@@ -14,7 +14,7 @@ test.py
 *.ko
 *.obj
 *.elf
-
+*.DS_STORE
 # Precompiled Headers
 *.gch
 *.pch
