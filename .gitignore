@@ -6,7 +6,8 @@ data/*
 *.src.rock
 *.zip
 *.tar.gz
-
+test.lua
+test.py
 # Object files
 *.o
 *.os
