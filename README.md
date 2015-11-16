@@ -3,4 +3,6 @@ An (in progress) implementation of Google's seq2seq architecture.
 
 A few notes:
 
+- This is based off of [Sutskever et al., 2014.](http://arxiv.org/abs/1409.3215) and [Vinyals & Le, 2015.](http://arxiv.org/pdf/1506.05869v1.pdf)
 - The word embeddings were obtained from [rotmanmi's WORD2VEC wrapper for Torch7](https://github.com/rotmanmi/word2vec.torch)
+- The data this is being tested on is the OpenSubtitles dataset, I used [a script I made](https://github.com/inikdom/opensubtitles-parser) to tokenize and create the input output sequences
