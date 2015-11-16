@@ -1,11 +1,13 @@
 # Compiled Lua sources
 luac.out
-
+Util/word2vecbin/*
+data/*
 # luarocks build files
 *.src.rock
 *.zip
 *.tar.gz
-
+test.lua
+test.py
 # Object files
 *.o
 *.os
