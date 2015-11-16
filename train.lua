@@ -20,13 +20,13 @@ end
 
 print("Starting pre-processor")
 
-local dataFiles = Preprocessor.start(options.dataDir)
+local maxSequenceLength = Preprocessor.start(options.dataDir)
 
 --prepare data for training with (input, output) pairs
 
 print("Creating minibatches...")
-
-MiniBatchLoader.createMiniBatches(dataFiles, options.batchSize, options.trainFrac,
-  options.evalFrac, options.testFrac)
+collectgarbage()
+MiniBatchLoader.createMiniBatches(options.dataDir, options.batchSize, options.trainFrac,
+  options.evalFrac, options.testFrac, 582)
 
 --perform training of n minibatches of m epochs over bs backsteps
