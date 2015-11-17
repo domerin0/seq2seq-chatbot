@@ -26,7 +26,7 @@ Preprocessor.start(options.dataDir)
 
 print("Creating minibatches...")
 collectgarbage()
---MiniBatchLoader.createMiniBatches(options.dataDir, options.batchSize, options.trainFrac,
---  options.evalFrac, options.testFrac)
+MiniBatchLoader.createMiniBatches(options.dataDir, options.batchSize, options.trainFrac,
+  options.evalFrac, options.testFrac, options.maxSeqLength)
 
 --perform training of n minibatches of m epochs over bs backsteps

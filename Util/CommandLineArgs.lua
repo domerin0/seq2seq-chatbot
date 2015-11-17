@@ -1,6 +1,14 @@
 --[[
 This file is a means to refactor command line argument parsing outside of the
 main nn files.
+
+This was loosely adapted from Andrej Karpathy's char-rnn train.lua file
+source: https://github.com/karpathy/char-rnn/blob/master/train.lua
+
+Major changes made were:
+1. Refactoring to new file for readbility
+2. Changing names to match rest of project's naming scheme
+3. Adding relevent commandline args for this project.
 ]]--
 local CommandLineArgs = {}
 
@@ -24,23 +32,21 @@ function CommandLineArgs.trainCmdArgs()
   cmd:option('-trainFrac',0.95,'fraction of data that goes into train set')
   cmd:option('-testFrac',0.05,'fraction of data that goes into test set')
   cmd:option('-evalFrac',0,'fraction of data that goes into eval set')
-
   cmd:option('-maxEpochs',50,'number of full passes through the training data')
   cmd:option('-dropout',0,'dropout for regularization, used after each RNN hidden layer. 0 = no dropout')
+  cmd:option('-maxSeqLength',90,'Max sentence length.')
 
 
 
   -- model params
-  cmd:option('-rnn_size', 128, 'size of LSTM internal state')
-  cmd:option('-num_layers', 2, 'number of layers in the LSTM')
+  cmd:option('-rnnSize', 128, 'size of LSTM internal state')
+  cmd:option('-numLayers', 2, 'number of layers in the LSTM')
   -- optimization
-  cmd:option('-learning_rate',2e-3,'learning rate')
+  cmd:option('-learningRate',2e-3,'learning rate')
   cmd:option('-learning_rate_decay',0.97,'learning rate decay')
   cmd:option('-learning_rate_decay_after',10,'in number of epochs, when to start decaying the learning rate')
   cmd:option('-decay_rate',0.95,'decay rate for rmsprop')
-  cmd:option('-seq_length',50,'number of timesteps to unroll for')
   cmd:option('-grad_clip',5,'clip gradients at this value')
-  cmd:option('-val_frac',0.05,'fraction of data that goes into validation set')
               -- test_frac will be computed as (1 - train_frac - val_frac)
   cmd:option('-init_from', '', 'initialize network parameters from checkpoint at this path')
   -- bookkeeping
