@@ -6,7 +6,7 @@ The main goal of this file is to run the preprocessor if necessary:
 require "lfs"
 
 local Preprocessor = {}
-
+local maxFileSize = 666569
 local StringUtils = require "Util.StringUtils"
 
 --trainFrac is percentage of data to use for training
@@ -71,7 +71,7 @@ function Preprocessor.start(dataDir)
 
     --1333139 was chosen because it represents about half
     --the dataset
-    for i=1,math.floor(numLines/888759) do
+    for i=1,math.floor(numLines/maxFileSize) do
       local p = path.join(processedDataDir, "data"..i..".t7")
       table.insert(dataFiles, p)
       if not path.exists(p) then
@@ -165,7 +165,7 @@ function Preprocessor.createDataFile(inputFile, vocabFile, dataFiles, numLines)
       end
       table.insert(dataset, sequence)
       --Use magic number determined above (or if < magic number use max lines)
-      if lineCounter % 888759 == 0 or lineCounter == numLines then
+      if lineCounter % maxFileSize == 0 or lineCounter == numLines then
         torch.save(dataFiles[fileCounter], dataset)
         fileCounter = fileCounter  + 1
         dataset = {}
