@@ -4,7 +4,7 @@ local MiniBatchLoader = require "Util.MiniBatchLoader"
 local VerifyGPU = require "Util.VerifyGPU"
 
 local options = CommandLineArgs.trainCmdArgs()
-
+local buckets = {7, 15, 20, 600}
 --decide whether to use CPU or GPU, and if GPU whether cuda or opencl
 local useGPU = false
 local useCuda = false
@@ -20,13 +20,13 @@ end
 
 print("Starting pre-processor")
 
-local maxSequenceLength = Preprocessor.start(options.dataDir)
+Preprocessor.start(options.dataDir)
 
 --prepare data for training with (input, output) pairs
 
 print("Creating minibatches...")
 collectgarbage()
-MiniBatchLoader.createMiniBatches(options.dataDir, options.batchSize, options.trainFrac,
-  options.evalFrac, options.testFrac, 582)
+--MiniBatchLoader.createMiniBatches(options.dataDir, options.batchSize, options.trainFrac,
+--  options.evalFrac, options.testFrac)
 
 --perform training of n minibatches of m epochs over bs backsteps

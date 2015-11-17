@@ -9,7 +9,7 @@ local MiniBatchLoader = {}
 math.randomseed( os.time() )
 
 function MiniBatchLoader.createMiniBatches(dataDir, batchSize, trainFrac,
-  evalFrac, testFrac, maxSequenceLength)
+  evalFrac, testFrac)
 
   --Checks to ensure user isn't testing us
   assert(evalFrac >= 0 and evalFrac < 1, "evalFrac not between 0 and 1...")
@@ -56,10 +56,6 @@ function MiniBatchLoader.createMiniBatches(dataDir, batchSize, trainFrac,
 
     table.insert(miniBatches, sourceTargetPairs)
   end
-  print("Made it!")
-      --create train/test/eval batch sets
-
-
     --save batch sets in appropriate t7 files
     print("Creating minibatch files...")
   for key, file in pairs(batchFiles) do

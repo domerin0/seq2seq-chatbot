@@ -5,7 +5,7 @@ torch.setdefaulttensortype('torch.FloatTensor')
 
 opt = {
 	binfilename = 'word2vecbin/GoogleNews-vectors-negative300.bin',
-	outfilename = 'data/word2vec.t7'
+	outfilename = 'data/save/word2vec.t7'
 }
 local w2vutils = {}
 if not paths.filep(opt.outfilename) then

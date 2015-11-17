@@ -50,6 +50,10 @@ word2vec = {}
 word2vec.M = M
 word2vec.w2vvocab = w2vvocab
 word2vec.v2wvocab = v2wvocab
+if not path.exists(opt.outfilename) then
+	local f=io.open(opt.outfilename,"w")
+	f:close()
+end
 torch.save(opt.outfilename,word2vec)
 print('Writing t7 File for future usage.')
 
