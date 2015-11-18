@@ -11,4 +11,4 @@ An (in progress) implementation of Google's seq2seq architecture.
 ##Todo
 
 - Finish implentation of train.lu, LSTM.lua
-- Look into solving memory issue (minibatch table exceeds luajit 1gb limit.) Currently work around is to make multiple minibatch files (not sure how good this approach is)
+- <del>Look into solving memory issue (minibatch table exceeds luajit 1gb limit.) Currently work around is to make multiple minibatch files (not sure how good this approach is)</del> solved!
