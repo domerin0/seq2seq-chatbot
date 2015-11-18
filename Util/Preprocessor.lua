@@ -79,7 +79,6 @@ it creates a single vocab mapping]]--
 function Preprocessor.createVocabFile(inputFiles, vocabFile)
   print("Creating token frequency list...")
   local mostCommonTokens = {}
-  local numTokens = 1
   local tokenFreq = {}
   for key, file in ipairs(inputFiles) do
     local numLines = 0
@@ -96,6 +95,7 @@ function Preprocessor.createVocabFile(inputFiles, vocabFile)
       end
     end
   print("Removing least common tokens...")
+  local numTokens = 1
   for tok, count in pairs(tokenFreq) do
     if count > 2 then
       mostCommonTokens[tok] = numTokens

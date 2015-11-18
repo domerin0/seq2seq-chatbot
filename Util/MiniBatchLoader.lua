@@ -3,6 +3,7 @@ The purpose of this file is to enable the train.lua file to
 'efficiently' create, load, and save the minibatches
 ]]
 local TableUtils = require "Util.TableUtils"
+local StringUtils = require "Util.StringUtils"
 local Preprocessor = require "Util.Preprocessor"
 require 'lfs'
 local MiniBatchLoader = {}
@@ -31,33 +32,37 @@ function MiniBatchLoader.createMiniBatches(dataDir, batchSize, trainFrac,
   local trainingPairSize = {}
 
   for file in lfs.dir(processedDir) do
-    table.insert(dataFiles, path.join(processedDir, file))
+    if not StringUtils.startsWith(file,".") then
+      local filePath = path.join(processedDir, file)
+      table.insert(dataFiles, filePath)
+    end
   end
 
-  local miniBatches = torch.Tensor(0,2,maxSequenceLength))
+--This tensor will eventually be overwritten, losing the random pair
+  local miniBatches = torch.IntTensor(1,2,maxSequenceLength)
 
   for key, value in ipairs(dataFiles) do
+    print(value)
     local data = torch.load(value)
     print("Loaded data...")
-
-    local sourceTargetPairs = torch.Tensor(#data-1, 2, maxSequenceLength)
+    local sourceTargetPairs = torch.IntTensor(#data-1, 2, maxSequenceLength)
 
     -- Reverse sequences to introduce short-term dependency's (Google's result)
     --Insert training pairs into table
     for i=1,#data-1 do
-      local source = TableUtils.padTable(TableUtils.reverseTable(data[i]),
-      maxSequenceLength)
-      data[i] = nil
-      local target = TableUtils.padTable(data[i + 1], maxSequenceLength)
-      if not sourceTargetPairs[i][1]:size(1) > maxSequenceLength and
-        not sourceTargetPairs[i][1]:size(1) > maxSequenceLength then
-          sourceTargetPairs[i] = torch.Tensor({source, target})
+      if not (#data[i] > maxSequenceLength) and
+        not (#data[i + 1] > maxSequenceLength) then
+          local source = TableUtils.reverseTable(data[i])
+          source = TableUtils.padTable(source, maxSequenceLength)
+          local target = TableUtils.padTable(data[i + 1], maxSequenceLength)
+          sourceTargetPairs[i] = torch.IntTensor({source, target})
       end
     end
 
     miniBatches =  torch.cat(miniBatches, sourceTargetPairs, 1)
-
   end
+  --Cut off first entry
+  miniBatches = miniBatches:sub(2,miniBatches:size(1))
     --save batch sets in appropriate t7 files
     print("Creating minibatch files...")
   --Due to memory constraints of data I have decided to split everything
@@ -67,7 +72,6 @@ function MiniBatchLoader.createMiniBatches(dataDir, batchSize, trainFrac,
   local trainFile = path.join(dataDir, "train/train.t7")
   local testFile = path.join(dataDir, "test/test.t7")
   local evalFile = path.join(dataDir, "eval/eval.t7")
-  local miniBatches = torch.load(file)
   local totalNum = miniBatches:size(1)
 
   local numTrain = math.floor(trainFrac * totalNum)
@@ -76,7 +80,8 @@ function MiniBatchLoader.createMiniBatches(dataDir, batchSize, trainFrac,
   torch.save(batchFile, miniBatches)
   torch.save(trainFile, miniBatches:sub(1, numTrain))
   torch.save(testFile, miniBatches:sub(numTrain + 1, numTrain + numTest))
-  torch.save(evalFile, miniBatches:sub(numTrain + numTest + 1, numTrain + numTest + numEval))
+  torch.save(evalFile, miniBatches:sub(numTrain + numTest + 1,
+    numTrain + numTest + numEval))
 
 end
 
@@ -88,7 +93,7 @@ decision allows for modularity between minibatch creation, and preprocessing the
 function MiniBatchLoader.getMaxSequenceLength(dataFile)
   local data = torch.load(dataFile)
   local maxLength = 0
-  for key vec in ipairs(data) do
+  for key, vec in ipairs(data) do
     if vec:size(1) > maxLength then
       maxLength = vec:size(1)
     end

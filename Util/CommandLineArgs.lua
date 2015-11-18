@@ -29,12 +29,12 @@ function CommandLineArgs.trainCmdArgs()
   cmd:option('-gpuid',0,'which gpu to use. -1 = use CPU')
   cmd:option('-opencl',0,'use OpenCL (instead of CUDA)')
   cmd:option('-batchSize',50,'number of sequences to train on in parallel')
-  cmd:option('-trainFrac',0.95,'fraction of data that goes into train set')
-  cmd:option('-testFrac',0.05,'fraction of data that goes into test set')
+  cmd:option('-trainFrac',0.7,'fraction of data that goes into train set')
+  cmd:option('-testFrac',0.3,'fraction of data that goes into test set')
   cmd:option('-evalFrac',0,'fraction of data that goes into eval set')
   cmd:option('-maxEpochs',50,'number of full passes through the training data')
   cmd:option('-dropout',0,'dropout for regularization, used after each RNN hidden layer. 0 = no dropout')
-  cmd:option('-maxSeqLength',90,'Max sentence length.')
+  cmd:option('-maxSeqLength',40,'Max sentence length.')
 
 
 
