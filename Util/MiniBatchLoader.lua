@@ -5,7 +5,9 @@ The purpose of this file is to enable the train.lua file to
 local TableUtils = require "Util.TableUtils"
 local StringUtils = require "Util.StringUtils"
 local Preprocessor = require "Util.Preprocessor"
+local Constants = require "Util.Constants"
 require 'lfs'
+
 local MiniBatchLoader = {}
 
 function MiniBatchLoader.createMiniBatches(dataDir, batchSize, trainFrac,
@@ -26,7 +28,7 @@ function MiniBatchLoader.createMiniBatches(dataDir, batchSize, trainFrac,
   local testFiles = {}
   local evalFiles = {}
   local dataFiles = {}
-  local processedDir = path.join(dataDir, "processed/")
+  local processedDir = path.join(dataDir, Constants.processedFolder)
   print("Loading data...")
 
   local trainingPairSize = {}
@@ -68,10 +70,10 @@ function MiniBatchLoader.createMiniBatches(dataDir, batchSize, trainFrac,
   --Due to memory constraints of data I have decided to split everything
   --into multiple files
 
-  local batchFile = path.join(dataDir, "rawbatches/batch.t7")
-  local trainFile = path.join(dataDir, "train/train.t7")
-  local testFile = path.join(dataDir, "test/test.t7")
-  local evalFile = path.join(dataDir, "eval/eval.t7")
+  local batchFile = path.join(dataDir,Constants.rawBatchesFolder..Constants.rawBatchesFile)
+  local trainFile = path.join(dataDir,Constants.trainFolder..Constants.trainFile)
+  local testFile = path.join(dataDir,Constants.testFolder..Constants.testFile)
+  local evalFile = path.join(dataDir,Constants.evalFolder..Constants.evalFile)
   local totalNum = miniBatches:size(1)
 
   local numTrain = math.floor(trainFrac * totalNum)
@@ -99,6 +101,17 @@ function MiniBatchLoader.getMaxSequenceLength(dataFile)
     end
   end
   return maxLength
+end
+
+--[[
+This function check if we even need to run the minibatchmaker
+It assumed if there are batches in the train folder that it
+does not need to be run
+]]
+function MiniBatchLoader.shouldRun(dataDir)
+  local trainDataDir = path.join(dataDir, Constants.trainFolder)
+  local trainFile = path.join(trainDataDir, Constants.trainFile)
+  return not path.exists(trainFile)
 end
 
 function MiniBatchLoader.loadBatches(batchFile)

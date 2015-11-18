@@ -7,20 +7,20 @@ require "lfs"
 
 local Preprocessor = {}
 local StringUtils = require "Util.StringUtils"
-
+local Constants = require "Util.Constants"
 --trainFrac is percentage of data to use for training
 -- validation data is computed as (1 - trainFrac)
 function Preprocessor.start(dataDir)
   lfs.mkdir (dataDir)
-  local vocabFile = path.join(dataDir, "vocab.t7")
-  local dicFile = path.join(dataDir, "index2Vec.t7")
+  local vocabFile = path.join(dataDir, Constants.vocabFile)
+  local dicFile = path.join(dataDir, Constants.dicFile  )
   --Make directories we will need just incase they don't exist
-  local inputFilesDir = path.join(dataDir, "raw/")
-  local processedDataDir  = path.join(dataDir, "processed/")
-  local batchesDataDir = path.join(dataDir, "rawbatches/")
-  local trainDataDir = path.join(dataDir, "train/")
-  local testDataDir = path.join(dataDir, "test/")
-  local evalDataDir = path.join(dataDir, "eval/")
+  local inputFilesDir = path.join(dataDir, Constants.rawFolder)
+  local processedDataDir  = path.join(dataDir, Constants.processedFolder)
+  local batchesDataDir = path.join(dataDir, Constants.rawBatchesFolder )
+  local trainDataDir = path.join(dataDir, Constants.trainFolder)
+  local testDataDir = path.join(dataDir, Constants.testFolder)
+  local evalDataDir = path.join(dataDir, Constants.evalFolder)
   lfs.mkdir(batchesDataDir)
   lfs.mkdir(trainDataDir)
   lfs.mkdir(testDataDir)
@@ -30,24 +30,6 @@ function Preprocessor.start(dataDir)
   local rawFiles = {}
   local dataFiles = {}
 
-
-  local runPreprocessor = false
-
-  if not path.exists(vocabFile) then
-    print('vocab.t7 does not exist... Creating it...')
-    f=io.open(vocabFile,"w")
-    f:close()
-    runPreprocessor = true
-  end
-
-  if not path.exists(dicFile) then
-    print("No dictionary file found.. Creating it...")
-    f=io.open(dicFile,"w")
-    f:close()
-    runPreprocessor = true
-  end
-
-  print(runPreprocessor)
   local numLines = 0
   local maxSequenceLength = 0
 
@@ -106,9 +88,9 @@ function Preprocessor.createVocabFile(inputFiles, vocabFile)
   end
   --Add <EOS> and <UNK> and $PAD$ tokens to vocab
   print("Adding special end of sentence and out of vocab tokens...")
-  mostCommonTokens["EOS"] = numTokens
-  mostCommonTokens["UNK"] = numTokens + 1
-  mostCommonTokens["$PAD$"] = numTokens + 2
+  mostCommonTokens[Constants.EOS] = numTokens
+  mostCommonTokens[Constants.UNK] = numTokens + 1
+  mostCommonTokens[Constants.PAD] = numTokens + 2
   numTokens = numTokens + 2
   print("Number of tokens in vocab... "..numTokens)
   print("Saving vocab mapping...")
@@ -154,13 +136,13 @@ function Preprocessor.createDataFile(inputFile, vocabFile, dataFile)
     local tempStr = StringUtils.split(line, ' ')
     for key, tok in pairs(tempStr) do
       if not vocabMapping[tok] then
-        sequence[#sequence + 1] = vocabMapping["UNK"]
+        sequence[#sequence + 1] = vocabMapping[Constants.UNK]
       else
         sequence[#sequence + 1] = vocabMapping[tok]
       end
     end
       --Must indicate end of sentence
-      sequence[#sequence + 1] = vocabMapping["EOS"]
+      sequence[#sequence + 1] = vocabMapping[Constants.EOS]
       if maxSequenceLength < #sequence then
         maxSequenceLength = #sequence
       end
@@ -169,6 +151,35 @@ function Preprocessor.createDataFile(inputFile, vocabFile, dataFile)
   print("Saving... "..dataFile)
   torch.save(dataFile, torch.ShortTensor(dataset))
   dataset = {}
+end
+
+--[[
+This function determines whether or not the preprocessor
+should run. It makes a (possibly poor) assumption that if
+the vocab and dictionary files exist then it does not need
+to be run.
+TODO find more stringent shouldRun criteria to make it user-proof
+]]
+function Preprocessor.shouldRun(dataDir)
+  local vocabFile = path.join(dataDir, Constants.vocabFile)
+  local dicFile = path.join(dataDir, Constants.dicFile)
+
+  local runPreprocessor = false
+
+  if not path.exists(vocabFile) then
+    print('vocab.t7 does not exist... Creating it...')
+    f=io.open(vocabFile,"w")
+    f:close()
+    runPreprocessor = true
+  end
+
+  if not path.exists(dicFile) then
+    print("No dictionary file found.. Creating it...")
+    f=io.open(dicFile,"w")
+    f:close()
+    runPreprocessor = true
+  end
+  return runPreprocessor
 end
 
 return Preprocessor
