@@ -18,6 +18,11 @@ function StringUtils.split(inputstr, sep)
         return t
 end
 
+-- Taken from http://stackoverflow.com/questions/22831701/lua-read-beginning-of-a-string
+function StringUtils.startsWith(String,Start)
+   return string.sub(String,1,string.len(Start))==Start
+end
+
 -- This function returns the input string as a tokenized table
 function StringUtils.tokenize(text)
   local tokenList = {}
