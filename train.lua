@@ -28,13 +28,14 @@ end
 
 VerifyGPU.checkCuda(options.gpuid, options.seed)
 
+
 VerifyGPU.checkOpenCl(options.gpuid, options.seed)
 
 --Load minibatches into memory!
 
 local batchLoader = MiniBatchLoader.loadMiniBatches()
 
-
+--Create model, or load from checkpoint
 
 
 --perform training of n minibatches of m epochs over bs backsteps
