@@ -1,7 +1,7 @@
 # seq2seq-chatbot
 An (in progress) implementation of Google's seq2seq architecture.
 
-I am also simultaneously [blogging](http://domkaukinen.com/tag/seq2seq/).
+I am also simultaneously [blogging](http://domkaukinen.com/tag/seq2seq/) about the process.
 
 ##A few notes:
 
