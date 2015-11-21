@@ -5,23 +5,23 @@ most constants from other files.
 
 local Constants = {}
 --File names
-local Constants.vocabFile = "vocab.t7"
-local Constants.dicFile = "index2vec.t7"
-local Constants.trainFile = "train.t7"
-local Constants.evalFile = "eval.t7"
-local Constants.testFile = "test.t7"
-local Constants.rawBatchesFile = "batches.t7"
---Folder names
-local Constants.saveFolder = "save/"
-local Constants.rawFolder = "raw/"
-local Constants.processedFolder = "processed/"
-local Constants.rawBatchesFolder = "rawbatches/"
-local Constants.trainFolder = "train/"
-local Constants.testFolder = "test/"
-local Constants.evalFolder = "eval/"
---Reserved tokens
-local Constants.EOS = "EOS"
-local Constants.UNK = "UNK"
-local Constants.PAD = "$PAD$"
+Constants.vocabFile = "vocab.t7"
+Constants.dicFile = "index2vec.t7"
+Constants.trainFile = "train.t7"
+Constants.evalFile = "eval.t7"
+Constants.testFile = "test.t7"
+Constants.rawBatchesFile = "batches.t7"
+--folder names
+Constants.saveFolder = "save/"
+Constants.rawFolder = "raw/"
+Constants.processedFolder = "processed/"
+Constants.rawBatchesFolder = "rawbatches/"
+Constants.trainFolder = "train/"
+Constants.testFolder = "test/"
+Constants.evalFolder = "eval/"
+--reserved tokens
+Constants.EOS = "EOS"
+Constants.UNK = "UNK"
+Constants.PAD = "$PAD$"
 
 return Constants

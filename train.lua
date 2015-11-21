@@ -17,8 +17,8 @@ end
 
 if MiniBatchLoader.shouldRun(options.dataDir) then
   print("Creating minibatches...")
-  MiniBatchLoader.createMiniBatches(options.dataDir, options.batchSize, options.trainFrac,
-    options.evalFrac, options.testFrac, options.maxSeqLength)
+  MiniBatchLoader.createMiniBatches(options.dataDir, options.batchSize,
+    options.maxSeqLength)
   collectgarbage()
 else
   print("Minibatches already created before, moving on...")
@@ -26,14 +26,15 @@ end
 
 --Now, check and enable GPU usage:
 
-VerifyGPU.checkCuda(options.gpuid, options.seed)
+--VerifyGPU.checkCuda(options.gpuid, options.seed)
 
 
-VerifyGPU.checkOpenCl(options.gpuid, options.seed)
+--VerifyGPU.checkOpenCl(options.gpuid, options.seed)
 
 --Load minibatches into memory!
 
-local batchLoader = MiniBatchLoader.loadMiniBatches(options.dataDir)
+local batchLoader = MiniBatchLoader.loadMiniBatches(options.dataDir, options.batchSize, trainFrac,
+  options.evalFrac, options.testFrac)
 
 --Create model, or load from checkpoint
 

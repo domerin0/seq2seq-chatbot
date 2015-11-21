@@ -10,23 +10,11 @@ require 'lfs'
 
 local MiniBatchLoader = {}
 
-function MiniBatchLoader.createMiniBatches(dataDir, batchSize, trainFrac,
-  evalFrac, testFrac, maxSequenceLength)
+function MiniBatchLoader.createMiniBatches(dataDir, batchSize, maxSequenceLength)
 
-  --Checks to ensure user isn't testing us
-  assert(evalFrac >= 0 and evalFrac < 1, "evalFrac not between 0 and 1...")
-  assert(trainFrac > 0 and trainFrac <= 1, "trainFrac not between 0 and 1...")
-  assert(testFrac >= 0 and testFrac < 1, "testFrac not between 0 and 1...")
-  assert(testFrac + evalFrac + trainFrac == 1, "eval, train and test don't add up to 1!")
-
-  print("Using ".. trainFrac .. " As percentage of data to train on...")
-  print("Using ".. evalFrac .. " As percentage of data to validate on...")
-  print("Using " .. testFrac .. " As percentage of data to test on...")
   print("Max sequence length is ... ".. maxSequenceLength)
   local batchFiles  = {}
-  local trainFiles = {}
-  local testFiles = {}
-  local evalFiles = {}
+
   local dataFiles = {}
   local processedDir = path.join(dataDir, Constants.processedFolder)
   print("Loading data...")
@@ -71,19 +59,13 @@ function MiniBatchLoader.createMiniBatches(dataDir, batchSize, trainFrac,
   --into multiple files
 
   local batchFile = path.join(dataDir,Constants.rawBatchesFolder..Constants.rawBatchesFile)
-  local trainFile = path.join(dataDir,Constants.trainFolder..Constants.trainFile)
-  local testFile = path.join(dataDir,Constants.testFolder..Constants.testFile)
-  local evalFile = path.join(dataDir,Constants.evalFolder..Constants.evalFile)
+
   local totalNum = miniBatches:size(1)
 
   local numTrain = math.floor(trainFrac * totalNum)
   local numTest = math.floor(testFrac * totalNum)
   local numEval = totalNum - numTrain - numTest
   torch.save(batchFile, miniBatches)
-  torch.save(trainFile, miniBatches:sub(1, numTrain))
-  torch.save(testFile, miniBatches:sub(numTrain + 1, numTrain + numTest))
-  torch.save(evalFile, miniBatches:sub(numTrain + numTest + 1,
-    numTrain + numTest + numEval))
 
 end
 
@@ -109,16 +91,26 @@ It assumed if there are batches in the train folder that it
 does not need to be run
 ]]
 function MiniBatchLoader.shouldRun(dataDir)
-  local trainDataDir = path.join(dataDir, Constants.trainFolder)
-  local trainFile = path.join(trainDataDir, Constants.trainFile)
+  local batchDataDir = path.join(dataDir, Constants.rawBatchesFolder)
+  local batchFile = path.join(trainDataDir, Constants.rawBatchesFile)
   return not path.exists(trainFile)
 end
 
-function MiniBatchLoader.loadBatches(dataDir)
+function MiniBatchLoader.loadBatches(dataDir, batchSize, trainFrac,
+  evalFrac, testFrac)
   local self = {}
   setmetatable(self, MiniBatchLoader)
+  --Checks to ensure user isn't testing us
+  assert(evalFrac >= 0 and evalFrac < 1, "evalFrac not between 0 and 1...")
+  assert(trainFrac > 0 and trainFrac <= 1, "trainFrac not between 0 and 1...")
+  assert(testFrac >= 0 and testFrac < 1, "testFrac not between 0 and 1...")
+  assert(testFrac + evalFrac + trainFrac == 1, "eval, train and test don't add up to 1!")
 
+  print("Using ".. trainFrac .. " As percentage of data to train on...")
+  print("Using ".. evalFrac .. " As percentage of data to validate on...")
+  print("Using " .. testFrac .. " As percentage of data to test on...")
   local saveFolder = path.join(dataDir, Constants.saveFolder )
+
   self.vocabMapping = torch.load(path.join(saveFolder, Constants.vocabFile))
   self.dicMapping = torch.load(path.join(saveFolder, Constants.dicFile))
 
@@ -136,3 +128,15 @@ function MiniBatchLoader.resetPointer()
 end
 
 return MiniBatchLoader
+
+--code I will probably need to refer to later:
+--local trainFiles = {}
+--local testFiles = {}
+--local evalFiles = {}
+--local trainFile = path.join(dataDir,Constants.trainFolder..Constants.trainFile)
+--local testFile = path.join(dataDir,Constants.testFolder..Constants.testFile)
+--local evalFile = path.join(dataDir,Constants.evalFolder..Constants.evalFile)
+--miniBatches, testBatches, evalBatches = miniBatches:sub(1, numTrain),
+--  miniBatches:sub(numTrain + 1, numTrain + numTest),
+--  miniBatches:sub(numTrain + numTest + 1,
+--   numTrain + numTest + numEval)
