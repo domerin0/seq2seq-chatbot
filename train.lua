@@ -33,7 +33,7 @@ VerifyGPU.checkOpenCl(options.gpuid, options.seed)
 
 --Load minibatches into memory!
 
-local batchLoader = MiniBatchLoader.loadMiniBatches()
+local batchLoader = MiniBatchLoader.loadMiniBatches(options.dataDir)
 
 --Create model, or load from checkpoint
 

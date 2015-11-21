@@ -12,6 +12,7 @@ local Constants.evalFile = "eval.t7"
 local Constants.testFile = "test.t7"
 local Constants.rawBatchesFile = "batches.t7"
 --Folder names
+local Constants.saveFolder = "save/"
 local Constants.rawFolder = "raw/"
 local Constants.processedFolder = "processed/"
 local Constants.rawBatchesFolder = "rawbatches/"

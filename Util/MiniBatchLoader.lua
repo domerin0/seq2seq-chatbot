@@ -114,9 +114,16 @@ function MiniBatchLoader.shouldRun(dataDir)
   return not path.exists(trainFile)
 end
 
-function MiniBatchLoader.loadBatches(batchFile)
+function MiniBatchLoader.loadBatches(dataDir)
   local self = {}
   setmetatable(self, MiniBatchLoader)
+
+  local saveFolder = path.join(dataDir, Constants.saveFolder )
+  self.vocabMapping = torch.load(path.join(saveFolder, Constants.vocabFile))
+  self.dicMapping = torch.load(path.join(saveFolder, Constants.dicFile))
+
+  local trainFile = path.join(dataDir, Constants.trainFolder)
+  trainFile = path.join(trainFile, Constants.trainFile)
 
   print('Loading previously allocated minibatches...')
 
