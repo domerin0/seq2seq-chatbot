@@ -4,6 +4,7 @@ local MiniBatchLoader = require "Util.MiniBatchLoader"
 local VerifyGPU = require "Util.VerifyGPU"
 
 local options = CommandLineArgs.trainCmdArgs()
+torch.manualSeed(options.seed)
 
 if Preprocessor.shouldRun(options.dataDir) then
   print("Starting pre-processor")
@@ -37,6 +38,14 @@ local batchLoader = MiniBatchLoader.loadMiniBatches(options.dataDir, options.bat
   options.evalFrac, options.testFrac)
 
 --Create model, or load from checkpoint
+if not path.exists(options.checkpoints) then
+  lfs.mkdir(options.checkpoints)
+end
+
+if(string.len(options.startFrom) > 0) then
+  print("Loading network parameters from checkpoint... "..options.startFrom)
+  local checkpoint = torch.load(options.startFrom)
+end
 
 
 --perform training of n minibatches of m epochs over bs backsteps

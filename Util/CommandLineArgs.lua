@@ -35,6 +35,7 @@ function CommandLineArgs.trainCmdArgs()
   cmd:option('-maxEpochs',50,'number of full passes through the training data')
   cmd:option('-dropout',0,'dropout for regularization, used after each RNN hidden layer. 0 = no dropout')
   cmd:option('-maxSeqLength',40,'Max sentence length.')
+  cmd:option('-seed',123,'Torch manual random number generator seed.')
 
 
 
@@ -49,10 +50,10 @@ function CommandLineArgs.trainCmdArgs()
   cmd:option('-gradClip',5,'Clip gradients at this value.')
   cmd:option('-weights', '', 'Initialize network parameters from checkpoint at this path.')
   -- bookkeeping
-  cmd:option('-seed',123,'Torch manual random number generator seed.')
   cmd:option('-printFreq',1,'How many steps/minibatches between printing out the loss.')
   cmd:option('-evalEvery',1000,'Every how many iterations should we evaluate on validation data.')
-  cmd:option('-checkpoints', 'cv', 'Tutput directory where checkpoints get written.')
+  cmd:option('-checkpoints', 'cv', 'Output directory where checkpoints get written.')
+  cmd:option('-startFrom', '', 'File to initialize training or prediction from.')
   cmd:option('-savefile','lstm','Filename to autosave the checkpont to. Will be inside checkpoint/')
   -- GPU/CPU
   cmd:text()
