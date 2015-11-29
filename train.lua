@@ -1,3 +1,7 @@
+--This file is heavily influenced by:
+-- Andrej Karpathy's https://github.com/karpathy/char-rnn/blob/master/train.lua
+
+
 local CommandLineArgs = require "Util.CommandLineArgs"
 local Preprocessor = require "Util.Preprocessor"
 local MiniBatchLoader = require "Util.MiniBatchLoader"
