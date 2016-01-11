@@ -61,7 +61,8 @@ function Seq2Seq:buildModel()
       self.protos.criterion = nn.ClassNLLCriterion()
   end
 
-  self.init_state = {}
+  self.encoderInitState = {}
+  self.decoderInitState = {}
   for L=1,self.options.numLayers do
     local h_init = torch.zeros(self.options.batchSize,
       self.options.rnnSize)
@@ -69,8 +70,11 @@ function Seq2Seq:buildModel()
       then h_init = h_init:cuda() end
     if self.options.gpuid >=0 and self.options.opencl == 1
       then h_init = h_init:cl() end
-    table.insert(self.init_state, h_init:clone())
-    table.insert(self.init_state, h_init:clone())
+    table.insert(self.encoderInitState, h_init:clone())
+    table.insert(self.encoderInitState, h_init:clone())
+
+    table.insert(self.decoderInitState, h_init:clone())
+    table.insert(self.decoderInitState, h_init:clone())
   end
 
   cuda()
@@ -117,12 +121,35 @@ function Seq2Seq:train(input, target)
 
   --forward pass
 
-  local rnnState = {[0] = initStateGlobal}
-  local predictions = {}
-  local loss = 0
+  local rnnEncoderState = {[0] = initStateGlobal}
 
+  for i=1,encoderInput:size(1) do
+    self.clones.encoder[i]:evaluate()
+    local encoderOut = self.clones.encoder:forward{
+      encoderInput[i],
+      unpack(rnnEncoderState[i-1])
+    }
+    rnnEncoderState[i] = {}
 
-  self.protos.encoder:forward(encoderInput)
+    for j=1,#initState do
+      table.insert(rnnEncoderState[i], encoderOut[i])
+    end
+  end
+
+  self.forwardConnect(encoderInput:size(1))
+
+  local rnnDecoderState = {[0] = rnnState[input:size(1)]}
+
+  for i=1,decoderInput:size(1) do
+    local decoderOut = self.protos.decoder:forward{
+      decoderInput[i],
+      unpack(rnnDecoderState[i-1])
+    }
+
+    for j=1,#initState do
+      table.insert(rnnDecoderState[i], decoderOut[i])
+    end
+  end
 
   --backward pass
 
