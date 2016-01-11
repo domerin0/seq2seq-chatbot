@@ -52,6 +52,20 @@ function TableUtils.shuffleTable(t)
 end
 
 
+--[[
+Taken from: https://github.com/karpathy/char-rnn/blob/4297a9bf69726823d944ad971555e91204f12ca8/util/misc.lua
+]]
+function cloneList(tensor_list, zero_too)
+    -- utility function. todo: move away to some utils file?
+    -- takes a list of tensors and returns a list of cloned tensors
+    local out = {}
+    for k,v in pairs(tensor_list) do
+        out[k] = v:clone()
+        if zero_too then out[k]:zero() end
+    end
+    return out
+end
+
 function TableUtils.makeContextWindow(sentence, n)
   assert(n%2==1, "Context windows size must be odd..")
   assert(n>1, "Context window must be greater than 1...")

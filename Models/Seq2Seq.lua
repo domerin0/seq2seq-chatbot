@@ -77,6 +77,9 @@ function Seq2Seq:buildModel()
     table.insert(self.decoderInitState, h_init:clone())
   end
 
+  self.encoderInitStateGlobal = TableUtils.cloneList(encoderInitState)
+  self.decoderInitStateGlobal = TableUtils.cloneList(decoderInitState)
+
   cuda()
 
   encoderParams, encoderGradParams = model_utils.combine_all_parameters(self.protos.encoder)
@@ -106,6 +109,9 @@ function Seq2Seq:cuda()
   end
 end
 
+--[[
+TODO clean up function (maybe remove some code duplication)
+]]
 function Seq2Seq:train(input, target)
   local encoderInput = input
   local decoderInput = target:sub(1,-2)
@@ -114,9 +120,9 @@ function Seq2Seq:train(input, target)
   local loss = 0
   local predictions  = {}
 
-  --forward pass
+  --forward pass--------------------------------------
 
-  local rnnEncoderState = {[0] = initStateGlobal}
+  local rnnEncoderState = {[0] = encoderInitStateGlobal}
 
   for i=1,encoderInput:size(1) do
     self.clones.encoder[i]:evaluate()
@@ -131,29 +137,41 @@ function Seq2Seq:train(input, target)
     end
   end
 
-  local rnnDecoderState = {[0] = rnnState[input:size(1)]}
+  local rnnDecoderState = {[0] = rnnEncoderState[input:size(1)]}
 
+  local decoderOut = {}
   for i=1,decoderInput:size(1) do
-    local decoderOut = self.protos.decoder:forward{
+    self.clones.decoder[i]:evaluate()
+    decoderOut = self.clones.decoder:forward{
       decoderInput[i],
       unpack(rnnDecoderState[i-1])
     }
 
     for j=1,#decoderInitState do
-      table.insert(rnnDecoderState[i], decoderOut[i])
+      table.insert(rnnDecoderState[j], decoderOut[j])
     end
+    predictions[i] = decoderOut[#decoderOut]
+    loss = loss + self.clones.criterion[i]:forward(predictions[i],
+      decoderTarget[i])
   end
 
-  --backward pass
+  self.loss = self.loss / decoderInput:size(1)
 
-  local drnnState = {[opt.seq_length] = clone_list(decoderInitState, true)}
-    for t=opt.seq_length,1,-1 do
+  --backward pass---------------------------------------------------
+
+  local drnnState = {[decoderInput:size(1)] = clone_list(
+    decoderInitStateGlobal,
+    true)}
+    for t=decoderInput:size(1),1,-1 do
         -- backprop through loss, and softmax/linear
-        local doutput_t = clones.criterion[t]:backward(predictions[t], y[t])
+        local doutput_t = self.clones.criterion[t]:backward(
+          predictions[t],
+          decoderTarget[t])
         table.insert(drnn_state[t], doutput_t)
+
         local dlst = self.clones.decoder[t]:backward({
-          x[t],
-          unpack(rnn_state[t-1])
+          decoderInput[t],
+          unpack(rnnDecoderState[t-1])
           }, drnn_state[t])
         drnn_state[t-1] = {}
         for k,v in pairs(dlst) do
@@ -163,8 +181,41 @@ function Seq2Seq:train(input, target)
         end
     end
 
+    --copy decoder gradients to encoder
 
+    local ernnState = {[encoderInput:size(1)] = clone_list(
+      encoderInitState,
+      true)}
+
+      for t=encoderInput:size(1),1,-1 do
+          -- backprop through loss, and softmax/linear
+          local doutput_t = self.clones.criterion[t]:backward(
+            predictions[t],
+            decoderTarget[t])
+          table.insert(drnn_state[t], doutput_t)
+
+          local dlst = self.clones.decoder[t]:backward({
+            decoderInput[t],
+            unpack(rnnDecoderState[t-1])
+            }, drnn_state[t])
+          drnn_state[t-1] = {}
+          for k,v in pairs(dlst) do
+              if k > 1 then
+                  drnn_state[t-1][k-1] = v
+              end
+          end
+      end
+
+    encoderGradParams:clamp(-self.options.gradClip,
+      self.options.gradClip)
+    decoderGradParams:clamp(-self.options.gradClip,
+      self.options.gradClip)
+
+    return loss, encoderGradParams, decoderGradParams
 end
 
+--[[
+prediction
+]]
 function Seq2Seq:eval(input)
 end
