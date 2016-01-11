@@ -106,18 +106,13 @@ function Seq2Seq:cuda()
   end
 end
 
---Copy hidden state from encoder to decoder
-function Seq2Seq:forwardConnect()
-
-end
-
-function Seq2Seq:backwardConnect()
-end
-
 function Seq2Seq:train(input, target)
   local encoderInput = input
   local decoderInput = target:sub(1,-2)
   local decoderTarget = target:sub(2,-1)
+
+  local loss = 0
+  local predictions  = {}
 
   --forward pass
 
@@ -131,12 +126,10 @@ function Seq2Seq:train(input, target)
     }
     rnnEncoderState[i] = {}
 
-    for j=1,#initState do
+    for j=1,#encoderInitState do
       table.insert(rnnEncoderState[i], encoderOut[i])
     end
   end
-
-  self.forwardConnect(encoderInput:size(1))
 
   local rnnDecoderState = {[0] = rnnState[input:size(1)]}
 
@@ -146,12 +139,29 @@ function Seq2Seq:train(input, target)
       unpack(rnnDecoderState[i-1])
     }
 
-    for j=1,#initState do
+    for j=1,#decoderInitState do
       table.insert(rnnDecoderState[i], decoderOut[i])
     end
   end
 
   --backward pass
+
+  local drnnState = {[opt.seq_length] = clone_list(decoderInitState, true)}
+    for t=opt.seq_length,1,-1 do
+        -- backprop through loss, and softmax/linear
+        local doutput_t = clones.criterion[t]:backward(predictions[t], y[t])
+        table.insert(drnn_state[t], doutput_t)
+        local dlst = self.clones.decoder[t]:backward({
+          x[t],
+          unpack(rnn_state[t-1])
+          }, drnn_state[t])
+        drnn_state[t-1] = {}
+        for k,v in pairs(dlst) do
+            if k > 1 then
+                drnn_state[t-1][k-1] = v
+            end
+        end
+    end
 
 
 end
