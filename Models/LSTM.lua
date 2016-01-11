@@ -1,17 +1,13 @@
 --[[
 Taken and adapted from  from : https://github.com/karpathy/char-rnn/blob/master/model/LSTM.lua
-Main changes are removing the one-hot encoding in favor of word embeddings
+Main changes are removing the one-hot encoding in favor of lookup table
 ]]
 
 --[[
-embeddingSize: size of input vector, or n dimensional representation of vocab
 vocabSize: size of vocabulary
 rnnSize: number of neurons in each hidden layer
 n: number of hidden layers
 dropout: add a dropout layer to prevent overfitting
-passHidden: boolean which says whether to apply final non-linear activation or not,
-this is useful for the encoder, which just passes its' hidden state forward
-useEmbeddingLayer: boolean which determines whether to use an embedding layer or not
 ]]
 local LSTM = {}
 function LSTM.lstm(vocabSize, rnnSize, n, dropout,
