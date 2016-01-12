@@ -10,13 +10,13 @@ require 'lfs'
 
 local MiniBatchLoader = {}
 
-function MiniBatchLoader.createMiniBatches(dataDir, batchSize, maxSequenceLength)
+function MiniBatchLoader.createMiniBatches(options)
 
-  print("Max sequence length is ... ".. maxSequenceLength)
+  print("Max sequence length is ... ".. options.maxSeqLength)
   local batchFiles  = {}
 
   local dataFiles = {}
-  local processedDir = path.join(dataDir, Constants.processedFolder)
+  local processedDir = path.join(options.dataDir, Constants.processedFolder)
   print("Loading data...")
 
   local trainingPairSize = {}
@@ -29,23 +29,33 @@ function MiniBatchLoader.createMiniBatches(dataDir, batchSize, maxSequenceLength
   end
 
 --This tensor will eventually be overwritten, losing the random pair
-  local miniBatches = torch.IntTensor(1,2,maxSequenceLength)
+  local miniBatches = torch.IntTensor(1,2,options.maxSeqLength)
 
   for key, value in ipairs(dataFiles) do
     print(value)
     local data = torch.load(value)
+    local VocabMapping = require "Util.VocabMapping"
+    local mapping = VocabMapping.create(options.dataDir)
     print("Loaded data...")
-    local sourceTargetPairs = torch.IntTensor(#data-1, 2, maxSequenceLength)
+    local sourceTargetPairs = torch.IntTensor(#data-1, 2, options.maxSeqLength)
 
     -- Reverse sequences to introduce short-term dependency's (Google's result)
-    --Insert training pairs into table
+    --Insert training pairs into tensor
     for i=1,#data-1 do
-      if not (#data[i] > maxSequenceLength) and
-        not (#data[i + 1] > maxSequenceLength) then
-          local source = TableUtils.reverseTable(data[i])
-          source = TableUtils.padTable(source, maxSequenceLength)
-          local target = TableUtils.padTable(data[i + 1], maxSequenceLength)
-          sourceTargetPairs[i] = torch.IntTensor({source, target})
+      if not (data[i]:size(1) > options.maxSeqLength) and
+        not (data[i + 1]:size(1) > options.maxSeqLength) then
+
+          local source = torch.IntTensor(options.maxSeqLength)
+            :fill(-1)
+          local target = torch.IntTensor(options.maxSeqLength)
+            :fill(-1)
+          local sourceIndices = TableUtils.indexTensor(data[i]:size(1))
+          local targetIndices = TableUtils.indexTensor(data[i + 1]:size(1))
+          source:indexCopy(1, sourceIndices, TableUtils.reverseTensor(data[i]))
+          target:indexCopy(1, targetIndices, data[i + 1])
+          sourceTargetPairs[i][1] = source
+          sourceTargetPairs[i][2] = target
+          --= torch.IntTensor({source, target})
       end
     end
 
@@ -58,12 +68,12 @@ function MiniBatchLoader.createMiniBatches(dataDir, batchSize, maxSequenceLength
   --Due to memory constraints of data I have decided to split everything
   --into multiple files
 
-  local batchFile = path.join(dataDir,Constants.rawBatchesFolder..Constants.rawBatchesFile)
+  local batchFile = path.join(options.dataDir,Constants.rawBatchesFolder..Constants.rawBatchesFile)
 
   local totalNum = miniBatches:size(1)
 
-  local numTrain = math.floor(trainFrac * totalNum)
-  local numTest = math.floor(testFrac * totalNum)
+  local numTrain = math.floor(options.trainFrac * totalNum)
+  local numTest = math.floor(options.testFrac * totalNum)
   local numEval = totalNum - numTrain - numTest
   torch.save(batchFile, miniBatches)
 

@@ -160,7 +160,7 @@ function Preprocessor.createDataFile(inputFile, vocabFile, dataFile)
       if maxSequenceLength < #sequence then
         maxSequenceLength = #sequence
       end
-      table.insert(dataset, torch.ShortTensor(sequence))
+      table.insert(dataset, torch.IntTensor(sequence))
   end
   print("Saving... "..dataFile)
   torch.save(dataFile, dataset)
@@ -176,7 +176,7 @@ TODO find more stringent shouldRun criteria to make it user-proof
 ]]
 function Preprocessor.shouldRun(dataDir)
   local vocabFile = path.join(dataDir, Constants.vocabFile)
-  local dicFile = path.join(dataDir, Constants.dicFile)
+  local dicFile = path.join(dataDir, Constants.indexFile)
 
   local runPreprocessor = false
 

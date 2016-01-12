@@ -1,7 +1,8 @@
 --[[
-This is based roughly off:
+This is mostly adapted from:
+https://github.com/karpathy/char-rnn/blob/master/train.lua
+and based roughly off:
 https://github.com/macournoyer/neuralconvo/blob/master/seq2seq.lua
-and:
 
 The main differences are not using rnn or nnx package,
 and having dropout/customizable layers.

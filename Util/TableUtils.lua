@@ -19,6 +19,30 @@ function TableUtils.reverseTable(sequence)
   return reversed
 end
 
+--[[
+Another function that doesn't quite fit here, but is here temporarily
+returns a tensor where tensor[i] = i. (takes length as argument)
+]]
+function TableUtils.indexTensor(indexLength)
+  local temp = torch.LongTensor(indexLength)
+  for i=1,indexLength do
+    temp[i] = i
+  end
+  return temp
+end
+
+--[[Not really a table function, but I'll leave this here for now
+swap tensor in place. Assumes 1d tensor (otherwise this doesn't make sense)
+]]
+function TableUtils.reverseTensor(tensor)
+  counter = 1
+  for i=tensor:size(1),1,-1 do
+    tensor[i], tensor[counter] = tensor[counter],tensor[i]
+    counter = counter + 1
+  end
+  return tensor
+end
+
 --Need to add check for numerical types!!
 function TableUtils.sum(t)
   local sum = 0

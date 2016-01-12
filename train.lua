@@ -23,8 +23,7 @@ end
 
 if MiniBatchLoader.shouldRun(options.dataDir) then
   print("Creating minibatches...")
-  MiniBatchLoader.createMiniBatches(options.dataDir, options.batchSize,
-    options.maxSeqLength)
+  MiniBatchLoader.createMiniBatches(options)
   collectgarbage()
 else
   print("Minibatches already created before, moving on...")
@@ -45,8 +44,7 @@ end
 
 --Load minibatches into memory!
 
-local batchLoader = MiniBatchLoader.loadMiniBatches(options.dataDir, options.batchSize, trainFrac,
-  options.evalFrac, options.testFrac)
+local batchLoader = MiniBatchLoader.loadMiniBatches(options)
 
 chatbot = seq2seq.Seq2Seq(options)
 
