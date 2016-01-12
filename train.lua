@@ -1,10 +1,10 @@
---This file is heavily influenced by:
+--This file is influenced by:
 -- Andrej Karpathy's https://github.com/karpathy/char-rnn/blob/master/train.lua
 
 
 local CommandLineArgs = require "Util.CommandLineArgs"
-local Preprocessor = require "Util.Preprocessor"
-local MiniBatchLoader = require "Util.MiniBatchLoader"
+local Preprocessor = require "Preprocessor"
+local MiniBatchLoader = require "MiniBatchLoader"
 local VerifyGPU = require "Util.VerifyGPU"
 require "seq2seq"
 

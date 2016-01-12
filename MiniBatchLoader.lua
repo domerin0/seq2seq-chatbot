@@ -4,7 +4,7 @@ The purpose of this file is to enable the train.lua file to
 ]]
 local TableUtils = require "Util.TableUtils"
 local StringUtils = require "Util.StringUtils"
-local Preprocessor = require "Util.Preprocessor"
+local Preprocessor = require "Preprocessor"
 local Constants = require "Util.Constants"
 require 'lfs'
 

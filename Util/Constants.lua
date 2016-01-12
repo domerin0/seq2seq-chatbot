@@ -6,8 +6,7 @@ most constants from other files.
 local Constants = {}
 --File names
 Constants.vocabFile = "vocab.t7"
-Constants.indexFile = "index2word.t7"
-Constants.dicFile = "index2vec.t7"
+Constants.dicFile = "dic.t7"
 Constants.trainFile = "train.t7"
 Constants.evalFile = "eval.t7"
 Constants.testFile = "test.t7"

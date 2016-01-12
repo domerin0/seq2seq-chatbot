@@ -13,7 +13,6 @@ local Constants = require "Util.Constants"
 function Preprocessor.start(dataDir)
   lfs.mkdir (dataDir)
   local vocabFile = path.join(dataDir, Constants.vocabFile)
-  local indexFile = path.join(dataDir, Constants.indexFile)
   local dicFile = path.join(dataDir, Constants.dicFile  )
   --Make directories we will need just incase they don't exist
   local inputFilesDir = path.join(dataDir, Constants.rawFolder)
@@ -43,7 +42,7 @@ function Preprocessor.start(dataDir)
   end
     -- Should take in all files and make one vocab mapping
     Preprocessor.createVocabFile(rawFiles, vocabFile)
-    Preprocessor.createIndexFile(vocabFile, indexFile)
+    Preprocessor.createDicFile(vocabFile, dicFile)
     --Preprocessor.createDicFile(vocabFile, dicFile)
 
     --Not very helpful, but for debugging purposes
@@ -98,40 +97,14 @@ function Preprocessor.createVocabFile(inputFiles, vocabFile)
   torch.save(vocabFile, mostCommonTokens)
 end
 
-
---[[This function creates the index to token mapping]]
-function Preprocessor.createIndexFile(vocabFile, indexFile)
+function Preprocessor.createDicFile(vocabFile, dicFile)
+  print("Creating dictionary mapping...")
   local vocabMapping = torch.load(vocabFile)
   local indexMapping = {}
   for key, value in ipairs(vocabMapping) do
     indexMapping[key] = value
   end
 
-  torch.save(indexFile, indexMapping)
-
-end
-
-function Preprocessor.createDicFile(vocabFile, dicFile)
-  local w2vutils = require "Util.w2vutils"
-  print("Creating dictionary mapping...")
-  local vocabMapping = torch.load(vocabFile)
-  local count = 0
-  for _ in pairs(vocabMapping) do count = count + 1 end
-  --for now constant 300 since that is embedding size
-  local indexMapping = torch.FloatTensor(count, 300)
-  print(count)
-  --local indexMapping = {}
-  for token, index in pairs(vocabMapping) do
-      local t = w2vutils:word2vec(token)
-      if t ~= nil then
-        local vec = torch.FloatTensor(t)
-        indexMapping[math.floor(index)] = vec
-      else
-        --Accountingfor out of vocab tokens in w2v
-      indexMapping[math.floor(index)] = torch.FloatTensor(w2vutils:word2vec("UNK"))
-    end
-    --indexMapping[index] = table.insert(indexMapping, w2vutils:word2vec(token))
-  end
   print("Saving dictionary mapping...")
   torch.save(dicFile, indexMapping)
 end
