@@ -151,11 +151,11 @@ function Seq2Seq:train(input, target)
       table.insert(rnnDecoderState[j], decoderOut[j])
     end
     predictions[i] = decoderOut[#decoderOut]
-    loss = loss + self.clones.criterion[i]:forward(predictions[i],
+    self.loss = self.loss + self.clones.criterion[i]:forward(
+      predictions[i],
       decoderTarget[i])
   end
 
-  self.loss = self.loss / decoderInput:size(1)
 
   --backward pass---------------------------------------------------
 
