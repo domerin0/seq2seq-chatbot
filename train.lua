@@ -97,7 +97,7 @@ for epoch=1,options.maxEpochs do
       checkpoint.batch =  batch
       checkpoint.epoch = epoch
       checkpoint.vocab = loader.vocabMapping
-      torch.save(savefile, checkpoint)
+      torch.save(options.savefile, checkpoint)
     end
 
     if i % opt.print_every == 0 then
@@ -109,8 +109,10 @@ for epoch=1,options.maxEpochs do
     if loss0 == nil then loss0 = loss end
     if loss[1] > loss0 * 3 then
         print('loss is exploding, aborting.')
-        break 
+        break
     end
+
+
 
   end
 

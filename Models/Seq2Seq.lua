@@ -78,9 +78,6 @@ function Seq2Seq:buildModel()
   end
 
   self.encoderInitStateGlobal = TableUtils.cloneList(encoderInitState)
-  self.decoderInitStateGlobal = TableUtils.cloneList(decoderInitState)
-
-  cuda()
 
   encoderParams, encoderGradParams = model_utils.combine_all_parameters(self.protos.encoder)
   decoderParams, decoderGradParams = model_utils.combine_all_parameters(self.protos.decoder)
@@ -97,6 +94,9 @@ function Seq2Seq:buildModel()
     self.clones[name] = model_utils.clone_many_times(self.proto,
       self.options.maxSeqLength, not self.proto.parameters)
   end
+
+  self.clones.encoder:zeroGradParameters()
+  self.clones.decoder:zeroGradParameters()
 
 end
 
@@ -122,10 +122,10 @@ function Seq2Seq:train(input, target)
 
   --forward pass--------------------------------------
 
-  local rnnEncoderState = {[0] = encoderInitStateGlobal}
+  local rnnEncoderState = {[0] = self.encoderInitStateGlobal}
 
   for i=1,encoderInput:size(1) do
-    self.clones.encoder[i]:evaluate()
+    self.clones.encoder[i]:training()
     local encoderOut = self.clones.encoder:forward{
       encoderInput[i],
       unpack(rnnEncoderState[i-1])
@@ -137,11 +137,13 @@ function Seq2Seq:train(input, target)
     end
   end
 
+--Pass encoder hidden state to decoder
+
   local rnnDecoderState = {[0] = rnnEncoderState[input:size(1)]}
 
   local decoderOut = {}
   for i=1,decoderInput:size(1) do
-    self.clones.decoder[i]:evaluate()
+    self.clones.decoder[i]:training()
     decoderOut = self.clones.decoder:forward{
       decoderInput[i],
       unpack(rnnDecoderState[i-1])
@@ -199,12 +201,20 @@ function Seq2Seq:train(input, target)
           end
       end
 
+    encoderInitStateGlobal = decoderInitState[#decoderInitState]
+
+    self.clones.encoder:updateParameters(self.options.learningRate)
+    self.clones.decoder:updateParameters(self.options.learningRate)
+
+    self.clones.encoder:zeroGradParameters()
+    self.clones.decoder:zeroGradParameters()
+
     encoderGradParams:clamp(-self.options.gradClip,
       self.options.gradClip)
     decoderGradParams:clamp(-self.options.gradClip,
       self.options.gradClip)
 
-    return loss, encoderGradParams, decoderGradParams
+    return loss
 end
 
 --[[
