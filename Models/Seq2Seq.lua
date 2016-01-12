@@ -164,10 +164,10 @@ function Seq2Seq:train(input, target)
     true)}
     for t=decoderInput:size(1),1,-1 do
         -- backprop through loss, and softmax/linear
-        local doutput_t = self.clones.criterion[t]:backward(
+        local decoderGrad = self.clones.criterion[t]:backward(
           predictions[t],
           decoderTarget[t])
-        table.insert(drnn_state[t], doutput_t)
+        table.insert(drnn_state[t], decoderGrad)
 
         local dlst = self.clones.decoder[t]:backward({
           decoderInput[t],
@@ -183,25 +183,18 @@ function Seq2Seq:train(input, target)
 
     --copy decoder gradients to encoder
 
-    local ernnState = {[encoderInput:size(1)] = clone_list(
-      encoderInitState,
-      true)}
+    local ernnState = {[encoderInput:size(1)] = drnnState[1]}
 
       for t=encoderInput:size(1),1,-1 do
-          -- backprop through loss, and softmax/linear
-          local doutput_t = self.clones.criterion[t]:backward(
-            predictions[t],
-            decoderTarget[t])
-          table.insert(drnn_state[t], doutput_t)
 
           local dlst = self.clones.decoder[t]:backward({
-            decoderInput[t],
-            unpack(rnnDecoderState[t-1])
-            }, drnn_state[t])
-          drnn_state[t-1] = {}
+            encoderInput[t],
+            unpack(rnnEncoderState[t-1])
+            }, ernnState[t])
+          ernnState[t-1] = {}
           for k,v in pairs(dlst) do
               if k > 1 then
-                  drnn_state[t-1][k-1] = v
+                  ernnState[t-1][k-1] = v
               end
           end
       end
