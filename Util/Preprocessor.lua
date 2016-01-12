@@ -27,6 +27,7 @@ function Preprocessor.start(dataDir)
   lfs.mkdir(testDataDir)
   lfs.mkdir(evalDataDir)
   lfs.mkdir(processedDataDir)
+  lfs.mkdir(inputFilesDir)
 
   local rawFiles = {}
   local dataFiles = {}
@@ -34,28 +35,25 @@ function Preprocessor.start(dataDir)
   local numLines = 0
   local maxSequenceLength = 0
 
-  if runPreprocessor then
-
-    for file in lfs.dir(inputFilesDir) do
-      if not StringUtils.startsWith(file,".") then
-        table.insert(rawFiles, path.join(inputFilesDir, file))
-        table.insert(dataFiles, path.join(processedDataDir, file))
-      end
+  for file in lfs.dir(inputFilesDir) do
+    if not StringUtils.startsWith(file,".") then
+      table.insert(rawFiles, path.join(inputFilesDir, file))
+      table.insert(dataFiles, path.join(processedDataDir, file))
     end
-      -- Should take in all files and make one vocab mapping
-      Preprocessor.createVocabFile(rawFiles, vocabFile)
-      preprocesor.createIndexFile(vocabFile, indexFile)
-      --Preprocessor.createDicFile(vocabFile, dicFile)
-
-      --Not very helpful, but for debugging purposes
-    assert(#rawFiles == #dataFiles, "Something went wrong...")
-
-    for key, file in ipairs(rawFiles) do
-      Preprocessor.createDataFile(file, vocabFile, dataFiles[key])
-    end
-
-    collectgarbage()
   end
+    -- Should take in all files and make one vocab mapping
+    Preprocessor.createVocabFile(rawFiles, vocabFile)
+    Preprocessor.createIndexFile(vocabFile, indexFile)
+    --Preprocessor.createDicFile(vocabFile, dicFile)
+
+    --Not very helpful, but for debugging purposes
+  assert(#rawFiles == #dataFiles, "Something went wrong...")
+
+  for key, file in ipairs(rawFiles) do
+    Preprocessor.createDataFile(file, vocabFile, dataFiles[key])
+  end
+
+  collectgarbage()
 end
 
 --[[ This function takes in a list of tokenized input files
@@ -102,7 +100,7 @@ end
 
 
 --[[This function creates the index to token mapping]]
-function Preprocessor.createIndex2Token(vocabFile, indexFile)
+function Preprocessor.createIndexFile(vocabFile, indexFile)
   local vocabMapping = torch.load(vocabFile)
   local indexMapping = {}
   for key, value in ipairs(vocabMapping) do
@@ -165,7 +163,7 @@ function Preprocessor.createDataFile(inputFile, vocabFile, dataFile)
       table.insert(dataset, torch.ShortTensor(sequence))
   end
   print("Saving... "..dataFile)
-  torch.save(dataFile, torch.ShortTensor(dataset))
+  torch.save(dataFile, dataset)
   dataset = {}
 end
 

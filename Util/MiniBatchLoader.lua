@@ -92,8 +92,8 @@ does not need to be run
 ]]
 function MiniBatchLoader.shouldRun(dataDir)
   local batchDataDir = path.join(dataDir, Constants.rawBatchesFolder)
-  local batchFile = path.join(trainDataDir, Constants.rawBatchesFile)
-  return not path.exists(trainFile)
+  local batchFile = path.join(batchDataDir, Constants.rawBatchesFile)
+  return not path.exists(batchFile)
 end
 
 function MiniBatchLoader.loadBatches(dataDir, batchSize, trainFrac,

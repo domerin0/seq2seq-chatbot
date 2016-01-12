@@ -8,7 +8,7 @@ and having dropout/customizable layers.
 ]]
 
 
-local Seq2Seq = torch.class("Models.Seq2Seq")
+local Seq2Seq = torch.class("seq2seq.Seq2Seq")
 local model_utils = require "Util.model_utils"
 local Constants = require "Util.Constants"
 --[[
@@ -58,7 +58,6 @@ function Seq2Seq:buildModel()
         self.options.rnnSize, self.options.n, self.options.dropout, true)
       self.protos.decoder = LSTM.lstm(self.options.embeddingSize, self.options.vocabSize,
         self.options.rnnSize,self.options.n, self.options.dropout, false)
-      end
       self.protos.criterion = nn.ClassNLLCriterion()
   end
 

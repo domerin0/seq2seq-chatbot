@@ -6,7 +6,7 @@ local CommandLineArgs = require "Util.CommandLineArgs"
 local Preprocessor = require "Util.Preprocessor"
 local MiniBatchLoader = require "Util.MiniBatchLoader"
 local VerifyGPU = require "Util.VerifyGPU"
-local Seq2Seq = require "Models.Seq2Seq"
+require "seq2seq"
 
 local options = CommandLineArgs.trainCmdArgs()
 torch.manualSeed(options.seed)
@@ -48,7 +48,7 @@ end
 local batchLoader = MiniBatchLoader.loadMiniBatches(options.dataDir, options.batchSize, trainFrac,
   options.evalFrac, options.testFrac)
 
-chatbot = Models.Seq2Seq(options)
+chatbot = seq2seq.Seq2Seq(options)
 
 trainLosses = {}
 valLosses = {}
