@@ -13,6 +13,7 @@ local Constants = require "Util.Constants"
 function Preprocessor.start(dataDir)
   lfs.mkdir (dataDir)
   local vocabFile = path.join(dataDir, Constants.vocabFile)
+  local indexFile = path.join(dataDir, Constants.indexFile)
   local dicFile = path.join(dataDir, Constants.dicFile  )
   --Make directories we will need just incase they don't exist
   local inputFilesDir = path.join(dataDir, Constants.rawFolder)
@@ -43,7 +44,8 @@ function Preprocessor.start(dataDir)
     end
       -- Should take in all files and make one vocab mapping
       Preprocessor.createVocabFile(rawFiles, vocabFile)
-      Preprocessor.createDicFile(vocabFile, dicFile)
+      preprocesor.createIndexFile(vocabFile, indexFile)
+      --Preprocessor.createDicFile(vocabFile, dicFile)
 
       --Not very helpful, but for debugging purposes
     assert(#rawFiles == #dataFiles, "Something went wrong...")
@@ -91,10 +93,24 @@ function Preprocessor.createVocabFile(inputFiles, vocabFile)
   mostCommonTokens[Constants.EOS] = numTokens
   mostCommonTokens[Constants.UNK] = numTokens + 1
   mostCommonTokens[Constants.PAD] = numTokens + 2
-  numTokens = numTokens + 2
+  mostCommonTokens[Constants.GO] = numTokens + 3
+  numTokens = numTokens + 3
   print("Number of tokens in vocab... "..numTokens)
   print("Saving vocab mapping...")
   torch.save(vocabFile, mostCommonTokens)
+end
+
+
+--[[This function creates the index to token mapping]]
+function Preprocessor.createIndex2Token(vocabFile, indexFile)
+  local vocabMapping = torch.load(vocabFile)
+  local indexMapping = {}
+  for key, value in ipairs(vocabMapping) do
+    indexMapping[key] = value
+  end
+
+  torch.save(indexFile, indexMapping)
+
 end
 
 function Preprocessor.createDicFile(vocabFile, dicFile)

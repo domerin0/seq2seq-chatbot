@@ -10,6 +10,7 @@ and having dropout/customizable layers.
 
 local Seq2Seq = torch.class("Models.Seq2Seq")
 local model_utils = require "Util.model_utils"
+local Constants = require "Util.Constants"
 --[[
 Build a conversational model using encoder-decoder structure,
 this assumes source vocab size = target vocab size
@@ -221,4 +222,59 @@ end
 prediction
 ]]
 function Seq2Seq:eval(input)
+
+  local predictions = {}
+  local probabilities = {}
+  --will probably refactor this to command line arg
+  local maxOutputSize = 100
+
+
+  local rnnEncoderState = {[0] = self.encoderInitStateGlobal}
+
+  for i=1,encoderInput:size(1) do
+    self.clones.encoder[i]:evaluate()
+    local encoderOut = self.clones.encoder:forward{
+      encoderInput[i],
+      unpack(rnnEncoderState[i-1])
+    }
+    rnnEncoderState[i] = {}
+
+    for j=1,#encoderInitState do
+      table.insert(rnnEncoderState[i], encoderOut[i])
+    end
+  end
+
+--Pass encoder hidden state to decoder
+
+  local rnnDecoderState = {[0] = rnnEncoderState[input:size(1)]}
+
+--Keep going until EOS is reached
+
+  local decoderOutput = Constants.GO
+
+  for i=1,maxOutputSize do
+    self.clones.decoder[i]:evaluate()
+    local prediction = self.clones.decoder:forward{
+      decoderOutput,
+      unpack(rnnDecoderState[i-1])
+    }
+
+    for j=1,#decoderInitState do
+      table.insert(rnnDecoderState[j], prediction[j])
+    end
+
+    local prob, wordId = prediction:sort(1, true)
+
+    decoderOutput = prediction[1]
+
+    if output == Constants.EOS then
+      break
+    end
+
+    table.insert(predictions, wordId)
+    table.insert(probabilities, prob)
+  end
+
+  return predictions, prbabilities
+
 end

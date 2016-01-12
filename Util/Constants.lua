@@ -20,8 +20,8 @@ Constants.trainFolder = "train/"
 Constants.testFolder = "test/"
 Constants.evalFolder = "eval/"
 --reserved tokens
-Constants.EOS = "EOS"
-Constants.UNK = "UNK"
+Constants.EOS = "$EOS$"
+Constants.UNK = "$UNK$"
 Constants.PAD = "$PAD$"
-
+Constants.GO = "$GO$"
 return Constants
