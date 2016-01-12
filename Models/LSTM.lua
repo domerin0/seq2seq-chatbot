@@ -1,21 +1,17 @@
 --[[
 Taken and adapted from  from : https://github.com/karpathy/char-rnn/blob/master/model/LSTM.lua
-Main changes are removing the one-hot encoding in favor of word embeddings
+Main changes are removing the one-hot encoding in favor of lookup table
 ]]
 
 --[[
-embeddingSize: size of input vector, or n dimensional representation of vocab
 vocabSize: size of vocabulary
 rnnSize: number of neurons in each hidden layer
 n: number of hidden layers
 dropout: add a dropout layer to prevent overfitting
-passHidden: boolean which says whether to apply final non-linear activation or not,
-this is useful for the encoder, which just passes its' hidden state forward
-useEmbeddingLayer: boolean which determines whether to use an embedding layer or not
 ]]
 local LSTM = {}
-function LSTM.lstm(embeddingSize, vocabSize, rnnSize, n, dropout,
-  passHidden, useEmbeddingLayer)
+function LSTM.lstm(vocabSize, rnnSize, n, dropout,
+  isEncoder)
   dropout = dropout or 0
 
   -- there will be 2*n+1 inputs
@@ -33,9 +29,9 @@ function LSTM.lstm(embeddingSize, vocabSize, rnnSize, n, dropout,
     local prev_h = inputs[L*2+1]
     local prev_c = inputs[L*2]
     -- the input to this layer
-    if L == 1 and useEmbeddingLayer then
-        x = Embedding(vocabSize, embeddingSize)(inputs[1])
-        input_size_L = embeddingSize
+    if L == 1 then
+        x = nn.LookupTable(vocabSize, rnnSize)(inputs[1])
+        input_size_L = vocabSize
     else
       x = outputs[(L-1)*2]
       if dropout > 0 then x = nn.Dropout(dropout)(x) end -- apply dropout, if any
@@ -70,11 +66,12 @@ function LSTM.lstm(embeddingSize, vocabSize, rnnSize, n, dropout,
   local top_h = outputs[#outputs]
   if dropout > 0 then top_h = nn.Dropout(dropout)(top_h) end
   local proj = nn.Linear(rnn_size, embeddingSize)(top_h):annotate{name='decoder'}
-  if passHidden then
+  if not isEncoder then
     local logsoft = nn.LogSoftMax()(proj)
     table.insert(outputs, logsoft)
   else
-    table.insert(outputs, proj)
+    local selection = nn.SelectTable(-1)(proj)
+    table.insert(outputs, selection)
   end
 
   return nn.gModule(inputs, outputs)
