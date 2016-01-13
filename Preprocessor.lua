@@ -13,7 +13,6 @@ local Constants = require "Util.Constants"
 function Preprocessor.start(dataDir)
   lfs.mkdir (dataDir)
   local vocabFile = path.join(dataDir, Constants.vocabFile)
-  local indexFile = path.join(dataDir, Constants.indexFile)
   local dicFile = path.join(dataDir, Constants.dicFile  )
   --Make directories we will need just incase they don't exist
   local inputFilesDir = path.join(dataDir, Constants.rawFolder)
@@ -27,6 +26,7 @@ function Preprocessor.start(dataDir)
   lfs.mkdir(testDataDir)
   lfs.mkdir(evalDataDir)
   lfs.mkdir(processedDataDir)
+  lfs.mkdir(inputFilesDir)
 
   local rawFiles = {}
   local dataFiles = {}
@@ -34,28 +34,25 @@ function Preprocessor.start(dataDir)
   local numLines = 0
   local maxSequenceLength = 0
 
-  if runPreprocessor then
-
-    for file in lfs.dir(inputFilesDir) do
-      if not StringUtils.startsWith(file,".") then
-        table.insert(rawFiles, path.join(inputFilesDir, file))
-        table.insert(dataFiles, path.join(processedDataDir, file))
-      end
+  for file in lfs.dir(inputFilesDir) do
+    if not StringUtils.startsWith(file,".") then
+      table.insert(rawFiles, path.join(inputFilesDir, file))
+      table.insert(dataFiles, path.join(processedDataDir, file))
     end
-      -- Should take in all files and make one vocab mapping
-      Preprocessor.createVocabFile(rawFiles, vocabFile)
-      preprocesor.createIndexFile(vocabFile, indexFile)
-      --Preprocessor.createDicFile(vocabFile, dicFile)
-
-      --Not very helpful, but for debugging purposes
-    assert(#rawFiles == #dataFiles, "Something went wrong...")
-
-    for key, file in ipairs(rawFiles) do
-      Preprocessor.createDataFile(file, vocabFile, dataFiles[key])
-    end
-
-    collectgarbage()
   end
+    -- Should take in all files and make one vocab mapping
+    Preprocessor.createVocabFile(rawFiles, vocabFile)
+    Preprocessor.createDicFile(vocabFile, dicFile)
+    --Preprocessor.createDicFile(vocabFile, dicFile)
+
+    --Not very helpful, but for debugging purposes
+  assert(#rawFiles == #dataFiles, "Something went wrong...")
+
+  for key, file in ipairs(rawFiles) do
+    Preprocessor.createDataFile(file, vocabFile, dataFiles[key])
+  end
+
+  collectgarbage()
 end
 
 --[[ This function takes in a list of tokenized input files
@@ -100,40 +97,14 @@ function Preprocessor.createVocabFile(inputFiles, vocabFile)
   torch.save(vocabFile, mostCommonTokens)
 end
 
-
---[[This function creates the index to token mapping]]
-function Preprocessor.createIndex2Token(vocabFile, indexFile)
+function Preprocessor.createDicFile(vocabFile, dicFile)
+  print("Creating dictionary mapping...")
   local vocabMapping = torch.load(vocabFile)
   local indexMapping = {}
   for key, value in ipairs(vocabMapping) do
     indexMapping[key] = value
   end
 
-  torch.save(indexFile, indexMapping)
-
-end
-
-function Preprocessor.createDicFile(vocabFile, dicFile)
-  local w2vutils = require "Util.w2vutils"
-  print("Creating dictionary mapping...")
-  local vocabMapping = torch.load(vocabFile)
-  local count = 0
-  for _ in pairs(vocabMapping) do count = count + 1 end
-  --for now constant 300 since that is embedding size
-  local indexMapping = torch.FloatTensor(count, 300)
-  print(count)
-  --local indexMapping = {}
-  for token, index in pairs(vocabMapping) do
-      local t = w2vutils:word2vec(token)
-      if t ~= nil then
-        local vec = torch.FloatTensor(t)
-        indexMapping[math.floor(index)] = vec
-      else
-        --Accountingfor out of vocab tokens in w2v
-      indexMapping[math.floor(index)] = torch.FloatTensor(w2vutils:word2vec("UNK"))
-    end
-    --indexMapping[index] = table.insert(indexMapping, w2vutils:word2vec(token))
-  end
   print("Saving dictionary mapping...")
   torch.save(dicFile, indexMapping)
 end
@@ -162,10 +133,10 @@ function Preprocessor.createDataFile(inputFile, vocabFile, dataFile)
       if maxSequenceLength < #sequence then
         maxSequenceLength = #sequence
       end
-      table.insert(dataset, torch.ShortTensor(sequence))
+      table.insert(dataset, torch.IntTensor(sequence))
   end
   print("Saving... "..dataFile)
-  torch.save(dataFile, torch.ShortTensor(dataset))
+  torch.save(dataFile, dataset)
   dataset = {}
 end
 

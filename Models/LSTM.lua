@@ -10,8 +10,7 @@ n: number of hidden layers
 dropout: add a dropout layer to prevent overfitting
 ]]
 local LSTM = {}
-function LSTM.lstm(vocabSize, rnnSize, n, dropout,
-  isEncoder)
+function LSTM.lstm(vocabSize, rnnSize, n, dropout, isEncoder)
   dropout = dropout or 0
 
   -- there will be 2*n+1 inputs

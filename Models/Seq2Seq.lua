@@ -1,16 +1,18 @@
 --[[
-This is based roughly off:
+This is mostly adapted from:
+https://github.com/karpathy/char-rnn/blob/master/train.lua
+and based roughly off:
 https://github.com/macournoyer/neuralconvo/blob/master/seq2seq.lua
-and:
 
 The main differences are not using rnn or nnx package,
 and having dropout/customizable layers.
 ]]
 
 
-local Seq2Seq = torch.class("Models.Seq2Seq")
+local Seq2Seq = torch.class("seq2seq.Seq2Seq")
 local model_utils = require "Util.model_utils"
 local Constants = require "Util.Constants"
+local LSTM = require "Models.LSTM"
 --[[
 Build a conversational model using encoder-decoder structure,
 this assumes source vocab size = target vocab size
@@ -18,33 +20,20 @@ this assumes source vocab size = target vocab size
 ]]
 function Seq2Seq:__init(options)
   self.options = options
-  buildModel()
+  self:buildModel()
 
 end
 
 function Seq2Seq:buildModel()
-  if not path.exists(self.options.checkpointDir) then lfs.mkdir(self.options.checkpointDir) end
+  if not path.exists(self.options.checkpoints) then lfs.mkdir(self.options.checkpoints) end
 
   -- define the model: prototypes for one timestep, then clone them in time
   local do_random_init = true
-  if string.len(self.options.initFrom) > 0 then
-      print('loading a model from checkpoint ' .. self.options.initFrom)
-      local checkpoint = torch.load(self.options.initFrom)
+  if string.len(self.options.startFrom) > 0 then
+      print('loading a model from checkpoint ' .. self.options.startFrom)
+      local checkpoint = torch.load(self.options.startFrom)
       self.protos = checkpoint.protos
-      -- make sure the vocabs are the same
-      local vocab_compatible = true
-      local checkpoint_vocab_size = 0
-      for c,i in pairs(checkpoint.vocab) do
-          if not (vocab[c] == i) then
-              vocab_compatible = false
-          end
-          checkpoint_vocab_size = checkpoint_vocab_size + 1
-      end
-      if not (checkpoint_vocab_size == vocab_size) then
-          vocab_compatible = false
-          print('checkpoint_vocab_size: ' .. checkpoint_vocab_size)
-      end
-      assert(vocab_compatible, 'error, the character vocabulary for this dataset and the one in the saved checkpoint are not the same. This is trouble.')
+
       -- overwrite model settings based on checkpoint to ensure compatibility
       print('overwriting rnnSize=' .. checkpoint.opt.rnnSize .. ', numLayers=' .. checkpoint.opt.numLayers .. ' based on the checkpoint.')
       self.options.rnnSize = checkpoint.opt.rnnSize
@@ -52,13 +41,12 @@ function Seq2Seq:buildModel()
       self.options.model = checkpoint.opt.model
       do_random_init = false
   else
-      print('creating an ' .. self.options.model .. ' with ' .. self.options.numLayers .. ' layers')
+      print('creating an model with ' .. self.options.numLayers .. ' layers')
       self.protos = {}
-      self.protos.encoder = LSTM.lstm(self.options.embeddingSize, self.options.vocabSize,
+      self.protos.encoder = LSTM.lstm(self.options.vocabSize,
         self.options.rnnSize, self.options.n, self.options.dropout, true)
-      self.protos.decoder = LSTM.lstm(self.options.embeddingSize, self.options.vocabSize,
+      self.protos.decoder = LSTM.lstm(self.options.vocabSize,
         self.options.rnnSize,self.options.n, self.options.dropout, false)
-      end
       self.protos.criterion = nn.ClassNLLCriterion()
   end
 
@@ -113,7 +101,7 @@ end
 --[[
 TODO clean up function (maybe remove some code duplication)
 ]]
-function Seq2Seq:train(input, target)
+function Seq2Seq:train(input, target, optimState)
   local encoderInput = input
   local decoderInput = target:sub(1,-2)
   local decoderTarget = target:sub(2,-1)
@@ -204,8 +192,8 @@ function Seq2Seq:train(input, target)
 
     encoderInitStateGlobal = decoderInitState[#decoderInitState]
 
-    self.clones.encoder:updateParameters(self.options.learningRate)
-    self.clones.decoder:updateParameters(self.options.learningRate)
+    self.clones.encoder:updateParameters(optimState.learningRate)
+    self.clones.decoder:updateParameters(optimState.learningRate)
 
     self.clones.encoder:zeroGradParameters()
     self.clones.decoder:zeroGradParameters()

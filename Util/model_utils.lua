@@ -103,9 +103,6 @@ function model_utils.combine_all_parameters(...)
     return flatParameters, flatGradParameters
 end
 
-
-
-
 function model_utils.clone_many_times(net, T)
     local clones = {}
 

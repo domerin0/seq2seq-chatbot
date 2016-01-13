@@ -13,7 +13,6 @@ Major changes made were:
 local CommandLineArgs = {}
 
 function CommandLineArgs.sampleCmdArgs()
-  print("hey")
 end
 
 function CommandLineArgs.trainCmdArgs()
@@ -24,7 +23,6 @@ function CommandLineArgs.trainCmdArgs()
   cmd:text()
   cmd:text('Options')
   -- data
-  cmd:option('-embeddingSize',300,'Word embedding size')
   cmd:option('-dataDir','data/','Data directory. Should point to tokenized input file')
   cmd:option('-gpuid',0,'which gpu to use. -1 = use CPU')
   cmd:option('-opencl',0,'use OpenCL (instead of CUDA)')
