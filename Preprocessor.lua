@@ -149,7 +149,7 @@ TODO find more stringent shouldRun criteria to make it user-proof
 ]]
 function Preprocessor.shouldRun(dataDir)
   local vocabFile = path.join(dataDir, Constants.vocabFile)
-  local dicFile = path.join(dataDir, Constants.indexFile)
+  local dicFile = path.join(dataDir, Constants.dicFile)
 
   local runPreprocessor = false
 

@@ -106,11 +106,7 @@ function MiniBatchLoader.shouldRun(dataDir)
   return not path.exists(batchFile)
 end
 
-function MiniBatchLoader.loadBatches(dataDir, batchSize, trainFrac,
-  evalFrac, testFrac)
-  local self = {}
-  setmetatable(self, MiniBatchLoader)
-  --Checks to ensure user isn't testing us
+function MiniBatchLoader.splitBatches(trainFrac, evalFrac, testFrac, dataDir)
   assert(evalFrac >= 0 and evalFrac < 1, "evalFrac not between 0 and 1...")
   assert(trainFrac > 0 and trainFrac <= 1, "trainFrac not between 0 and 1...")
   assert(testFrac >= 0 and testFrac < 1, "testFrac not between 0 and 1...")
@@ -119,22 +115,73 @@ function MiniBatchLoader.loadBatches(dataDir, batchSize, trainFrac,
   print("Using ".. trainFrac .. " As percentage of data to train on...")
   print("Using ".. evalFrac .. " As percentage of data to validate on...")
   print("Using " .. testFrac .. " As percentage of data to test on...")
-  local saveFolder = path.join(dataDir, Constants.saveFolder )
-
-  self.vocabMapping = torch.load(path.join(saveFolder, Constants.vocabFile))
-  self.dicMapping = torch.load(path.join(saveFolder, Constants.dicFile))
 
   local trainFile = path.join(dataDir, Constants.trainFolder)
   trainFile = path.join(trainFile, Constants.trainFile)
 
+  local testFile = path.join(dataDir, Constants.testFolder)
+  testFile = path.join(testFile, Constants.testFile)
+
+  local crossValFile = path.join(dataDir, Constants.evalFolder)
+  crossValFile = path.join(crossValFile, Constants.evalFolder)
+
+  local batchDataDir = path.join(dataDir, Constants.rawBatchesFolder)
+  local batchFile = path.join(batchDataDir, Constants.rawBatchesFile)
+
+  local batches = torch.load(batchFile)
+
+  local testStart = math.floor(trainFrac * batches:size(1)) + 1
+  local testEnd = testStart + math.floor(testFrac * batches:size(1))
+  local crossValStart = testEnd + 1
+  local crossValEnd = crossValStart + math.floor(evalFrac * batches:size(1))
+
+  local temp = batches:sub(1, testStart - 1):clone()
+  print("temp "..temp:size(1))
+  torch.save(trainFile, temp)
+  temp = batches:sub(testStart, testEnd):clone()
+  print("temp "..temp:size(1))
+  torch.save(testFile, temp)
+  if math.floor(crossValStart) ~= math.floor(crossValEnd) then
+    temp = batches:sub(crossValStart, crossValEnd):clone()
+    torch.save(crossValFile, temp)
+  end
+
+end
+
+function MiniBatchLoader.shouldSplit(dataDir)
+  local trainPath = path.join(dataDir, Constants.trainFolder)
+  trainPath = path.join(trainPath, Constants.trainFile)
+  return not path.exists(trainPath)
+end
+
+function MiniBatchLoader.loadBatches(dataDir, batchSize)
+  local self = {}
+  setmetatable(self, MiniBatchLoader)
+  --Checks to ensure user isn't testing us
+  self.batchSize = batchSize
+  self.batchPointer = 1
+  local trainPath = path.join(dataDir, Constants.trainFolder)
+  trainPath = path.join(trainPath, Constants.trainFile)
+  self.trainBatches = torch.load(trainPath)
+  self.numBatches = math.floor(self.trainBatches:size(1) / self.batchSize)
   print('Loading previously allocated minibatches...')
 
 end
 
-function MiniBatchLoader.nextBatch()
+function MiniBatchLoader.nextBatch(self)
+  local batch = self.trainBatches:sub(
+    ((self.batchPointer - 1) * self.batchSize) + 1,
+    self.batchPointer * self.batchSize)
+  if self.batchPointer == self.numBatches then
+    self.batchPointer = 1
+  else
+    self.batchPointer = self.batchPointer + 1
+  end
+  return batch
 end
 
-function MiniBatchLoader.resetPointer()
+function MiniBatchLoader.resetPointer(self)
+  self.batchPointer = 1
 end
 
 return MiniBatchLoader

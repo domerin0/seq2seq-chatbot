@@ -33,20 +33,32 @@ end
 
 local cuid = VerifyGPU.checkCuda(options.gpuid, options.seed)
 
-
-local clid = VerifyGPU.checkOpenCl(options.gpuid, options.seed)
+if cuid < 1 then
+  local clid = VerifyGPU.checkOpenCl(options.gpuid, options.seed)
+end
 
 if clid == -1 and cuid == -1 then
   options.gpuid = -1
 end
 
-
+--Split batches to test/train/cross val sets!
+if MiniBatchLoader.shouldSplit(options.dataDir) then
+  print("Splitting batches into proper train sets!")
+  MiniBatchLoader.splitBatches(options.trainFrac, options.evalFrac, options.testFrac, options.dataDir)
+  collectgarbage()
+else
+  print("Batches already split, moving them into memory!")
+end
 
 --Load minibatches into memory!
 
-local batchLoader = MiniBatchLoader.loadMiniBatches(options)
+local batchLoader = MiniBatchLoader.loadBatches(options.dataDir, options.batchSize)
 
 chatbot = seq2seq.Seq2Seq(options)
+
+if options.gpuid > -1 then
+  chatbot:cuda()
+end
 
 trainLosses = {}
 valLosses = {}
@@ -57,10 +69,12 @@ for epoch=1,options.maxEpochs do
 
   print("\n-- Epoch " .. epoch .. " / " .. options.maxEpoch)
   print("")
+  local miniBatch = batchLoader:nextBatch()
+
   for batch=1,options.batchSize do
     local timer = torch.Timer()
-    local miniBatch = batchLoader:nextBatch()
-    local loss, _, __ = chatbot:train(miniBatch[batch][1], miniBatch[batch][2])
+    x, y = prepro(miniBatch[batch])
+    local loss, _, __ = chatbot:train(miniBatch[batch][1], miniBatch[batch][2], optimState)
 
     --Check for NaN
     if loss ~= loss then
@@ -69,6 +83,7 @@ for epoch=1,options.maxEpochs do
     end
 
     trainLosses[#trainLosses + 1] = loss
+  end
 
     local time = timer:time().real
 
@@ -109,13 +124,9 @@ for epoch=1,options.maxEpochs do
         print('loss is exploding, aborting.')
         break
     end
-
-
-
-  end
-
-
 end
 
-
---perform training of n minibatches of m epochs over bs backsteps
+--[[remove -1 padding, and make contiguous in memory
+]]
+function prepro(source, target)
+end
