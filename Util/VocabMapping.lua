@@ -8,8 +8,12 @@ VocabMapping.__index = VocabMapping
 
 function VocabMapping.create(dataDir)
   local self = setmetatable({}, VocabMapping)
-  self.vocabFile = torch.load(path.join(dataDir, Constants.vocabFile))
-  self.dicFile = torch.load(path.join(dataDir, Constants.dicFile))
+  local vocabPath = path.join(dataDir, Constants.vocabFile)
+  local dicPath = path.join(dataDir, Constants.dicFile)
+  local vocabFile = torch.load(vocabPath)
+  local dicFile = torch.load(dicPath)
+  self.vocabFile = vocabFile
+  self.dicFile = dicFile
   return self
 end
 
@@ -20,6 +24,10 @@ end
 
 function VocabMapping.token2Index(self, token)
   return self.vocabFile[token]
+end
+
+function VocabMapping.size(self)
+  return #(self.vocabFile)
 end
 
 return VocabMapping

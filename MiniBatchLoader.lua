@@ -34,8 +34,6 @@ function MiniBatchLoader.createMiniBatches(options)
   for key, value in ipairs(dataFiles) do
     print(value)
     local data = torch.load(value)
-    local VocabMapping = require "Util.VocabMapping"
-    local mapping = VocabMapping.create(options.dataDir)
     print("Loaded data...")
     local sourceTargetPairs = torch.IntTensor(#data-1, 2, options.maxSeqLength)
 

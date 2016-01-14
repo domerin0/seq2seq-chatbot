@@ -29,6 +29,11 @@ else
   print("Minibatches already created before, moving on...")
 end
 
+local VocabMapping = require "Util.VocabMapping"
+vMap = VocabMapping.create(options.dataDir)
+print(vMap:index2Token(607))
+options.vocabSize = vMap:size()
+print(vMap:size())
 --Now, check and enable GPU usage:
 
 local cuid = VerifyGPU.checkCuda(options.gpuid, options.seed)

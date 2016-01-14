@@ -43,10 +43,12 @@ function Seq2Seq:buildModel()
   else
       print('creating an model with ' .. self.options.numLayers .. ' layers')
       self.protos = {}
+      print(self.options.vocabSize)
+      print(self.options.rnnSize)
       self.protos.encoder = LSTM.lstm(self.options.vocabSize,
-        self.options.rnnSize, self.options.n, self.options.dropout, true)
+        self.options.rnnSize, self.options.numLayers, self.options.dropout, true)
       self.protos.decoder = LSTM.lstm(self.options.vocabSize,
-        self.options.rnnSize,self.options.n, self.options.dropout, false)
+        self.options.rnnSize,self.options.numLayers, self.options.dropout, false)
       self.protos.criterion = nn.ClassNLLCriterion()
   end
 

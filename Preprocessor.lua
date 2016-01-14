@@ -43,16 +43,13 @@ function Preprocessor.start(dataDir)
     -- Should take in all files and make one vocab mapping
     Preprocessor.createVocabFile(rawFiles, vocabFile)
     Preprocessor.createDicFile(vocabFile, dicFile)
-    --Preprocessor.createDicFile(vocabFile, dicFile)
 
     --Not very helpful, but for debugging purposes
   assert(#rawFiles == #dataFiles, "Something went wrong...")
 
-  for key, file in ipairs(rawFiles) do
-    Preprocessor.createDataFile(file, vocabFile, dataFiles[key])
-  end
-
-  collectgarbage()
+  --for key, file in ipairs(rawFiles) do
+    --Preprocessor.createDataFile(file, vocabFile, dataFiles[key])
+  --end
 end
 
 --[[ This function takes in a list of tokenized input files
@@ -101,7 +98,7 @@ function Preprocessor.createDicFile(vocabFile, dicFile)
   print("Creating dictionary mapping...")
   local vocabMapping = torch.load(vocabFile)
   local indexMapping = {}
-  for key, value in ipairs(vocabMapping) do
+  for key, value in pairs(vocabMapping) do
     indexMapping[key] = value
   end
 
