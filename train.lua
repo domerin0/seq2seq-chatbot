@@ -2,6 +2,7 @@
 -- Andrej Karpathy's https://github.com/karpathy/char-rnn/blob/master/train.lua
 
 
+local VocabMapping = require "Util.VocabMapping"
 local CommandLineArgs = require "Util.CommandLineArgs"
 local Preprocessor = require "Preprocessor"
 local MiniBatchLoader = require "MiniBatchLoader"
@@ -29,11 +30,10 @@ else
   print("Minibatches already created before, moving on...")
 end
 
-local VocabMapping = require "Util.VocabMapping"
-vMap = VocabMapping.create(options.dataDir)
-print(vMap:index2Token(607))
+local vMap = VocabMapping.create(options.dataDir)
 options.vocabSize = vMap:size()
-print(vMap:size())
+--print(vMap:token2Index("smokin"))
+--print(vMap:index2Token(7759))
 --Now, check and enable GPU usage:
 
 local cuid = VerifyGPU.checkCuda(options.gpuid, options.seed)

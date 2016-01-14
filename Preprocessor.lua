@@ -99,7 +99,7 @@ function Preprocessor.createDicFile(vocabFile, dicFile)
   local vocabMapping = torch.load(vocabFile)
   local indexMapping = {}
   for key, value in pairs(vocabMapping) do
-    indexMapping[key] = value
+    indexMapping[value] = key
   end
 
   print("Saving dictionary mapping...")
