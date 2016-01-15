@@ -9,6 +9,7 @@ rnnSize: number of neurons in each hidden layer
 n: number of hidden layers
 dropout: add a dropout layer to prevent overfitting
 ]]
+require 'nn'
 local LSTM = {}
 function LSTM.lstm(vocabSize, rnnSize, n, dropout, isEncoder)
   dropout = dropout or 0
@@ -64,7 +65,7 @@ function LSTM.lstm(vocabSize, rnnSize, n, dropout, isEncoder)
   -- set up the decoder
   local top_h = outputs[#outputs]
   if dropout > 0 then top_h = nn.Dropout(dropout)(top_h) end
-  local proj = nn.Linear(rnn_size, embeddingSize)(top_h):annotate{name='decoder'}
+  local proj = nn.Linear(rnnSize, vocabSize)(top_h):annotate{name='decoder'}
   if not isEncoder then
     local logsoft = nn.LogSoftMax()(proj)
     table.insert(outputs, logsoft)

@@ -12,14 +12,23 @@ Major changes made were:
 ]]--
 local CommandLineArgs = {}
 
-function CommandLineArgs.sampleCmdArgs()
+function CommandLineArgs.predictCmdArgs()
+  print("Running preditCmdArgs")
+  cmd = torch.CmdLine()
+  cmd:text()
+  cmd:text('Options')
+
+  cmd:option('-checkpoint', '', 'Checkpoint file to sample from.')
+  cmd:option('-logfile', '', 'Output directory where chatlogs should be saved.')
+  -- parse input params
+  return cmd:parse(arg)
 end
 
 function CommandLineArgs.trainCmdArgs()
   print("Running trainCmdArgs")
   cmd = torch.CmdLine()
   cmd:text()
-  cmd:text('Train a character-level language model')
+  cmd:text('Train a chatbot!')
   cmd:text()
   cmd:text('Options')
   -- data
@@ -38,22 +47,21 @@ function CommandLineArgs.trainCmdArgs()
 
 
   -- model params
-  cmd:option('-rnnSize', 128, 'size of LSTM internal state')
+  cmd:option('-hiddenSize', 128, 'size of LSTM internal state')
   cmd:option('-numLayers', 2, 'number of layers in the LSTM')
   -- optimization
   cmd:option('-learningRate',2e-3,'Learning rate.')
   cmd:option('-lrDecay',0.97,'Learning rate decay.')
   cmd:option('-lrDecayAfter',10,'In number of epochs, when to start decaying the learning rate.')
-  cmd:option('-decayRate',0.95,'Decay rate for rmsprop.')
+  cmd:option('--momentum', 0.9, 'momentum')
   cmd:option('-gradClip',5,'Clip gradients at this value.')
   cmd:option('-weights', '', 'Initialize network parameters from checkpoint at this path.')
   -- bookkeeping
-  cmd:option('-printFreq',1,'How many steps/minibatches between printing out the loss.')
+  cmd:option('-printFreq',50,'How many steps between printing out the loss.')
   cmd:option('-evalEvery',1000,'Every how many iterations should we evaluate on validation data.')
   cmd:option('-checkpoints', 'cv', 'Output directory where checkpoints get written.')
   cmd:option('-startFrom', '', 'File to initialize training or prediction from.')
-  cmd:option('-savefile','lstm','Filename to autosave the checkpont to. Will be inside checkpoint/')
-  -- GPU/CPU
+  cmd:option('-savefile','chatbot','Filename to autosave the checkpont to. Will be inside checkpoint/')
   cmd:text()
 -- parse input params
   return cmd:parse(arg)
