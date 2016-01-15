@@ -28,7 +28,7 @@ Optional (for gpu usage):
 luarocks install cunn
 luarocks install cutorch
 ```
-Or is you prefer AMD,
+Or if you prefer AMD,
 
 ```bash
 luarocks install clnn
