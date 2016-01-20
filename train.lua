@@ -53,7 +53,8 @@ local batchLoader = MiniBatchLoader.loadBatches(options.dataDir, options.batchSi
 
 local chatbot = nil
 if options.startFrom then
-  chatbot = seq2seq.Seq2Seq(options.numLayers, options.hiddenSize, options.vocabSize, options.dropout)
+  chatbot = seq2seq.Seq2Seq(options.numLayers, options.hiddenSize,
+  vMap, options.dropout)
 else
   local checkpoint = torch.load(options.startFrom)
   chatbot = checkpoint.chatbot
