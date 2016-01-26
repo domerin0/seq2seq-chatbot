@@ -11,6 +11,7 @@ Constants.trainFile = "train.t7"
 Constants.evalFile = "eval.t7"
 Constants.testFile = "test.t7"
 Constants.rawBatchesFile = "batches.t7"
+Constants.metaBatchInfo = "metabatchinfo.t7"
 --folder names
 Constants.saveFolder = "save/"
 Constants.rawFolder = "raw/"

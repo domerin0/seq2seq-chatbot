@@ -11,12 +11,16 @@ require 'lfs'
 local MiniBatchLoader = {}
 MiniBatchLoader.__index = MiniBatchLoader
 
+
+--[[
+This method now stores each batch in a separate file... Yes this will probably be slower,
+but I'm trying it out to see if it alleviates memory issues.
+]]
 function MiniBatchLoader.createMiniBatches(options)
 
   print("Max sequence length is ... ".. options.maxSeqLength)
-  local batchFiles  = {}
-
   local dataFiles = {}
+  local batchMetaData = {}
   local processedDir = path.join(options.dataDir, Constants.processedFolder)
   print("Loading data...")
 
@@ -28,7 +32,11 @@ function MiniBatchLoader.createMiniBatches(options)
   end
 
   local sourceTargetPairs = {}
+  local batchFiles  = {}
   local index = 1
+  local fileCounter = 1
+  local batchCounter = 0
+
   for key, value in ipairs(dataFiles) do
     print(value)
     local data = torch.load(value)
@@ -37,6 +45,8 @@ function MiniBatchLoader.createMiniBatches(options)
     -- Reverse sequences to introduce short-term dependency's (Google's result)
     --Insert training pairs into tensor
     for i=1,#data-1 do
+      --right now we remove sequences longer than the max length,
+      --in the future it may be wiser to just truncate them?
       if not (data[i]:size(1) > options.maxSeqLength) and
         not (data[i + 1]:size(1) > options.maxSeqLength) then
           sourceTargetPairs[index] = {}
@@ -45,10 +55,24 @@ function MiniBatchLoader.createMiniBatches(options)
           sourceTargetPairs[index][2] = data[i + 1]
           index = index + 1
       end
+      if #sourceTargetPairs > 0 and #sourceTargetPairs % options.batchSize == 0 then
+        batchCounter = batchCounter + 1
+        local batchFile = path.join(options.dataDir,Constants.rawBatchesFolder..fileCounter..Constants.rawBatchesFile)
+        table.insert(batchFiles, batchFile)
+        torch.save(batchFile, sourceTargetPairs)
+        sourceTargetPairs = {}
+        index = 1
+        fileCounter = fileCounter + 1
+      end
     end
+    collectgarbage()
   end
-      local batchFile = path.join(options.dataDir,Constants.rawBatchesFolder..Constants.rawBatchesFile)
-      torch.save(batchFile, sourceTargetPairs)
+  local batchMetaFile = path.join(options.dataDir, Constants.rawBatchesFolder..Constants.metaBatchInfo)
+  batchMetaData.batchFiles = batchFiles
+  batchMetaData.numBatchs = batchCounter
+  batchMetaData.batchSize = options.batchSize
+  batchMetaData.maxSeqLength = options.maxSeqLength
+  torch.save(batchMetaFile, batchMetaData)
 end
 
 --[[Reads in tensor files, and gets max seqence length.
@@ -74,76 +98,62 @@ does not need to be run
 ]]
 function MiniBatchLoader.shouldRun(dataDir)
   local batchDataDir = path.join(dataDir, Constants.rawBatchesFolder)
-  local batchFile = path.join(batchDataDir, Constants.rawBatchesFile)
-  return not path.exists(batchFile)
+  return not path.exists(batchDataDir)
 end
 
-function MiniBatchLoader.loadBatches(dataDir, batchSize, trainFrac, evalFrac, testFrac)
+function MiniBatchLoader.loadBatches(dataDir,trainFrac)
   local self = {}
   setmetatable(self, MiniBatchLoader)
-  assert(evalFrac >= 0 and evalFrac < 1, "evalFrac not between 0 and 1...")
   assert(trainFrac > 0 and trainFrac <= 1, "trainFrac not between 0 and 1...")
-  assert(testFrac >= 0 and testFrac < 1, "testFrac not between 0 and 1...")
-  assert(testFrac + evalFrac + trainFrac == 1, "eval, train and test don't add up to 1!")
 
   print("Using ".. trainFrac .. " As percentage of data to train on...")
-  print("Using ".. evalFrac .. " As percentage of data to validate on...")
-  print("Using " .. testFrac .. " As percentage of data to test on...")
+  print("Using " .. 1 - trainFrac .. " As percentage of data to test on...")
   --Checks to ensure user isn't testing us
   self.trainFrac = trainFrac
-  self.evalFrac = evalFrac
-  self.testFrac = testFrac
-  self.batchSize = batchSize
-  self.batchPointer = 1
-
-  --1 = train set, 2 = test set, 3 = cross val set
+  self.testFrac =  1 - trainFrac
+  self.trainBatchPointer = 0
+  self.testBatchPointer = 0
+  --flag will be set to 1 when test set has been entirely iterated over
+  self.testSetFlag = 0
+  --1 = train set, 2 = test set
   self.splitIndex = 1
+  self.batchFiles = {}
   local batchDataDir = path.join(dataDir, Constants.rawBatchesFolder)
-  local batchFile = path.join(batchDataDir, Constants.rawBatchesFile)
-  self.batches = torch.load(batchFile)
-  local counter = 0
-  for key, value in ipairs(self.batches) do
-    counter = counter + 1
-  end
-  self.numBatches = math.floor(counter / self.batchSize)
+  local batchMetaData = torch.load(path.join(batchDataDir, Constants.metaBatchInfo))
+  self.batchSize = batchMetaData.batchSize
+  self.numBatches = batchMetaData.numBatchs
+  self.batchFiles = batchMetaData.batchFiles
+  self.maxSeqLength = batchMetaData.maxSeqLength
+
   self.batchLimits = {
     {1,math.floor(self.numBatches * self.trainFrac)},
-    {math.floor(self.numBatches * self.trainFrac)+1, math.floor(self.numBatches * (self.trainFrac + self.testFrac))},
-    {math.floor(self.numBatches * (self.trainFrac + self.testFrac)) + 1, self.numBatches}
+    {math.floor(self.numBatches * self.trainFrac)+1, self.numBatches}
   }
-  print('Loading previously allocated minibatches...')
   return self
 end
 
-function MiniBatchLoader.nextBatch(self)
-  local batch = {}
-  for i=1,self.batchSize do
-    batch[i] = self.batches[((self.batchPointer - 1) * self.batchSize) + i]
+--index of 1 indicates train set being drawn from
+--index of 2 indicates test set being drawn from
+function MiniBatchLoader.nextBatch(self, index)
+  if index == 1 then
+    local batch = torch.load(self.batchFiles[self.trainBatchPointer + 1])
+    self.trainBatchPointer = (self.trainBatchPointer + 1) % self.batchLimits[1][2]
+    return batch
   end
-  if (self.batchPointer*self.batchSize) >= self.batchLimits[self.splitIndex][2] then
-    self.splitIndex = 1
-    self.batchPointer = 1
-  else
-    self.batchPointer = self.batchPointer + 1
+  if index ==2 then
+    if self.testBatchPointer == self.batchLimits[2][2] then return nil end
+    -- 1-based indexing...
+    local batch = torch.load(self.batchFiles[self.testBatchPointer + 1])
+    self.testBatchPointer = (self.testBatchPointer + 1) % (self.batchLimits[2][2] + 1)
+    return batch
   end
-  return batch
+--return nil if we get down here...
+  return nil
 end
 
-function MiniBatchLoader.resetPointer(self, splitIndex)
+--[[function MiniBatchLoader.resetPointer(self, splitIndex)
   self.splitIndex = splitIndex
   self.batchPointer = self.batchLimits[self.splitIndex][1]
-end
+end]]--
 
 return MiniBatchLoader
-
---code I will probably need to refer to later:
---local trainFiles = {}
---local testFiles = {}
---local evalFiles = {}
---local trainFile = path.join(dataDir,Constants.trainFolder..Constants.trainFile)
---local testFile = path.join(dataDir,Constants.testFolder..Constants.testFile)
---local evalFile = path.join(dataDir,Constants.evalFolder..Constants.evalFile)
---miniBatches, testBatches, evalBatches = miniBatches:sub(1, numTrain),
---  miniBatches:sub(numTrain + 1, numTrain + numTest),
---  miniBatches:sub(numTrain + numTest + 1,
---   numTrain + numTest + numEval)
