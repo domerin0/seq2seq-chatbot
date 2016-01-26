@@ -36,14 +36,17 @@ options.vocabSize = vMap.size
 
 print("Vocab size is: "..options.vocabSize)
 --Now, check and enable GPU usage:
-
+--set preprocessor funtion here to prevent call if on every tick
+local prepro = cudaPrepro
 local cuid = VerifyGPU.checkCuda(options.gpuid, options.seed)
 
 if cuid < 1 then
+  prepro = clPrepro
   local clid = VerifyGPU.checkOpenCl(options.gpuid, options.seed)
 end
 
 if (clid == -1 or clid == nil) and cuid == -1 then
+  prepro = cpuPrepro
   options.gpuid = -1
 end
 
@@ -72,23 +75,22 @@ local printEvery =  math.floor(options.printFreq * batchLoader.numBatches)
 print(string.format("There are %s batches per epoch: ", batchLoader.numBatches))
 local testLosses = {}
 local trainLosses = {}
+
 for epoch=1,options.maxEpochs do
 
   print("\n-- Epoch " .. epoch .. " / " .. options.maxEpochs)
   print("")
     for _=1,batchLoader.numBatches do
       local trainBatch = batchLoader:nextBatch(1)
+      for i=1,batchLoader.batchSize do
+        trainBatch[batch][1], trainBatch[batch][2] = prepro(trainBatch[batch][1], trainBatch[batch][2])
+      end
       local timer = torch.Timer()
       local losses = 0
       local loss = 0
       for batch=1,batchLoader.batchSize do
         iteration = iteration + 1
-
         local input, target = trainBatch[batch][1], trainBatch[batch][2]
-        if options.gpuid > -1 then
-          input = input:contiguous():cuda()
-          target = target:contiguous():cuda()
-        end
         loss = chatbot:train(input, target, optimState)
 
         --Check for NaN
@@ -104,8 +106,8 @@ for epoch=1,options.maxEpochs do
       local time = timer:time().real
 --    Do this stuff (run test set, print some output to console, etc..)
 --  Every so often
-    if math.floor(iteration / batchLoader.numBatches) % 4 == 0 then
-      print(string.format("Percentage of Epoch done: %d", math.floor(iteration / batchLoader.numBatches)))
+    if math.floor(iteration / batchLoader.batchSize) % 10 == 0 then
+      print(string.format("Batch took: %.4fs, percent of epoch done: %d",time, math.floor(iteration / batchLoader.numBatches)))
     end
       if  math.floor((iteration / batchLoader.batchSize)) %  printEvery == 0  then
         table.insert(trainLosses, losses)
@@ -150,4 +152,22 @@ for epoch=1,options.maxEpochs do
   end
   collectgarbage()
 
+end
+
+function cpuPrepro(input, target)
+  input = input:contiguous()
+  target = target:contiguous()
+  return input, target
+end
+
+function clPrepro(input, target)
+  input = input:contiguous():cl()
+  target = target:contiguous():cl()
+  return input, target
+end
+
+function cudaPrepro(input, target)
+  input = input:contiguous():cuda()
+  target = target:contiguous():cuda()
+  return input, target
 end
