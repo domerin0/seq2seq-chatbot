@@ -3,11 +3,16 @@
 --added multiple layers and dropout
 local Seq2Seq = torch.class("seq2seq.Seq2Seq")
 
-function Seq2Seq:__init(numLayers, hiddenSize, vocabSize, dropout)
+function Seq2Seq:__init(numLayers, hiddenSize, vocabSize, dropout, dataDir)
   self.dropout = dropout or 0
   self.vocabSize = vocabSize
   self.hiddenSize = hiddenSize
   self.numLayers = numLayers
+  local Constants = require "Util.Constants"
+  local vocabPath = path.join(dataDir, Constants.vocabFile)
+  local vocabFile = torch.load(vocabPath)
+  self.goToken = vocabFile[Constants.GO]
+  self.eosToken = vocabFile[Constants.EOS]
   self:buildModel()
 end
 
@@ -25,6 +30,7 @@ function Seq2Seq:buildModel()
   for i=1,self.numLayers do
     self.encoderHidden[i] = nn.LSTM(self.hiddenSize, self.hiddenSize)
     self.encoder:add(nn.Sequencer(self.encoderHidden[i]))
+    self.encoder:add(nn.Sequencer(nn.Dropout(self.dropout)))
   end
   self.encoder:add(nn.SelectTable(-1))
 
@@ -35,10 +41,12 @@ function Seq2Seq:buildModel()
   for i=1,self.numLayers do
     self.decoderHidden[i] = nn.LSTM(self.hiddenSize, self.hiddenSize)
     self.decoder:add(nn.Sequencer(self.decoderHidden[i]))
+    self.decoder:add(nn.Sequencer(nn.Dropout(self.dropout)))
   end
   self.decoder:add(nn.Sequencer(nn.Linear(self.hiddenSize, self.vocabSize)))
   self.decoder:add(nn.Sequencer(nn.LogSoftMax()))
 
+  self.criterion = nn.SequencerCriterion(nn.ClassNLLCriterion())
 
   self.zeroTensor = torch.Tensor(2):zero()
 end
@@ -50,7 +58,7 @@ function Seq2Seq:cuda()
   if self.criterion then
     self.criterion:cuda()
   end
-
+  self.zeroTensor = self.zeroTensor:cuda()
 end
 
 function Seq2Seq:forwardConnect(inputSeqLength)
@@ -148,6 +156,7 @@ function Seq2Seq:predict(input)
   local probabilities = {}
 
   local output = self.goToken
+  --limit output to 50 for now
   for i = 1, 50 do
     local prediction = self.decoder:forward(torch.Tensor{output})[1]
 
