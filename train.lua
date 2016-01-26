@@ -31,8 +31,9 @@ else
 end
 
 local vMap = VocabMapping.create(options.dataDir)
-options.vocabSize = vMap:size()
+options.vocabSize = vMap.size
 
+print("Vocab size is: "..options.vocabSize)
 --Now, check and enable GPU usage:
 
 local cuid = VerifyGPU.checkCuda(options.gpuid, options.seed)
@@ -54,7 +55,7 @@ local batchLoader = MiniBatchLoader.loadBatches(options.dataDir, options.batchSi
 local chatbot = nil
 if options.startFrom then
   chatbot = seq2seq.Seq2Seq(options.numLayers, options.hiddenSize,
-  vMap, options.dropout)
+  options.vocabSize, options.dropout, options.dataDir)
 else
   local checkpoint = torch.load(options.startFrom)
   chatbot = checkpoint.chatbot
@@ -64,8 +65,6 @@ end
 if options.gpuid > -1 then
   chatbot:cuda()
 end
-chatbot.criterion = nn.SequencerCriterion(nn.ClassNLLCriterion())
-
 local optimState = {learningRate = options.learningRate, momentum = options.momentum}
 local iteration = 0
 local maxIterations = options.maxEpochs * batchLoader.numBatches * batchLoader.batchSize
@@ -75,13 +74,18 @@ for epoch=1,options.maxEpochs do
   print("")
   local miniBatch = batchLoader:nextBatch()
   valLimit = (batchLoader.batchLimits[2][2] - batchLoader.batchLimits[2][1]) * batchLoader.batchSize
-  local valLosses = torch.Tensor(valLimit):fill(0)
-  local trainLosses = torch.Tensor(batchLoader.numBatches * batchLoader.batchSize):fill(0)
+  local valLosses = {}
+  local trainLosses = {}
   local timer = torch.Timer()
   for batch=1,options.batchSize do
     iteration = iteration + 1
     --x, y = prepro(miniBatch[batch])
-    local loss = chatbot:train(miniBatch[batch][1], miniBatch[batch][2], optimState)
+    local input, target = miniBatch[batch][1], miniBatch[batch][2]
+    if options.gpuid > -1 then
+      input = input:contiguous():cuda()
+      target = target:contiguous():cuda()
+    end
+    local loss = chatbot:train(input, target, optimState)
 
     --Check for NaN
     if loss ~= loss then
@@ -89,22 +93,20 @@ for epoch=1,options.maxEpochs do
       break
     end
 
-    trainLosses[iteration % (batchLoader.numBatches * batchLoader.batchSize)] = loss
+    trainLosses[#trainLosses + 1] = loss
 
-    if iteration % 50 == 0 and options.lrDecay < 1 then
+  end
+    if iteration % options.printFreq == 0 and options.lrDecay < 1 then
       if epoch >= options.lrDecayAfter then
         local decayFactor = options.lrDecay
-        optimState.learningRate = optimState.learningRate * decay_factor -- decay it
+        optimState.learningRate = optimState.learningRate * options.lrDecay -- decay it
         print('decayed learning rate by a factor ' .. decayFactor .. ' to ' .. optimState.learningRate)
       end
     end
 
-  end
-
   local time = timer:time().real
 
-    -- every now and then or on last iteration
-    if minMeanError == nil or trainLosses:mean() < minMeanError then
+    if iteration % 1000 == 0 then
       print("Performing test on cross validation set: ")
       batchLoader:resetPointer(2)
       local counter = 1
@@ -117,30 +119,26 @@ for epoch=1,options.maxEpochs do
         end
       end
 
+      local minMeanError = torch.Tensor(trainLosses):mean()
+      local testLoss = torch.Tensor(valLosses):mean()
+      print(string.format("%d/%d (epoch %.3f), train_loss = %6.8f, time/batch = %.4fs", iteration, maxIterations, epoch, minMeanError, time))
       print("\n(Saving model ...)")
-      minMeanError = trainLosses:mean()
-
-      local savefile = string.format('%s/lm_%s_epoch%.2f_%.4f.t7', checkpointDir, options.savefile, iteration / batchLoader.numBatches, valLosses:mean())
+      print("Train loss: "..minMeanError .. " Test Loss: " ..testLoss)
+      local savefile = string.format('%s/lm_%s_epoch%.2f_%.4f.t7', checkpointDir, options.savefile, iteration / batchLoader.numBatches, testLoss)
       print('saving checkpoint to ' .. savefile)
       local checkpoint = {}
       checkpoint.vocabSize = chatbot.vocabSize
       checkpoint.options = options
       checkpoint.trainLosses = trainLosses
       checkpoint.valLossess = valLosses
-      checkpoint.batch =  batch
       checkpoint.epoch = epoch
       checkpoint.model = chatbot
       torch.save(savefile, checkpoint)
+      trainLosses = {}
+      valLosses ={}
   end
 
-  if iteration % options.printFreq == 0 then
-    print(string.format("%d/%d (epoch %.3f), train_loss = %6.8f, time/batch = %.4fs", iteration, maxIterations, epoch, trainLosses:mean(), time))
-  end
 
   if iteration % 10 == 0 then collectgarbage() end
 
-  if trainLosses[1] < trainLosses:mean()*3 then
-      print('Loss is exploding, aborting.')
-      break
-  end
 end

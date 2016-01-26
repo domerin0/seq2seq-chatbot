@@ -35,7 +35,7 @@ function CommandLineArgs.trainCmdArgs()
   cmd:option('-dataDir','data/','Data directory. Should point to tokenized input file')
   cmd:option('-gpuid',0,'which gpu to use. -1 = use CPU')
   cmd:option('-opencl',0,'use OpenCL (instead of CUDA)')
-  cmd:option('-batchSize',50,'number of sequences to train on in parallel')
+  cmd:option('-batchSize',200,'number of sequences to train on in parallel')
   cmd:option('-trainFrac',0.7,'fraction of data that goes into train set')
   cmd:option('-testFrac',0.3,'fraction of data that goes into test set')
   cmd:option('-evalFrac',0,'fraction of data that goes into eval set')
@@ -47,7 +47,7 @@ function CommandLineArgs.trainCmdArgs()
 
 
   -- model params
-  cmd:option('-hiddenSize', 128, 'size of LSTM internal state')
+  cmd:option('-hiddenSize', 500, 'size of LSTM internal state')
   cmd:option('-numLayers', 2, 'number of layers in the LSTM')
   -- optimization
   cmd:option('-learningRate',2e-3,'Learning rate.')
@@ -57,7 +57,7 @@ function CommandLineArgs.trainCmdArgs()
   cmd:option('-gradClip',5,'Clip gradients at this value.')
   cmd:option('-weights', '', 'Initialize network parameters from checkpoint at this path.')
   -- bookkeeping
-  cmd:option('-printFreq',50,'How many steps between printing out the loss.')
+  cmd:option('-printFreq',1000,'How many steps between printing out the loss.')
   cmd:option('-evalEvery',1000,'Every how many iterations should we evaluate on validation data.')
   cmd:option('-checkpoints', 'cv', 'Output directory where checkpoints get written.')
   cmd:option('-startFrom', '', 'File to initialize training or prediction from.')

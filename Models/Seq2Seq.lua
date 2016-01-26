@@ -3,14 +3,16 @@
 --added multiple layers and dropout
 local Seq2Seq = torch.class("seq2seq.Seq2Seq")
 
-function Seq2Seq:__init(numLayers, hiddenSize, vocabMapping, dropout)
+function Seq2Seq:__init(numLayers, hiddenSize, vocabSize, dropout, dataDir)
   self.dropout = dropout or 0
-  self.vocabSize = vocabMapping.size()
+  self.vocabSize = vocabSize
   self.hiddenSize = hiddenSize
   self.numLayers = numLayers
   local Constants = require "Util.Constants"
-  self.goToken = vocabMapping.token2Index(Constants.GO)
-  self.eosToken = vocabMapping.token2Index(Constants.EOS)
+  local vocabPath = path.join(dataDir, Constants.vocabFile)
+  local vocabFile = torch.load(vocabPath)
+  self.goToken = vocabFile[Constants.GO]
+  self.eosToken = vocabFile[Constants.EOS]
   self:buildModel()
 end
 
@@ -44,6 +46,7 @@ function Seq2Seq:buildModel()
   self.decoder:add(nn.Sequencer(nn.Linear(self.hiddenSize, self.vocabSize)))
   self.decoder:add(nn.Sequencer(nn.LogSoftMax()))
 
+  self.criterion = nn.SequencerCriterion(nn.ClassNLLCriterion())
 
   self.zeroTensor = torch.Tensor(2):zero()
 end
@@ -55,7 +58,7 @@ function Seq2Seq:cuda()
   if self.criterion then
     self.criterion:cuda()
   end
-
+  self.zeroTensor = self.zeroTensor:cuda()
 end
 
 function Seq2Seq:forwardConnect(inputSeqLength)

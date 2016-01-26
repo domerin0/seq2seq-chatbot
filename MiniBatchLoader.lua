@@ -28,6 +28,7 @@ function MiniBatchLoader.createMiniBatches(options)
   end
 
   local sourceTargetPairs = {}
+  local index = 1
   for key, value in ipairs(dataFiles) do
     print(value)
     local data = torch.load(value)
@@ -35,22 +36,19 @@ function MiniBatchLoader.createMiniBatches(options)
     --local sourceTargetPairs = torch.IntTensor(#data-1, 2, options.maxSeqLength)
     -- Reverse sequences to introduce short-term dependency's (Google's result)
     --Insert training pairs into tensor
-    local index = 1
     for i=1,#data-1 do
       if not (data[i]:size(1) > options.maxSeqLength) and
         not (data[i + 1]:size(1) > options.maxSeqLength) then
           sourceTargetPairs[index] = {}
-          sourceTargetPairs[index][1] = data[i]
+          --reverse source sentence
+          sourceTargetPairs[index][1] = TableUtils.reverseTensor(data[i])
           sourceTargetPairs[index][2] = data[i + 1]
           index = index + 1
       end
     end
   end
-  print("Creating minibatch files...")
-
-  local batchFile = path.join(options.dataDir,Constants.rawBatchesFolder..Constants.rawBatchesFile)
-  torch.save(batchFile, sourceTargetPairs)
-
+      local batchFile = path.join(options.dataDir,Constants.rawBatchesFolder..Constants.rawBatchesFile)
+      torch.save(batchFile, sourceTargetPairs)
 end
 
 --[[Reads in tensor files, and gets max seqence length.
@@ -104,7 +102,7 @@ function MiniBatchLoader.loadBatches(dataDir, batchSize, trainFrac, evalFrac, te
   local batchFile = path.join(batchDataDir, Constants.rawBatchesFile)
   self.batches = torch.load(batchFile)
   local counter = 0
-  for key, value in pairs(self.batches) do
+  for key, value in ipairs(self.batches) do
     counter = counter + 1
   end
   self.numBatches = math.floor(counter / self.batchSize)
