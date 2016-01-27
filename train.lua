@@ -9,6 +9,32 @@ local MiniBatchLoader = require "MiniBatchLoader"
 local VerifyGPU = require "Util.VerifyGPU"
 require "seq2seq"
 
+--------Preprocessing functions-------------------
+
+
+function cpuPrepro(input, target)
+  input = input:contiguous()
+  target = target:contiguous()
+  return input, target
+end
+
+function clPrepro(input, target)
+  input = input:contiguous():cl()
+  target = target:contiguous():cl()
+  return input, target
+end
+
+function cudaPrepro(input, target)
+  input = input:contiguous():cuda()
+  target = target:contiguous():cuda()
+  return input, target
+end
+
+
+-------end preprocessing functions------------------
+
+
+
 local options = CommandLineArgs.trainCmdArgs()
 torch.manualSeed(options.seed)
 --catch this issue early
@@ -40,7 +66,7 @@ print("Vocab size is: "..options.vocabSize)
 local prepro = cudaPrepro
 local cuid = VerifyGPU.checkCuda(options.gpuid, options.seed)
 
-if cuid < 1 then
+if cuid < 0 then
   prepro = clPrepro
   local clid = VerifyGPU.checkOpenCl(options.gpuid, options.seed)
 end
@@ -80,24 +106,33 @@ for epoch=1,options.maxEpochs do
 
   print("\n-- Epoch " .. epoch .. " / " .. options.maxEpochs)
   print("")
-    for _=1,batchLoader.numBatches do
+    local losses = 0
+    for batch=1,batchLoader.numBatches do
       local trainBatch = batchLoader:nextBatch(1)
-      for i=1,batchLoader.batchSize do
-        trainBatch[batch][1], trainBatch[batch][2] = prepro(trainBatch[batch][1], trainBatch[batch][2])
-      end
-      local timer = torch.Timer()
-      local losses = 0
-      local loss = 0
-      for batch=1,batchLoader.batchSize do
-        iteration = iteration + 1
-        local input, target = trainBatch[batch][1], trainBatch[batch][2]
-        loss = chatbot:train(input, target, optimState)
 
-        --Check for NaN
-        if loss ~= loss then
-          print("Critical error, stopping early!")
-          break
+-------------I am unrolling the for loop here in an attempt to speed up the code--------------
+
+      local b = batchLoader.batchSize % 4
+      if b ~= 0 then
+        for i=1,b do
+          trainBatch[i][1], trainBatch[i][2] = prepro(trainBatch[i][1], trainBatch[i][2])
         end
+      end
+      for i=1,batchLoader.batchSize,4 do
+        trainBatch[i][1], trainBatch[i][2] = prepro(trainBatch[i][1], trainBatch[i][2])
+        trainBatch[i + 1][1], trainBatch[i + 1][2] = prepro(trainBatch[i + 1][1], trainBatch[i + 1][2])
+        trainBatch[i + 2][1], trainBatch[i + 2][2] = prepro(trainBatch[i + 2][1], trainBatch[i + 2][2])
+        trainBatch[i + 3][1], trainBatch[i + 3][2] = prepro(trainBatch[i + 3][1], trainBatch[i + 3][2])
+      end
+
+-------------end of for loop unroll------------------------------------------------------
+
+      local timer = torch.Timer()
+      local loss = 0
+      for example=1,batchLoader.batchSize do
+        iteration = iteration + 1
+        local input, target = trainBatch[example][1], trainBatch[example][2]
+        loss = chatbot:train(input, target, optimState)
 
         losses = losses + (loss / printEvery)
 
@@ -107,9 +142,9 @@ for epoch=1,options.maxEpochs do
 --    Do this stuff (run test set, print some output to console, etc..)
 --  Every so often
     if math.floor(iteration / batchLoader.batchSize) % 10 == 0 then
-      print(string.format("Batch took: %.4fs, percent of epoch done: %d",time, math.floor(iteration / batchLoader.numBatches)))
+      print(string.format("Batch took: %.4fs, percent of epoch done: %d",time, batch / batchLoader.numBatches))
     end
-      if  math.floor((iteration / batchLoader.batchSize)) %  printEvery == 0  then
+      if  batch %  printEvery == 0  then
         table.insert(trainLosses, losses)
         losses = 0
         loss = 0
@@ -152,22 +187,4 @@ for epoch=1,options.maxEpochs do
   end
   collectgarbage()
 
-end
-
-function cpuPrepro(input, target)
-  input = input:contiguous()
-  target = target:contiguous()
-  return input, target
-end
-
-function clPrepro(input, target)
-  input = input:contiguous():cl()
-  target = target:contiguous():cl()
-  return input, target
-end
-
-function cudaPrepro(input, target)
-  input = input:contiguous():cuda()
-  target = target:contiguous():cuda()
-  return input, target
 end
