@@ -124,6 +124,8 @@ function MiniBatchLoader.loadBatches(dataDir,trainFrac)
   self.numBatches = batchMetaData.numBatchs
   self.batchFiles = batchMetaData.batchFiles
   self.maxSeqLength = batchMetaData.maxSeqLength
+  --shuffling batches
+  TableUtils.shuffleTable(self.batchFiles)
 
   self.batchLimits = {
     {1,math.floor(self.numBatches * self.trainFrac)},
