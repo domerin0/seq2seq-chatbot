@@ -150,7 +150,7 @@ for epoch=1,options.maxEpochs do
         loss = 0
         --decay learning rate if no improvement in 3 steps
         if(#trainLosses > 2) then
-          if(loss  > unpack(trainLosses)) then
+          if(trainLosses[#trainLosses]  > trainLosses[#trainLosses - 2]) then
             print('decayed learning rate by a factor ' .. decayFactor .. ' to ' .. optimState.learningRate)
             optimState.learningRate = optimState.learningRate * options.lrDecay
             local decayFactor = options.lrDecay
@@ -162,7 +162,7 @@ for epoch=1,options.maxEpochs do
         while batch do
           batch = batchLoader:nextBatch(2)
           for i=1,batchLoader.batchSize do
-            loss = chatbot:eval(miniBatch[i][1], miniBatch[i][2])
+            loss = chatbot:eval(batch[i][1], batch[i][2])
             counter = counter + 1
             losses = loss + losses
           end
@@ -172,7 +172,7 @@ for epoch=1,options.maxEpochs do
         print("Train loss: "..trainLosses[#trainLosses] .. " Test Loss: " ..testLosses[#testLosses])
         print(string.format("%d/%d (epoch %.3f), train_loss = %6.8f, time/batch = %.4fs", iteration, maxIterations, epoch, trainLosses[#trainLosses], time))
         print("\n(Saving model ...)")
-        local savefile = string.format('%s/lm_%s_epoch%.2f_%.4f.t7', checkpointDir, options.savefile, iteration / maxIterations, testLoss)
+        local savefile = string.format('%s/lm_%s_epoch%.2f_%.4f.t7', checkpointDir, options.savefile, iteration / maxIterations, testLosses[#testLosses])
         print('saving checkpoint to ' .. savefile)
         local checkpoint = {}
         checkpoint.vocabSize = chatbot.vocabSize
