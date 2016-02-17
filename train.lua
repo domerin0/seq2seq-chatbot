@@ -134,7 +134,7 @@ for epoch=1,options.maxEpochs do
         local input, target = trainBatch[example][1], trainBatch[example][2]
         loss = chatbot:train(input, target, optimState)
 
-        losses = losses + (loss / printEvery)
+        losses = losses + (loss / batchLoader.batchSize)
 
       end
 
@@ -142,10 +142,10 @@ for epoch=1,options.maxEpochs do
 --    Do this stuff (run test set, print some output to console, etc..)
 --  Every so often
     if math.floor(iteration / batchLoader.batchSize) % 10 == 0 then
-      print(string.format("Batch took: %.4fs, percent of epoch done: %d",time, batch / batchLoader.numBatches))
+      print(string.format("Batch took: %.4fs, percent of epoch done: %.4fs, loss: %.4fs",time, batch / batchLoader.numBatches, losses / iteration))
     end
       if  batch %  printEvery == 0  then
-        table.insert(trainLosses, losses)
+        table.insert(trainLosses, losses / printEvery)
         losses = 0
         loss = 0
         --decay learning rate if no improvement in 3 steps

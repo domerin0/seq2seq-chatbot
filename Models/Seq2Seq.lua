@@ -22,7 +22,6 @@ function Seq2Seq:buildModel()
   print("Hidden size of: ".. self.hiddenSize)
   print("Number of layers: "..self.numLayers)
   print("Dropout: ".. self.dropout)
-  print("Vocab size of: "..self.vocabSize)
   self.encoder = nn.Sequential()
   self.encoder:add(nn.LookupTable(self.vocabSize, self.hiddenSize))
   self.encoder:add(nn.SplitTable(1,2))
@@ -62,36 +61,31 @@ function Seq2Seq:cuda()
 end
 
 function Seq2Seq:forwardConnect(inputSeqLength)
-  for i=1,self.numLayers do
-    self.decoderHidden[i].userPrevOutput =
+    self.decoderHidden[1].userPrevOutput =
       nn.rnn.recursiveCopy(
-        self.decoderHidden[i].userPrevOutput,
-        self.encoderHidden[i].outputs[inputSeqLength]
+        self.decoderHidden[1].userPrevOutput,
+        self.encoderHidden[self.numLayers].outputs[inputSeqLength]
       )
 
-    self.decoderHidden[i].userPrevCell =
+    self.decoderHidden[1].userPrevCell =
       nn.rnn.recursiveCopy(
-        self.decoderHidden[i].userPrevCell,
-        self.encoderHidden[i].cells[inputSeqLength]
+        self.decoderHidden[1].userPrevCell,
+        self.encoderHidden[self.numLayers].cells[inputSeqLength]
       )
-  end
-
 end
 
 function Seq2Seq:backwardConnect()
-  for i=1,self.numLayers do
-    self.encoderHidden[i].userNextGradCell =
+    self.encoderHidden[self.numLayers].userNextGradCell =
       nn.rnn.recursiveCopy(
-        self.encoderHidden[i].userNextGradCell,
-        self.decoderHidden[i].userGradPrevCell
+        self.encoderHidden[self.numLayers].userNextGradCell,
+        self.decoderHidden[1].userGradPrevCell
       )
 
-    self.encoderHidden[i].gradPrevOutput =
+    self.encoderHidden[self.numLayers].gradPrevOutput =
       nn.rnn.recursiveCopy(
-        self.encoderHidden[i].gradPrevOutput,
-        self.decoderHidden[i].userGradPrevOutput
+        self.encoderHidden[self.numLayers].gradPrevOutput,
+        self.decoderHidden[1].userGradPrevOutput
       )
-  end
 end
 
 

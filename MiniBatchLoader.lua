@@ -67,7 +67,9 @@ function MiniBatchLoader.createMiniBatches(options)
     end
     collectgarbage()
   end
-  local batchMetaFile = path.join(options.dataDir, Constants.rawBatchesFolder..Constants.metaBatchInfo)
+  local batchDataDir = path.join(options.dataDir, Constants.rawBatchesFolder)
+  local batchMetaFile = path.join(batchDataDir, Constants.metaBatchInfo)
+  print(batchMetaFile)
   batchMetaData.batchFiles = batchFiles
   batchMetaData.numBatchs = batchCounter
   batchMetaData.batchSize = options.batchSize
@@ -98,7 +100,8 @@ does not need to be run
 ]]
 function MiniBatchLoader.shouldRun(dataDir)
   local batchDataDir = path.join(dataDir, Constants.rawBatchesFolder)
-  return not path.exists(batchDataDir)
+  local rawBatchMetaFile = path.join(batchDataDir, Constants.metaBatchInfo)
+  return not path.exists(rawBatchMetaFile)
 end
 
 function MiniBatchLoader.loadBatches(dataDir,trainFrac)
@@ -139,14 +142,19 @@ end
 function MiniBatchLoader.nextBatch(self, index)
   if index == 1 then
     local batch = torch.load(self.batchFiles[self.trainBatchPointer + 1])
-    self.trainBatchPointer = (self.trainBatchPointer + 1) % self.batchLimits[1][2]
+    self.trainBatchPointer = self.trainBatchPointer % self.batchLimits[1][2]
+    self.trainBatchPointer = self.trainBatchPointer + 1
     return batch
   end
   if index ==2 then
-    if self.testBatchPointer == self.batchLimits[2][2] then return nil end
     -- 1-based indexing...
     local batch = torch.load(self.batchFiles[self.testBatchPointer + 1])
-    self.testBatchPointer = (self.testBatchPointer + 1) % (self.batchLimits[2][2] + 1)
+    if self.testBatchPointer == self.batchLimits[2][2] then
+      self.testBatchPointer = 0
+      return nil
+    end
+    self.testBatchPointer = self.testBatchPointer % self.batchLimits[2][2]
+    self.testBatchPointer = self.testBatchPointer + 1
     return batch
   end
 --return nil if we get down here...

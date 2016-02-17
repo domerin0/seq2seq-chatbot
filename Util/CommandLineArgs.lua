@@ -38,15 +38,15 @@ function CommandLineArgs.trainCmdArgs()
   cmd:option('-batchSize',200,'number of sequences to train on in parallel')
   cmd:option('-trainFrac',0.7,'fraction of data that goes into train set (rest will be in test set)')
   cmd:option('-maxEpochs',50,'number of full passes through the training data')
-  cmd:option('-dropout',0.5,'dropout for regularization, used after each RNN hidden layer. 0 = no dropout')
+  cmd:option('-dropout',0.8,'dropout for regularization, used after each RNN hidden layer. 0 = no dropout')
   cmd:option('-maxSeqLength',30,'Max sentence length.')
   cmd:option('-seed',123,'Torch manual random number generator seed.')
 
   -- model params
   cmd:option('-hiddenSize', 500, 'size of LSTM internal state')
-  cmd:option('-numLayers', 2, 'number of layers in the LSTM')
+  cmd:option('-numLayers', 1, 'number of layers in the LSTM')
   -- optimization
-  cmd:option('-learningRate',2e-3,'Learning rate.')
+  cmd:option('-learningRate',0.0001,'Learning rate.')
   cmd:option('-lrDecay',0.97,'Learning rate decay.')
   cmd:option('--momentum', 0.9, 'momentum')
   cmd:option('-gradClip',5,'Clip gradients at this value.')
