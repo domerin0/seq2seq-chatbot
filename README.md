@@ -1,6 +1,6 @@
 # seq2seq-chatbot
 
-*I've mostly stopped working on this project in favor of my newer implementation [neural-chatbot](https://github.com/inikdom/neural-chatbot) done with TensorFlow.
+**I've mostly stopped working on this project in favor of my newer implementation [neural-chatbot](https://github.com/inikdom/neural-chatbot) done with TensorFlow.
 
 
 An implementation of Google's seq2seq architecture.
