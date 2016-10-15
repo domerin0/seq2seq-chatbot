@@ -11,7 +11,6 @@ require "seq2seq"
 
 --------Preprocessing functions-------------------
 
-
 function cpuPrepro(input, target)
   input = input:contiguous()
   target = target:contiguous()
@@ -29,7 +28,6 @@ function cudaPrepro(input, target)
   target = target:contiguous():cuda()
   return input, target
 end
-
 
 -------end preprocessing functions------------------
 
@@ -142,7 +140,7 @@ for epoch=1,options.maxEpochs do
 --    Do this stuff (run test set, print some output to console, etc..)
 --  Every so often
     if math.floor(iteration / batchLoader.batchSize) % 10 == 0 then
-      print(string.format("Batch took: %.4fs, percent of epoch done: %.4f%, loss: %.4f",time, batch / batchLoader.numBatches, losses / iteration))
+      print(string.format("Batch took: %.4fs, percent of epoch done: %.4f, loss: %.4f",time, batch / batchLoader.numBatches, losses / iteration))
     end
       if  batch %  printEvery == 0  then
         table.insert(trainLosses, losses / printEvery)

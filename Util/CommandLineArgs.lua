@@ -44,7 +44,7 @@ function CommandLineArgs.trainCmdArgs()
 
   -- model params
   cmd:option('-hiddenSize', 500, 'size of LSTM internal state')
-  cmd:option('-numLayers', 1, 'number of layers in the LSTM')
+  cmd:option('-numLayers', 2, 'number of layers in the LSTM')
   -- optimization
   cmd:option('-learningRate',0.0001,'Learning rate.')
   cmd:option('-lrDecay',0.97,'Learning rate decay.')
@@ -52,7 +52,7 @@ function CommandLineArgs.trainCmdArgs()
   cmd:option('-gradClip',5,'Clip gradients at this value.')
   cmd:option('-weights', '', 'Initialize network parameters from checkpoint at this path.')
   -- bookkeeping
-  cmd:option('-printFreq',0.1,'How often to print out checkpoint info and save (as a percentage of one epoch)')
+  cmd:option('-printFreq',1.0,'How often to print out checkpoint info and save (as a percentage of one epoch)')
   cmd:option('-checkpoints', 'cv', 'Output directory where checkpoints get written.')
   cmd:option('-startFrom', '', 'File to initialize training or prediction from.')
   cmd:option('-savefile','chatbot','Filename to autosave the checkpont to. Will be inside checkpoint/')

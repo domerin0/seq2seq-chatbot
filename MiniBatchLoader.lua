@@ -114,8 +114,6 @@ function MiniBatchLoader.loadBatches(dataDir,trainFrac)
   --Checks to ensure user isn't testing us
   self.trainFrac = trainFrac
   self.testFrac =  1 - trainFrac
-  self.trainBatchPointer = 0
-  self.testBatchPointer = 0
   --flag will be set to 1 when test set has been entirely iterated over
   self.testSetFlag = 0
   --1 = train set, 2 = test set
@@ -134,6 +132,8 @@ function MiniBatchLoader.loadBatches(dataDir,trainFrac)
     {1,math.floor(self.numBatches * self.trainFrac)},
     {math.floor(self.numBatches * self.trainFrac)+1, self.numBatches}
   }
+  self.trainBatchPointer = 0
+  self.testBatchPointer = self.batchLimits[2][1] - 1
   return self
 end
 
@@ -144,13 +144,13 @@ function MiniBatchLoader.nextBatch(self, index)
     local batch = torch.load(self.batchFiles[self.trainBatchPointer + 1])
     self.trainBatchPointer = self.trainBatchPointer % self.batchLimits[1][2]
     self.trainBatchPointer = self.trainBatchPointer + 1
+    -- 1-based indexing...
     return batch
   end
   if index ==2 then
-    -- 1-based indexing...
     local batch = torch.load(self.batchFiles[self.testBatchPointer + 1])
-    if self.testBatchPointer == self.batchLimits[2][2] then
-      self.testBatchPointer = 0
+    if self.testBatchPointer == self.batchLimits[2][2] - 1 then
+      self.testBatchPointer = self.batchLimits[2][1] - 1
       return nil
     end
     self.testBatchPointer = self.testBatchPointer % self.batchLimits[2][2]

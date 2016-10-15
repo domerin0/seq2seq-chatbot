@@ -27,7 +27,7 @@ $ luarocks install cutorch
 Or if you prefer AMD,
 
 ```bash
-$luarocks install clnn
+$ luarocks install clnn
 $ luarocks install cltorch
 ```
 
@@ -44,16 +44,19 @@ To simplify things, my plan is to either include a bash script that downloads a 
 
 ##Examples of Usage and Training
 
-So far it seems to be taking approximately 55 hours per epoch. My data set is 162mb. This seems to be really high, but my main priority for now is to get this working in some small use cases, then worry about speeding up the training.
+Run
 
-Coming soon. 
+``$ th train.lua``
+
+The dataset is stored in `data/raw/`, and comes from my other project [opensubtitles-parser](https://github.com/inikdom/opensubtitles-parser)
+
 
 ##A few notes:
 - Some of this was borrowed from : [char-rnn](https://github.com/karpathy/char-rnn)
 - This is based off of [Sutskever et al., 2014.](http://arxiv.org/abs/1409.3215) and [Vinyals & Le, 2015.](http://arxiv.org/pdf/1506.05869v1.pdf)
 - The data this is being tested on is the OpenSubtitles dataset, I used [a script I made](https://github.com/inikdom/opensubtitles-parser) to tokenize and create the input output sequences
 - I made heavy use of the rnn package provided by [Element Research](https://github.com/Element-Research/rnn)
- 
+
 
 ##Unfinished TODO
 
