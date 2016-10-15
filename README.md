@@ -1,4 +1,8 @@
 # seq2seq-chatbot
+
+**I've mostly stopped working on this project in favor of my newer implementation [neural-chatbot](https://github.com/inikdom/neural-chatbot) done with TensorFlow.
+
+
 An implementation of Google's seq2seq architecture.
 
 I am also simultaneously [blogging](http://domkaukinen.com/tag/seq2seq/) about the process.
@@ -10,28 +14,28 @@ First install torch if you haven't already. [Here](http://torch.ch/docs/getting-
 You will need to install a few packages to get this to work as well:
 
 ```bash
-luarocks install nn
-luarocks install rnn
+$ luarocks install nn
+$ luarocks install rnn
 ```
 
 Optional (for gpu usage):
 
 ```bash
-luarocks install cunn
-luarocks install cutorch
+$ luarocks install cunn
+$ luarocks install cutorch
 ```
 Or if you prefer AMD,
 
 ```bash
-luarocks install clnn
-luarocks install cltorch
+$luarocks install clnn
+$ luarocks install cltorch
 ```
 
 If you get errors, you should try installing these packages as well:
 
 ```
-luarocks install dpnn
-luarocks install cunnx
+$ luarocks install dpnn
+$ luarocks install cunnx
 ```
 
 You will need one or more large corpus text files with each line being a conversational phrase. The preceeding line is assumed to be the source, and the following line the target.
