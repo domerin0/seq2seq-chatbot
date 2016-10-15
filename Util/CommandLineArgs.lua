@@ -44,7 +44,7 @@ function CommandLineArgs.trainCmdArgs()
 
   -- model params
   cmd:option('-hiddenSize', 500, 'size of LSTM internal state')
-  cmd:option('-numLayers', 1, 'number of layers in the LSTM')
+  cmd:option('-numLayers', 2, 'number of layers in the LSTM')
   -- optimization
   cmd:option('-learningRate',0.0001,'Learning rate.')
   cmd:option('-lrDecay',0.97,'Learning rate decay.')
