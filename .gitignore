@@ -1,7 +1,9 @@
 # Compiled Lua sources
 luac.out
 Util/word2vecbin/*
-data/*
+data/processed/*
+data/cv/*
+data/rawbatches/*
 # luarocks build files
 *.src.rock
 *.zip
@@ -40,4 +42,3 @@ test.py
 *.i*86
 *.x86_64
 *.hex
-
