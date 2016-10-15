@@ -1,0 +1,448 @@
+1 00 : 03 : 54, 500 > 00 : 04 : 01, 000 innocence 2 00 : 08 : 10, 041 > 00 : 08 : 12, 359 what' s your name ?
+iris .
+3 00 : 08 : 12, 816 > 00 : 08 : 14, 220 good morning , iris .
+4 00 : 08 : 16, 324 > 00 : 08 : 20, 493 these are nadja , rose , side 5 00 : 08 : 21, 301 > 00 : 08 : 24, 618 alice and selma .
+6 00 : 08 : 25, 857 > 00 : 08 : 27, 844 and i am bianca .
+7 00 : 09 : 05, 602 > 00 : 09 : 09, 179 rose , vera , come , quick .
+8 00 : 09 : 16, 812 > 00 : 09 : 18, 979 selma , you also .
+9 00 : 09 : 20, 794 > 00 : 09 : 22, 526 hurry .
+10 00 : 09 : 47, 246 > 00 : 09 : 49, 055 change of tapes .
+11 00 : 10 : 00, 064 > 00 : 10 : 03, 160 you see , iris , each one has a tape color .
+12 00 : 10 : 03, 196 > 00 : 10 : 05, 591 the red one is for small ones .
+13 00 : 10 : 07, 430 > 00 : 10 : 09, 376 and violet for the one in charge .
+14 00 : 10 : 12, 809 > 00 : 10 : 15, 336 no , violet is natacha' s color .
+15 00 : 10 : 15, 595 > 00 : 10 : 18, 554 she went away , now i wear the violet one .
+16 00 : 10 : 18, 639 > 00 : 10 : 20, 489 liar .
+17 00 : 10 : 30, 063 > 00 : 10 : 32, 688 don' t worry , she' il get over it .
+18 00 : 10 : 35, 694 > 00 : 10 : 38, 893 iris , you will sleep here and i will sleep over there .
+19 00 : 11 : 22, 358 > 00 : 11 : 24, 580 bianca , where is my younger brother ?
+20 00 : 11 : 25, 092 > 00 : 11 : 26, 644 there are no males here .
+21 00 : 11 : 27, 062 > 00 : 11 : 29, 856 why not ?
+because .
+22 00 : 11 : 31, 580 > 00 : 11 : 35, 549 but , where am i ?
+this is our house .
+23 00 : 11 : 57, 427 > 00 : 12 : 00, 031 you will also learn to swim .
+24 00 : 12 : 24, 825 > 00 : 12 : 28, 920 now try yourself you see , how fun it is ?
+25 00 : 12 : 31, 383 > 00 : 12 : 35, 386 you must also move the legs .
+that' s right .
+raise your legs .
+that' s right .
+26 00 : 12 : 40, 754 > 00 : 12 : 44, 780 and forward , that' s right 27 00 : 14 : 13, 435 > 00 : 14 : 15, 839 you also arrived today ?
+28 00 : 14 : 16, 976 > 00 : 14 : 20, 310 yes , but i will not remain for long .
+29 00 : 14 : 57, 897 > 00 : 15 : 01, 852 laura , come .
+can i be with iris ?
+30 00 : 15 : 02, 019 > 00 : 15 : 05, 920 no , you' re not in the same house .
+but you will be able to see her tomorrow .
+31 00 : 15 : 09, 104 > 00 : 15 : 12, 344 you see , iris , there are 5 houses in the park , one for each group of girls .
+32 00 : 15 : 12, 618 > 00 : 15 : 16, 945 laura is in house # 1 and you are in house # 3 , with us .
+33 00 : 16 : 11, 847 > 00 : 16 : 14, 193 this is madeleine , she is here to serve us .
+34 00 : 16 : 14, 794 > 00 : 16 : 18, 224 if she does not obey us she will be punished .
+35 00 : 16 : 43, 015 > 00 : 16 : 45, 043 i want to go back home .
+36 00 : 16 : 45, 350 > 00 : 16 : 47, 313 this is your home now .
+37 00 : 16 : 50, 141 > 00 : 16 : 52, 915 but they are going to come to look for to me no .
+38 00 : 16 : 53, 034 > 00 : 16 : 55, 407 will my brother be able to visit me ?
+39 00 : 16 : 55, 616 > 00 : 16 : 56, 979 no , no .
+40 00 : 18 : 02, 765 > 00 : 18 : 03, 985 iris .
+41 00 : 18 : 06, 614 > 00 : 18 : 07, 967 iris .
+42 00 : 18 : 13, 268 > 00 : 18 : 14, 662 come .
+43 00 : 18 : 19, 712 > 00 : 18 : 23, 477 i am going to show you the house .
+and bianca , where is she ?
+44 00 : 18 : 35, 600 > 00 : 18 : 36, 867 bianca .
+45 00 : 18 : 41, 436 > 00 : 18 : 42, 762 bianca .
+46 00 : 18 : 43, 882 > 00 : 18 : 46, 069 where are you going ?
+i can' t tell you .
+47 00 : 18 : 46, 090 > 00 : 18 : 47, 849 why not ?
+because .
+48 00 : 18 : 48, 097 > 00 : 18 : 51, 203 i want to go with you .
+that is not possible .
+49 00 : 18 : 51, 387 > 00 : 18 : 53, 082 why not ?
+because .
+50 00 : 18 : 57, 130 > 00 : 18 : 59, 554 leave her alone , she must go now .
+no .
+51 00 : 19 : 02, 071 > 00 : 19 : 04, 229 leave her alone .
+no .
+52 00 : 19 : 06, 770 > 00 : 19 : 10, 786 i promise that when you wake up tomorrow morning i will be there with you .
+53 00 : 19 : 49, 528 > 00 : 19 : 52, 559 it is always so .
+at 9 we leave .
+54 00 : 19 : 52, 623 > 00 : 19 : 55, 892 at 10 we go to sleep .
+at 7 we wake up .
+55 00 : 19 : 56, 066 > 00 : 19 : 58, 800 at 8 we have breakfast .
+at 9 we work .
+56 00 : 19 : 59, 356 > 00 : 20 : 01, 566 work ?
+yes .
+57 00 : 20 : 02, 214 > 00 : 20 : 06, 029 do you know what time it is now ?
+here that is very important .
+58 00 : 20 : 06, 398 > 00 : 20 : 09, 301 do you know to count ?
+59 00 : 20 : 11, 298 > 00 : 20 : 14, 809 one , two , three , four , five , six , seven , eight .
+60 00 : 20 : 15, 575 > 00 : 20 : 19, 254 one , two , three , four , five , six , seven , eight .
+61 00 : 20 : 20, 093 > 00 : 20 : 23, 230 one , two , three , four , five 62 00 : 20 : 23, 347 > 00 : 20 : 26, 583 six , seven , eight , nine , ten .
+63 00 : 20 : 41, 647 > 00 : 20 : 46, 771 one , two , three , four , five , six 64 00 : 20 : 47, 174 > 00 : 20 : 51, 589 seven , eight , nine , ten , eleven 65 00 : 20 : 52, 109 > 00 : 20 : 56, 283 twelve , thirteen , fourteen 66 00 : 22 : 40, 869 > 00 : 22 : 42, 769 iris .
+67 00 : 22 : 44, 956 > 00 : 22 : 46, 900 iris .
+68 00 : 22 : 50, 894 > 00 : 22 : 52, 990 stand up , we' re going .
+69 00 : 23 : 15, 288 > 00 : 23 : 16, 993 bianca 70 00 : 23 : 18, 838 > 00 : 23 : 21, 542 will you stay with me today ?
+71 00 : 23 : 59, 070 > 00 : 24 : 01, 100 iris , come .
+72 00 : 24 : 03, 012 > 00 : 24 : 04, 430 come .
+73 00 : 24 : 07, 110 > 00 : 24 : 09, 680 it is important to follow the way .
+74 00 : 24 : 09, 753 > 00 : 24 : 12, 369 and that you always follow the lamps .
+75 00 : 24 : 17, 425 > 00 : 24 : 19, 862 where are we going ?
+down there .
+76 00 : 24 : 31, 257 > 00 : 24 : 34, 136 good morning .
+good morning .
+77 00 : 24 : 36, 480 > 00 : 24 : 38, 525 so long , iris .
+78 00 : 25 : 14, 816 > 00 : 25 : 17, 361 good morning .
+good morning .
+79 00 : 25 : 17, 790 > 00 : 25 : 20, 177 i am mademoiselle edith .
+80 00 : 25 : 55, 100 > 00 : 25 : 57, 007 i hope you' il be happy here .
+81 00 : 25 : 57, 058 > 00 : 26 : 00, 159 we will learn to love all the animals in this park 82 00 : 26 : 00, 366 > 00 : 26 : 02, 855 come with me .
+83 00 : 26 : 07, 247 > 00 : 26 : 09, 925 all beings are fruits of the same tree 84 00 : 26 : 09, 952 > 00 : 26 : 12, 555 which is called life .
+life first started in the sea 85 00 : 26 : 12, 655 > 00 : 26 : 15, 507 and then spread to air and finally to earth .
+86 00 : 26 : 15, 564 > 00 : 26 : 17, 442 what is this ?
+a hind .
+87 00 : 26 : 17, 458 > 00 : 26 : 19, 587 and this ?
+a rat .
+88 00 : 26 : 20, 677 > 00 : 26 : 22, 525 and this ?
+a fox , a wolf .
+89 00 : 26 : 22, 649 > 00 : 26 : 24, 222 and we are here .
+90 00 : 26 : 24, 336 > 00 : 26 : 27, 437 we are the most evolved species that exist and our progress never stops 91 00 : 26 : 27, 532 > 00 : 26 : 30, 697 and the human infants , within several years , will have completely different characteristics 92 00 : 26 : 30, 830 > 00 : 26 : 34, 456 then you , and in several generations the progress of evolution will clearly be seen .
+93 00 : 27 : 07, 136 > 00 : 27 : 10, 865 alice , will i have to stay long here ?
+94 00 : 27 : 13, 454 > 00 : 27 : 14, 961 yes .
+95 00 : 27 : 16, 601 > 00 : 27 : 18, 877 do we have any visits ?
+96 00 : 27 : 21, 058 > 00 : 27 : 24, 385 there are no visits , nobody ever comes .
+97 00 : 27 : 24, 567 > 00 : 27 : 26, 583 but is there a headmistress ?
+98 00 : 27 : 26, 730 > 00 : 27 : 29, 994 yes , she comes every year in order to see us dance .
+99 00 : 27 : 41, 404 > 00 : 27 : 43, 449 however you will not see the headmistress in the near future .
+100 00 : 27 : 43, 575 > 00 : 27 : 46, 247 she only comes once a year to give the blue tape .
+101 00 : 27 : 49, 058 > 00 : 27 : 51, 801 and when will i be able to leave to see my little brother ?
+102 00 : 27 : 51, 981 > 00 : 27 : 54, 213 you cannot leave , it is prohibited .
+103 00 : 27 : 54, 626 > 00 : 27 : 56, 451 but you gou out every afternoon .
+104 00 : 27 : 56, 524 > 00 : 27 : 58, 819 i don' t go out .
+i told you it' s prohibited .
+105 00 : 28 : 00, 419 > 00 : 28 : 02, 388 what do you do then ?
+106 00 : 28 : 04, 257 > 00 : 28 : 07, 157 listen , if you continue with this , you will be punished .
+107 00 : 28 : 35, 433 > 00 : 28 : 38, 152 good morning .
+good morning .
+108 00 : 28 : 41, 830 > 00 : 28 : 44, 142 here are your things .
+109 00 : 29 : 04, 882 > 00 : 29 : 07, 333 you are going to meet mademoiselle eva .
+she is very kind .
+110 00 : 29 : 14, 955 > 00 : 29 : 16, 970 welcomes , young ladies .
+111 00 : 29 : 19, 927 > 00 : 29 : 21, 463 come in .
+112 00 : 29 : 34, 126 > 00 : 29 : 37, 037 you are lucky of being chosen to live here .
+113 00 : 29 : 37, 063 > 00 : 29 : 40, 281 but you are still just ugly maggots .
+114 00 : 29 : 40, 355 > 00 : 29 : 43, 087 it will be necessary to work hard .
+115 00 : 29 : 47, 755 > 00 : 29 : 51, 176 hurry young lady .
+116 00 : 29 : 57, 729 > 00 : 29 : 59, 203 wait .
+117 00 : 30 : 00, 002 > 00 : 30 : 02, 449 i am going to show you something , and you have to pay attention .
+118 00 : 30 : 02, 661 > 00 : 30 : 04, 832 because you will have to do it after me .
+119 00 : 30 : 05, 743 > 00 : 30 : 08, 627 seven , eight .
+120 00 : 30 : 08, 955 > 00 : 30 : 13, 219 one , two , three 121 00 : 30 : 13, 729 > 00 : 30 : 17, 484 four , five , six 122 00 : 30 : 18, 418 > 00 : 30 : 21, 052 seven , eight .
+123 00 : 31 : 37, 635 > 00 : 31 : 41, 304 unfortunately not all maggots transform themselves into butterflies .
+124 00 : 31 : 41, 759 > 00 : 31 : 45, 331 but i hope that within a few years you will all have that honor .
+125 00 : 34 : 08, 550 > 00 : 34 : 12, 385 bianca , where do you go in the afternoons ?
+126 00 : 34 : 13, 579 > 00 : 34 : 17, 039 do you see boys ?
+no .
+127 00 : 34 : 17, 538 > 00 : 34 : 19, 670 then what do you do ?
+128 00 : 34 : 34, 297 > 00 : 34 : 36, 361 attention , i am counting .
+129 00 : 34 : 37, 529 > 00 : 34 : 40, 427 one , two , three , four 130 00 : 34 : 40, 902 > 00 : 34 : 43, 839 five , six , seven 131 00 : 34 : 44, 131 > 00 : 34 : 47, 662 eight , nine , ten 132 00 : 35 : 02, 224 > 00 : 35 : 04, 215 hide !
+133 00 : 35 : 11, 698 > 00 : 35 : 13, 422 bianca ?
+134 00 : 38 : 10, 501 > 00 : 38 : 12, 552 what do we do now ?
+135 00 : 40 : 26, 086 > 00 : 40 : 27, 612 iris .
+136 00 : 40 : 29, 622 > 00 : 40 : 31, 295 i am here .
+137 00 : 40 : 32, 586 > 00 : 40 : 34, 774 are you crazy ?
+we have been looking everywhere for you .
+138 00 : 40 : 34, 839 > 00 : 40 : 36, 702 i wanted to follow bianca .
+139 00 : 40 : 36, 786 > 00 : 40 : 38, 801 you didn' t try to leave the park , did you ?
+140 00 : 40 : 38, 902 > 00 : 40 : 40, 057 no .
+141 00 : 40 : 40, 115 > 00 : 40 : 42, 343 you know what kind of punishment there is for leaving the park ?
+142 00 : 40 : 43, 992 > 00 : 40 : 45, 123 no .
+143 00 : 40 : 45, 330 > 00 : 40 : 49, 964 you stay here forever and serve the others .
+144 00 : 40 : 58, 690 > 00 : 41 : 02, 090 what is it ?
+i don' t see anything .
+145 00 : 41 : 04, 149 > 00 : 41 : 07, 733 i see something .
+what ?
+146 00 : 41 : 09, 605 > 00 : 41 : 12, 532 what do you see ?
+147 00 : 41 : 26, 200 > 00 : 41 : 29, 453 you see this ?
+this is the wall that surrounds the whole park .
+148 00 : 41 : 33, 296 > 00 : 41 : 36, 500 iris , i am going to show you another secret .
+149 00 : 41 : 42, 747 > 00 : 41 : 44, 162 look .
+150 00 : 42 : 05, 185 > 00 : 42 : 10, 170 you see , outside there are very strange people , that' s why we musn' t go outside .
+151 00 : 42 : 17, 735 > 00 : 42 : 20, 828 and bianca' s secret , do you know what it is ?
+152 00 : 42 : 21, 394 > 00 : 42 : 23, 720 sure , come with me .
+153 00 : 42 : 39, 054 > 00 : 42 : 42, 016 so , what' s her secret ?
+154 00 : 42 : 45, 939 > 00 : 42 : 48, 262 let' s play a game .
+155 00 : 42 : 51, 929 > 00 : 42 : 54, 428 you musn' t move .
+156 00 : 43 : 02, 358 > 00 : 43 : 05, 861 you lost .
+no , start again .
+157 00 : 43 : 17, 042 > 00 : 43 : 19, 765 you are a little spy .
+158 00 : 44 : 41, 601 > 00 : 44 : 43, 489 bianca .
+159 00 : 44 : 47, 445 > 00 : 44 : 49, 262 bianca .
+160 00 : 44 : 50, 455 > 00 : 44 : 53, 542 what do you want ?
+i want to sleep with you .
+161 00 : 44 : 53, 705 > 00 : 44 : 56, 281 it is prohibited .
+162 00 : 45 : 42, 088 > 00 : 45 : 44, 052 what did you do with your legs ?
+163 00 : 45 : 44, 231 > 00 : 45 : 46, 813 i hurt them when i was playing .
+164 00 : 45 : 51, 961 > 00 : 45 : 54, 055 we' re finished , young ladies .
+165 00 : 45 : 54, 585 > 00 : 45 : 57, 046 iris , please wait here .
+166 00 : 46 : 01, 581 > 00 : 46 : 04, 366 tell me , are you happy here ?
+yes .
+167 00 : 46 : 05, 733 > 00 : 46 : 08, 043 do you get on well with your friends ?
+yes .
+168 00 : 46 : 09, 885 > 00 : 46 : 11, 892 especially with bianca .
+169 00 : 46 : 12, 063 > 00 : 46 : 16, 070 and because you like bianca so much , i suppose that you obey her as well .
+170 00 : 46 : 16, 607 > 00 : 46 : 18, 105 yes .
+171 00 : 46 : 21, 136 > 00 : 46 : 24, 148 you know , perhaps it is difficult to understand it 172 00 : 46 : 24, 306 > 00 : 46 : 28, 375 but obedience is the one and only way that guarantees us a good life .
+173 00 : 46 : 42, 018 > 00 : 46 : 43, 981 what are you doing ?
+174 00 : 46 : 52, 615 > 00 : 46 : 54, 874 do you ever ask yourself if we' il ever get out of here ?
+175 00 : 46 : 54, 988 > 00 : 46 : 59, 307 of course i do , but there is a great wall in between and there are no doors .
+176 00 : 47 : 04, 109 > 00 : 47 : 06, 939 don' t worry , i know how to get out of here .
+177 00 : 47 : 07, 200 > 00 : 47 : 08, 899 how ?
+178 00 : 47 : 09, 240 > 00 : 47 : 11, 812 can' t you guess ?
+no .
+179 00 : 47 : 52, 677 > 00 : 47 : 54, 482 will you come with me ?
+180 00 : 47 : 55, 717 > 00 : 47 : 57, 611 that is prohibited .
+181 00 : 48 : 03, 653 > 00 : 48 : 06, 451 you won' t tell on me ?
+no .
+182 00 : 48 : 07, 281 > 00 : 48 : 09, 909 do you swear ?
+i swear .
+183 00 : 48 : 13, 198 > 00 : 48 : 16, 246 cna you help me with untying the rope 184 00 : 51 : 01, 779 > 00 : 51 : 05, 385 is is true that mademoiselle edith tried to escape when she was just a little girl 185 00 : 51 : 05, 685 > 00 : 51 : 08, 812 and that the headmistress punished her by breaking her legs ?
+186 00 : 51 : 10, 027 > 00 : 51 : 13, 599 ah , those stories of punishment are just a way of scaring the children .
+187 00 : 51 : 13, 762 > 00 : 51 : 16, 815 they cannot force us to be here all of our life 188 00 : 51 : 16, 954 > 00 : 51 : 19, 527 if we don' t want it ourselves .
+189 00 : 52 : 16, 483 > 00 : 52 : 18, 052 iris ?
+190 00 : 52 : 27, 148 > 00 : 52 : 28, 895 iris ?
+191 00 : 52 : 31, 332 > 00 : 52 : 32, 964 iris ?
+192 00 : 52 : 55, 787 > 00 : 52 : 58, 350 what are you doing there ?
+193 00 : 53 : 03, 178 > 00 : 53 : 05, 801 are you scared of the storms ?
+194 00 : 53 : 12, 528 > 00 : 53 : 16, 488 laura left the park , but i shouldn' t have told you that .
+195 00 : 53 : 16, 744 > 00 : 53 : 19, 251 were you with her ?
+196 00 : 53 : 22, 348 > 00 : 53 : 24, 955 will she be punished ?
+197 00 : 53 : 28, 553 > 00 : 53 : 31, 721 are they also going to punish me ?
+198 00 : 53 : 34, 960 > 00 : 53 : 38, 154 did anybody see you ?
+no .
+199 00 : 53 : 41, 738 > 00 : 53 : 44, 713 did you speak about this with anyone ?
+no .
+200 00 : 53 : 45, 532 > 00 : 53 : 48, 035 will i be punished ?
+201 00 : 53 : 51, 383 > 00 : 53 : 53, 961 no , i promise you , you won' t be .
+202 00 : 55 : 02, 325 > 00 : 55 : 03, 922 come in .
+203 00 : 55 : 26, 702 > 00 : 55 : 29, 268 laura is no longer among us .
+204 00 : 55 : 30, 408 > 00 : 55 : 32, 617 i know that you are sad 205 00 : 55 : 32, 984 > 00 : 55 : 37, 004 we will organize an incineration ceremony as soon as possible .
+206 00 : 57 : 09, 892 > 00 : 57 : 11, 918 good afternoon , young ladies .
+207 00 : 57 : 13, 534 > 00 : 57 : 15, 117 good afternoon .
+208 00 : 57 : 18, 510 > 00 : 57 : 20, 042 let' s go .
+209 00 : 58 : 14, 286 > 00 : 58 : 16, 527 stephanie don' t eat with your fingers .
+210 00 : 58 : 16, 959 > 00 : 58 : 20, 340 use your fork .
+211 00 : 59 : 08, 251 > 00 : 59 : 09, 905 eva .
+212 00 : 59 : 10, 634 > 00 : 59 : 13, 009 eva , calm down .
+213 00 : 59 : 16, 157 > 00 : 59 : 19, 559 calm down .
+214 00 : 59 : 28, 930 > 00 : 59 : 32, 335 calm down .
+215 00 : 59 : 33, 854 > 00 : 59 : 36, 359 we' re going back now .
+216 00 : 59 : 44, 049 > 00 : 59 : 46, 178 happy new year , young ladies .
+happy new year .
+217 00 : 59 : 46, 223 > 00 : 59 : 47, 750 did you make a wish ?
+yes .
+218 00 : 59 : 47, 800 > 00 : 59 : 51, 367 what kind of wish did you make ?
+to always be with bianca .
+219 00 : 59 : 52, 374 > 00 : 59 : 54, 482 i want to be chosen as the headmistress 220 00 : 59 : 54, 945 > 00 : 59 : 56, 586 those are not dreams .
+221 00 : 59 : 56, 815 > 00 : 59 : 58, 786 well , it all depends on the talent .
+222 00 : 59 : 59, 302 > 01 : 00 : 01, 837 i am sure that she will be chosen .
+223 01 : 00 : 02, 047 > 01 : 00 : 03, 993 what means " chosen " ?
+224 01 : 00 : 04, 317 > 01 : 00 : 07, 328 every year , the headmistress comes and she chooses the one that wears the blue tape 225 01 : 00 : 07, 453 > 01 : 00 : 10, 772 and she takes her away .
+it' s one of the ways to get out of here faster .
+226 01 : 00 : 11, 102 > 01 : 00 : 13, 704 but i' il be afraid of the headmistress when she comes .
+227 01 : 00 : 13, 903 > 01 : 00 : 16, 159 i won' t be scared .
+228 01 : 00 : 52, 873 > 01 : 00 : 55, 952 please , please let me be chosen .
+229 01 : 01 : 01, 773 > 01 : 01 : 03, 800 two of them have become very pretty .
+230 01 : 01 : 04, 057 > 01 : 01 : 07, 312 this year has been a good year , i think that she will be very satisfied .
+231 01 : 01 : 21, 674 > 01 : 01 : 24, 489 so long headmistress , so long .
+232 01 : 01 : 27, 797 > 01 : 01 : 29, 526 alice .
+233 01 : 01 : 35, 285 > 01 : 01 : 38, 710 what are you doing here ?
+today is not your turn .
+234 01 : 01 : 38, 900 > 01 : 01 : 41, 553 i want to practise with mademoiselle eva .
+235 01 : 01 : 42, 110 > 01 : 01 : 43, 190 good one .
+236 01 : 01 : 43, 786 > 01 : 01 : 46, 165 she asked me to come .
+237 01 : 01 : 46, 570 > 01 : 01 : 49, 271 why do you want so much to be chosen ?
+238 01 : 01 : 56, 083 > 01 : 01 : 58, 772 do you want to distance yourself from the others ?
+239 01 : 02 : 00, 728 > 01 : 02 : 02, 844 aren' t you happy here ?
+240 01 : 02 : 03, 002 > 01 : 02 : 06, 281 i am , but i would like to make sure that they like me .
+241 01 : 02 : 07, 565 > 01 : 02 : 11, 780 you know alice , i don' t believe that they will choose you .
+242 01 : 02 : 21, 977 > 01 : 02 : 25, 980 and what do you know you disabled species !
+243 01 : 02 : 52, 105 > 01 : 02 : 55, 606 you shouldn' t have discouraged alice like that .
+244 01 : 03 : 02, 187 > 01 : 03 : 05, 569 anyway , she doesn' t know what it means to be chosen .
+245 01 : 03 : 06, 135 > 01 : 03 : 07, 682 and what do you know about it ?
+246 01 : 03 : 09, 772 > 01 : 03 : 12, 360 if they disappoint her , she will suffer .
+247 01 : 03 : 14, 539 > 01 : 03 : 16, 800 she will learn .
+248 01 : 03 : 18, 847 > 01 : 03 : 21, 209 learn what ?
+249 01 : 03 : 26, 581 > 01 : 03 : 29, 339 i don' t believe she will become like us .
+250 01 : 03 : 32, 928 > 01 : 03 : 35, 373 what do you mean by " like us " ?
+251 01 : 04 : 02, 528 > 01 : 04 : 05, 398 hurry , we' re only waiting for you .
+252 01 : 06 : 07, 721 > 01 : 06 : 09, 427 here you are .
+253 01 : 06 : 10, 213 > 01 : 06 : 14, 295 raise your chin .
+turn .
+254 01 : 06 : 15, 733 > 01 : 06 : 19, 776 very good .
+now give me a beautiful smile .
+255 01 : 06 : 21, 464 > 01 : 06 : 23, 002 are you coming ?
+256 01 : 06 : 26, 677 > 01 : 06 : 30, 119 turn .
+stay like this , please .
+257 01 : 06 : 30, 576 > 01 : 06 : 32, 856 take a look at the nape of the neck .
+258 01 : 06 : 34, 180 > 01 : 06 : 36, 995 very well on the feet , very well .
+259 01 : 06 : 38, 616 > 01 : 06 : 40, 061 thanks .
+260 01 : 06 : 40, 477 > 01 : 06 : 42, 007 are you coming ?
+261 01 : 06 : 43, 455 > 01 : 06 : 45, 031 don' t be scared .
+262 01 : 06 : 45, 151 > 01 : 06 : 48, 910 what is that ball ?
+push it a little back .
+263 01 : 06 : 51, 417 > 01 : 06 : 54, 128 thanks .
+the profile .
+264 01 : 06 : 54, 934 > 01 : 06 : 57, 871 stand on your toes .
+stay like that .
+265 01 : 06 : 58, 177 > 01 : 07 : 00, 438 very well , thanks .
+266 01 : 07 : 01, 513 > 01 : 07 : 03, 044 coming ?
+267 01 : 07 : 03, 454 > 01 : 07 : 07, 940 are we bashful ?
+of course we are not .
+we are very beautiful .
+see .
+268 01 : 07 : 08, 968 > 01 : 07 : 11, 037 the profile .
+269 01 : 07 : 11, 303 > 01 : 07 : 14, 179 wait a second i want to see something .
+270 01 : 07 : 15, 339 > 01 : 07 : 17, 032 a little short .
+271 01 : 07 : 17, 736 > 01 : 07 : 19, 597 turn .
+272 01 : 07 : 21, 743 > 01 : 07 : 24, 679 stay like that , i need to see something .
+273 01 : 07 : 25, 294 > 01 : 07 : 28, 247 wait , do not move .
+step on your toes .
+274 01 : 07 : 28, 478 > 01 : 07 : 32, 286 wait , wait , wait , wait a little more .
+275 01 : 07 : 32, 505 > 01 : 07 : 34, 948 now you can descend .
+thanks .
+276 01 : 07 : 35, 421 > 01 : 07 : 36, 978 are you coming ?
+277 01 : 07 : 38, 309 > 01 : 07 : 40, 103 let' s see .
+278 01 : 07 : 40, 275 > 01 : 07 : 43, 770 look at her face .
+raise the chin .
+279 01 : 07 : 45, 054 > 01 : 07 : 46, 588 very well .
+280 01 : 07 : 47, 114 > 01 : 07 : 50, 416 what a pretty nape of the neck , very pretty .
+look .
+281 01 : 07 : 51, 586 > 01 : 07 : 54, 178 very pretty .
+turn .
+282 01 : 07 : 59, 329 > 01 : 08 : 02, 348 she is very pretty , isn' t she ?
+283 01 : 08 : 05, 987 > 01 : 08 : 07, 539 you .
+284 01 : 08 : 15, 859 > 01 : 08 : 18, 031 give me your hand .
+285 01 : 08 : 20, 796 > 01 : 08 : 22, 980 now the other hand .
+286 01 : 08 : 24, 594 > 01 : 08 : 26, 787 show me your teeth .
+287 01 : 08 : 37, 046 > 01 : 08 : 41, 396 this one .
+this one ?
+sorry .
+288 01 : 08 : 45, 025 > 01 : 08 : 48, 769 congratulations , you worked well with the students .
+289 01 : 08 : 55, 801 > 01 : 08 : 57, 499 alice .
+290 01 : 08 : 59, 969 > 01 : 09 : 02, 198 lady , take me .
+291 01 : 09 : 02, 292 > 01 : 09 : 03, 941 alice !
+292 01 : 09 : 04, 284 > 01 : 09 : 06, 579 you said that i will be the chosen one .
+293 01 : 09 : 06, 795 > 01 : 09 : 09, 538 i never said that .
+294 01 : 09 : 30, 566 > 01 : 09 : 32, 356 it she going to die ?
+295 01 : 11 : 57, 495 > 01 : 11 : 59, 153 where are you going ?
+296 01 : 14 : 10, 962 > 01 : 14 : 13, 646 we cannot find her .
+297 01 : 14 : 26, 609 > 01 : 14 : 29, 250 alice did a very big mistake .
+298 01 : 14 : 31, 518 > 01 : 14 : 34, 121 we will never see her again .
+299 01 : 14 : 35, 052 > 01 : 14 : 37, 724 and we will never speak about her again .
+300 01 : 15 : 23, 273 > 01 : 15 : 24, 979 now you know how the transformation looks like .
+301 01 : 15 : 25, 552 > 01 : 15 : 29, 126 first one occurs at the age of 7 , when they lose the milk teeth .
+302 01 : 15 : 29, 830 > 01 : 15 : 31, 909 the second one will happen any moment .
+303 01 : 15 : 32, 016 > 01 : 15 : 35, 140 this time the entire body will transform .
+304 01 : 15 : 35, 451 > 01 : 15 : 39, 526 from now on , every month , they will lose a little blood .
+305 01 : 16 : 03, 949 > 01 : 16 : 08, 071 now it must find a companion to assure its descendants .
+306 01 : 16 : 31, 384 > 01 : 16 : 33, 868 hurry , we musn' t be late .
+307 01 : 16 : 34, 987 > 01 : 16 : 36, 797 i am coming .
+308 01 : 17 : 28, 849 > 01 : 17 : 31, 701 rose , today you will be in charge of the others .
+309 01 : 17 : 32, 458 > 01 : 17 : 34, 100 ok .
+why ?
+310 01 : 17 : 35, 218 > 01 : 17 : 37, 728 because i am goin with bianca .
+but that is prohibited .
+311 01 : 17 : 38, 185 > 01 : 17 : 42, 271 as of today she has permission .
+are you coming ?
+312 01 : 17 : 55, 061 > 01 : 17 : 59, 199 and why her ?
+someday you will take her place .
+313 01 : 18 : 29, 194 > 01 : 18 : 31, 984 good afternoon , young ladies .
+good afternoon , miss .
+314 01 : 18 : 32, 366 > 01 : 18 : 34, 484 welcome , nadja .
+315 01 : 18 : 35, 783 > 01 : 18 : 38, 399 you are going to see that everything will be fine .
+316 01 : 18 : 40, 807 > 01 : 18 : 43, 004 good afternoon , nadja .
+good afternoon , miss .
+317 01 : 18 : 43, 836 > 01 : 18 : 45, 503 let' s go .
+318 01 : 19 : 43, 149 > 01 : 19 : 46, 170 what is that ?
+those are your clothes .
+319 01 : 19 : 48, 254 > 01 : 19 : 51, 330 why are there only four ?
+you will see .
+320 01 : 19 : 53, 925 > 01 : 19 : 56, 096 leave us alone .
+321 01 : 20 : 01, 558 > 01 : 20 : 04, 171 repeat it all before the audience .
+322 01 : 20 : 24, 037 > 01 : 20 : 26, 956 step up , step on the chair .
+323 01 : 20 : 34, 951 > 01 : 20 : 38, 006 you will have to take care of legs , nadja .
+324 01 : 20 : 41, 547 > 01 : 20 : 43, 163 ok .
+325 01 : 20 : 46, 729 > 01 : 20 : 48, 502 young ladies .
+326 01 : 20 : 56, 687 > 01 : 20 : 58, 783 here is where we dance .
+327 01 : 21 : 00, 648 > 01 : 21 : 02, 783 repeat .
+328 01 : 21 : 07, 534 > 01 : 21 : 09, 438 very well , nadja .
+329 01 : 21 : 12, 877 > 01 : 21 : 15, 879 continue , continue .
+330 01 : 21 : 26, 946 > 01 : 21 : 28, 899 continue , nadja .
+331 01 : 21 : 35, 498 > 01 : 21 : 37, 590 what is that noise ?
+332 01 : 21 : 38, 296 > 01 : 21 : 41, 518 it is absolutely prohibited to draw the curtains .
+333 01 : 21 : 41, 832 > 01 : 21 : 44, 511 what is on the other side ?
+the spectators .
+334 01 : 21 : 45, 742 > 01 : 21 : 48, 072 the spectators ?
+335 01 : 21 : 55, 718 > 01 : 21 : 57, 781 where are you going ?
+336 01 : 21 : 58, 528 > 01 : 22 : 01, 736 leave me alone .
+calm down .
+337 01 : 22 : 03, 043 > 01 : 22 : 06, 678 nadja , don' t be scared .
+338 01 : 22 : 07, 982 > 01 : 22 : 12, 198 when the curtains will unveil you will not see them .
+339 01 : 22 : 12, 668 > 01 : 22 : 14, 329 ok ?
+340 01 : 22 : 16, 447 > 01 : 22 : 19, 563 let' s go to the classroom .
+bianca , take care of her .
+341 01 : 22 : 33, 699 > 01 : 22 : 37, 041 you are going to see , they always applaud us .
+342 01 : 25 : 25, 408 > 01 : 25 : 27, 640 what is wrong ?
+343 01 : 25 : 29, 555 > 01 : 25 : 32, 074 i cannot return .
+344 01 : 25 : 39, 421 > 01 : 25 : 42, 732 next time you will be less scared .
+345 01 : 25 : 44, 504 > 01 : 25 : 46, 936 i don' t want to return .
+346 01 : 25 : 50, 700 > 01 : 25 : 52, 952 you have no choice .
+347 01 : 26 : 27, 091 > 01 : 26 : 29, 787 good , this is all for today .
+348 01 : 26 : 34, 586 > 01 : 26 : 37, 807 i hope that you will be more concentrated tonight .
+349 01 : 26 : 42, 096 > 01 : 26 : 45, 744 bianca , come with me please .
+350 01 : 26 : 51, 553 > 01 : 26 : 53, 773 it is your turn .
+351 01 : 27 : 10, 208 > 01 : 27 : 14, 595 mademoiselle edith already told you about the bleedings that can occur .
+352 01 : 27 : 15, 113 > 01 : 27 : 18, 408 when it happens you will use these cloths .
+353 01 : 27 : 21, 842 > 01 : 27 : 25, 632 you know bianca , a complete new cycle will begin .
+354 01 : 27 : 28, 458 > 01 : 27 : 31, 494 you and other violet tapes are going to leave the school .
+355 01 : 27 : 34, 364 > 01 : 27 : 36, 963 and tonight you will dance for the last time .
+356 01 : 27 : 37, 242 > 01 : 27 : 39, 786 last time ?
+357 01 : 28 : 44, 387 > 01 : 28 : 48, 256 bravo , you are the most beautiful .
+358 01 : 30 : 43, 565 > 01 : 30 : 46, 341 i am very proud of you .
+thank you miss .
+359 01 : 30 : 50, 214 > 01 : 30 : 52, 166 did you all have a good time ?
+360 01 : 30 : 53, 392 > 01 : 30 : 55, 415 come , let' s go .
+361 01 : 31 : 38, 169 > 01 : 31 : 39, 835 come .
+362 01 : 32 : 03, 179 > 01 : 32 : 05, 264 bianca , come .
+363 01 : 32 : 37, 614 > 01 : 32 : 40, 012 what are you doing here ?
+364 01 : 32 : 42, 321 > 01 : 32 : 44, 797 what is that thing ?
+365 01 : 32 : 46, 255 > 01 : 32 : 49, 265 didn' t they find the money ?
+money ?
+366 01 : 32 : 51, 675 > 01 : 32 : 53, 837 look .
+367 01 : 33 : 02, 535 > 01 : 33 : 07, 166 do you think the guests will pay for the expenses of the school ?
+368 01 : 33 : 08, 795 > 01 : 33 : 11, 900 who else , if not them ?
+369 01 : 33 : 15, 417 > 01 : 33 : 17, 076 you ?
+370 01 : 33 : 17, 745 > 01 : 33 : 21, 879 i am sure that you will use your legs well when you leave the school .
+371 01 : 33 : 24, 123 > 01 : 33 : 26, 243 i do not want to go out .
+372 01 : 36 : 44, 348 > 01 : 36 : 46, 052 bianca .
+373 01 : 36 : 54, 296 > 01 : 36 : 57, 688 bianca , what are you doing there ?
+374 01 : 36 : 58, 252 > 01 : 37 : 00, 331 leave me alone .
+375 01 : 37 : 01, 678 > 01 : 37 : 04, 432 is it true that you are leaving ?
+376 01 : 37 : 11, 217 > 01 : 37 : 15, 640 i do not want you to go , i want you to stay with me forever .
+377 01 : 37 : 47, 945 > 01 : 37 : 49, 780 iris .
+378 01 : 37 : 54, 048 > 01 : 37 : 57, 300 iris .
+leave me alone .
+379 01 : 41 : 02, 597 > 01 : 41 : 04, 589 bianca .
+380 01 : 41 : 08, 393 > 01 : 41 : 10, 261 bianca .
+381 01 : 41 : 40, 640 > 01 : 41 : 42, 526 good bye .
+382 01 : 41 : 53, 276 > 01 : 41 : 55, 318 you won' t forget me ?
+383 01 : 41 : 55, 498 > 01 : 41 : 58, 061 no , and you ?
+never .
+384 01 : 41 : 58, 191 > 01 : 42 : 02, 243 will we see each other when you come out ?
+when i come out ?
+385 01 : 42 : 16, 827 > 01 : 42 : 19, 076 it is time , bianca .
+386 01 : 44 : 01, 707 > 01 : 44 : 03, 326 young ladies .
+387 01 : 44 : 22, 415 > 01 : 44 : 24, 576 let' s go , young ladies .
+388 01 : 45 : 23, 946 > 01 : 45 : 25, 898 come , let' s go .
+389 01 : 46 : 22, 663 > 01 : 46 : 24, 742 stand up , young ladies .
+390 01 : 47 : 23, 724 > 01 : 47 : 25, 716 headmistress 391 01 : 47 : 28, 067 > 01 : 47 : 30, 628 what is going to happen with us ?
+392 01 : 47 : 34, 119 > 01 : 47 : 38, 164 one thing is certain : you are going to forget us quickly .
+393 01 : 49 : 44, 809 > 01 : 49 : 46, 745 go .

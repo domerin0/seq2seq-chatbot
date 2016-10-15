@@ -1,0 +1,839 @@
+any comments , suggestions and bug reports regarding the subtitle .
+e mail to : geek@ geekbone . org
+i was at agenda 2000 and uh , one of the people who was there was craig mundie , who is some kind of high mucky muck at microsoft ,
+i think uh , vice president of consumer products or something like that .
+and uh , i hadn' t actually met him
+i , i , i , uh , bumped in to him in an , in an elevator ... in an elevator
+and uh , i looked at his badge and said , " oh , i see you work for microsoft .
+and he looked back to me and said , " oh , yeah and what do you do ?
+and i thought he seemed just a sort of a tad dismissive
+i mean , here' s the archetypal , you know , guy in a suit
+looking at a scruffy hacker
+and so i gave him the thousand yard stare and said ,
+i' m your worst nightmare .
+wonderview productions presents
+a j. t. s. moore fllm
+revolutlon os
+for most its short , but colorful history , the computer industry has been dominated by the windows operating system .
+but that could soon change , as windows faces a strong challenge from linux
+silicon valley has long been the place to develop new technology , start new companies and get really rich .
+now the valley is the front line in a revolution fighting for that most politically incorrect of ideas : individual freedom
+day and night , a loose confederation of hackers and programmers zaps bits pieces of computer code around the world as it builds the tools to set computer users free using open information and the free exchange of technology to achieve its goals .
+this revolution began in the 1980' s with the free software movement and gnu project .
+and now is most commonly associated with linux and the open source movement .
+what is linux ?
+we do have one sector that taking off today .
+it is the linux related sector .
+and i thought this might be a good opportunity to say ,
+what is linux ?
+and i' il answer this question for you .
+many of you probably already know , but there are 12 million users out there
+a computer operating system developed by hundreds of programmers collaborating on the internet
+a challenge to microsoft windows nt
+very popular for its speed and so this' s what the craze is about
+to kind of explain what linux is you have to explain what an operating system is
+and ... the thing about operating system is you , i mean ... you' re never ever supposed to see it .
+because ... nobody really uses an operating system , people use ... programs ... on their computer
+and the only mission in life of an operating system is to help those programs run .
+so an operating system never does anything on its own
+it' s only waiting for the programs to ask for certain resources or , or , ask for a certain file on the disk or ask for the programs to connect them to the outside world .
+and then the operating system comes , steps in and then tries to make it easy for people to write programs
+and , what is open source ?
+open source is a way for people to collaborate on software without being encumbered by all of the problems of intellectual property , having to negotiate contracts every time you buy a piece of software , have a lot of lawyers involved .
+in general , we just wanna get the software to work and we want be able to have people contribute fixes to that , etc ..
+so we sort of sacrifice some of the intellectual property rights and just let the whole world use the software
+before there could be linux
+there was richard stallman and the free software movement .
+they think of richard stallman as the ... great philosopher , right .
+and think of me as the engineer
+richard stallman is the founding father of the free software movement .
+through his efforts to build the gnu operating system .
+he created the legal , philosophical and technological foundation for the free software movement .
+without these contributions , it' s unlikely that linux and open source would have evolved in to their current forms today
+i joined the mlt artificial intelligence lab in 1971 ,
+i joined ... a thriving community of hackers , people who loved programming ,
+loved exploring the what they could do with computers .
+and they had developed a complete operating system , entirely written there .
+and i became one of the team , that continued to improve the operating system , adding new capabilities
+that was my job , and i loved it , we all loved it .
+that' s why we were doing it .
+and [ clears throat ] we called our system
+the incompatible time sharing system " which is an example of the playful spirit which defines a hacker .
+hackers are people who enjoy playful cleverness .
+well , it first started going wrong as the outside world started pressuring us to have passwords .
+we didn' t have any passwords on our computer .
+and the reason was that the hackers who' d originally designed the system realized that passwords were a way the administrators could control all the users .
+and they didn' t want to build tools you know , locks and keys for the administrators to control them , so they just didn' t do it .
+they left that out
+and we had the philosophy that whoever sitting at the computer should be able to do whatever he wants and somebody else who was there yesterday shouldn' t be controlling what you do today
+when they put passwords onto one of the machines at mlt
+i and bunch of other hackers didn' t like it ,
+i decided to try a subversive sort of hack .
+i figured out how to decode the passwords , so by looking at the database of encoded passwords
+i could figure out what each person would actually type to login
+and so i sent messages to people , saying ,
+hello ?
+i see that you' ve chosen the password mumble , whatever it was .
+how about if you do as i do just type enter for your password it' s much shorter , much easier to type " .
+and ... of course with this message i was implicitly telling them the security was really just a joke .
+anyway , but in addition i was letting them in on this hack .
+and eventually , a fifth of all the users on that computer joined me in using just enter as their passwords .
+how did that begin ?
+who began that ? ]
+it actually began with the start of computers because at that time software was just passed around between people
+and i think it was only like in the lates 70' s or early 80' s
+that people started really closing up their software ,
+and saying , " no , you can never get a look at the source code .
+you can' t change the software even if it' s necessary for you to fix it , for your own application
+and ... um , you can actually blame some of that on microsoft ,
+they are one of the real pioneers of the proprietary software model .
+in the mid 1970' s , a group of hackers and computer hobbyist in silicon valley formed the " homebrew computer club " .
+in the club january 31 , 1976 newsletter ,
+bill gates of the recently formed microsoft , wrote an open letter to the community where he made a point by point argument for the relatively new concept of proprietary software up to that point , the practice of computer users had been to freely pass around software with not much thought given to its ownership
+known as an open letter to hobbyists , bill gates writes ,
+to me the most critical thing in the hobby market right now is the lack of good software courses , books and software itself .
+without good software and an owner who understands programming ,
+a hobby computer is wasted .
+will quality software be written for the hobby market ?
+gates goes on to write , " the feedback we have gotten from the hundreds of people who say they are using baslc has all been positive .
+two surprising things are apparent , however .
+1 ) most of these " users " never bought baslc , and 2 ) the amount of royalties we have received from sales to hobbyists makes the time spent on of altair baslc worth less than 2 dollars an hour
+why is this ?
+as the majority of hobbyists must be aware , most of you steal your software .
+hardware must be paid for but software is something to share .
+who cares if the people who worked on it get paid ?
+is this fair ?
+one thing you don' t do by stealing software is get back at mlts for some problem you may have had
+mlts doesn' t make money selling software .
+one thing you do do is prevent good software from being written .
+who can afford to do professional work for nothing ?
+what hobbyist can put 3 man years into programming , finding all bugs , documenting his product and distribute it for free ?
+the fact is , no one besides us has invested a lot of money in hobby software .
+what about the guys who resell altair baslc ?
+aren' t they making money on hobby software ?
+yes , but those who have been reported to us may lose in the end .
+they are the ones who give hobbyists a bad name , and should be kicked out of any club meeting they show up at .
+i would appreciate letters from anyone who wants to pay up , or has a suggestion or comment .
+signed bill gates , general partner , micro soft .
+in the late 70' s and early 1980' s , richard stallman was doing artificial intelligence research and coding at the mlt artificial intelligence lab .
+richard had a number of negative experiences during that period which soured him on the whole idea of commercial software .
+uh ... some company wanted to work on and wanted to fix was locked up . and he couldn' t get the company that owned on the code to let him fix it even though it would have been to their advantage to do so .
+and that put me into a moral dilemma , you see ?
+because to get one of the modern computers of the day , which was the early 80' s , you would have to get a proprietory operating system .
+the developers of those systems didn' t share with other people ,
+instead they tried to control the users , dominate the users , restrict them .
+say , if to get the system , you have to sign a promise you won' t share with anybody else .
+and to me that was essentially a promise to be a bad person , to betray the rest of the world , cut myself off from society from a cooperating community .
+and i had already experienced what happened when other people did that to us , when they refused to share with us . because they had signed these contracts .
+and it hurt the whole lab , it kept us from doing useful things before .
+so i just wasn' t going to do that .
+i thought , " this is wrong !
+i am not going to live this way
+and from experiences like this he developed a profound hostility to the idea of intellectual property and software .
+he eventually acted this out by founding the free software foundation .
+i was an operating system developer .
+if i were to develop another operating system .
+and then as the author , encourage everyone to share it .
+say , everyone , " you come and get it , use this , form a new community
+not only could i gave myself a way to keep using computers without betraying other people , but i' d give it to everybody else , too .
+everybody would have a way out of that moral dilemma
+and so i realized this was what i had to do with my life .
+i actually began the project in january of 1984 .
+that' s when i resigned for my job at mlt to start developing the gnu operating system .
+now i should explain the name gnu is a hack .
+because it' s a recursive acronym .
+it stands for " gnu' s not unix " .
+you see so the " g " in " gnu " stands for " gnu " .
+and what the name means is
+i was developing a system that was like the unix operating system , but was not the unix operating system .
+this was a different system .
+we would have to write it completely from scratch because unix was proprietory .
+we were forbidden to share unix ,
+we couldn' t use unix .
+it was useless for a community .
+so we had to write a replacement for it .
+throughout the 1980s , as richard stallman was building the gnu project , computer scientists from the university of california at berkeley were developing their own free operating system .
+known as berkeley unix , or bsd , it was based upon the unix kernel which had been licensed from at& t.
+however , due to legal problems with at& t and fragmentation of the source code , hackers and other non institutional users were slow to adopt it
+well , unix consisted of a large number of separate programs that communicated with each other .
+so we just had to replace these programs one by one .
+so what i started doing was writing a replacement for one program , and then another , and then another , and then people started joining me , because i published an announcement inviting other people to join me to help write these programs .
+and uh ... and by around 1991 , we had replaced practically all of them .
+well ... we had to ... to have a complete system , you need to have a kernel , which is the program that allocates resources to all the other programs , you need a compiler , which translates a program from readable source code that programmers can understand into numbers , mysterious numbers that the computer can actually run . you need other programs that go with the compiler to help do this job . you need a debugger . you need a text editor . you need text formatters . you need mailers ... you need lots and lots of things .
+there are hundreds of programs in a unix like operating system .
+i saw stallman' s announcement .
+actually i met him in february of 1987 .
+he came to give a five day tutorial on emacs at our company .
+and during the day he would explain new ways to think about emacs and ways to extend it , enhance it , and to use the emacs source code uh , for better or worse .
+but in the evening , he was busily working on this compiler , and he had not yet released it to the public , so he was uh , being a little bit uh , careful about who , who got to see the source code .
+but i was very eager , and when he first announced it in june ,
+i downloaded it immediately .
+i , i played with it .
+i got some , some pointers from him .
+and when i sent the source code back to him , he was very , uh , actually amazed that how quickly i was able to ramp up on his technology .
+whenever we worked on something at stanford or in the university ,
+whenever we worked on something at stanford or in the university , we would get , mostly at the time we were working off machines from digital equipment or sun , mostly sun .
+whenever we would get a sun machine , the first thing we would do is we would spend literally days downloading gnu free software from the internet , building it and installing it on that sun machine .
+the crucial thing about gnu is that it' s free software .
+and free software refers not to price , but to freedom .
+so think of free speech , not free beer .
+the freedoms that i am talking about are the freedoms to make changes if you want to , or hire somebody else to make changes for you if you' re using a software for your business , to redistribute copies , to share with other people , and to make improvements and publish them so that other people can get the benefit of them , too .
+and those are the freedoms that distinguish free software from non free software .
+these are the freedoms that enable people to form a community .
+if you don' t have all these freedoms , you' re being divided and dominated by somebody .
+my first experience contributing to free software came in late 1989 , early 1990 .
+i was working as a graduate student at stanford university on computer aided design tools .
+one of the pieces i needed was a tool called a parser generator .
+well , the free software foundation under richard stallman created a great tool called " bison " .
+i needed a tool that worked with c++ .
+bison worked with c.
+i modified bison to create something called " bison++ " .
+and it' s a tremendous feeling of empowerment be able to take a piece of software that was available and create what you needed in a very short piece of time by modifying it .
+i put it back on the internet and i was amazed at the number of people that picked it up and started using it .
+in fact , i remember going to , uh job interviews ,
+i , at various times , considered just going out getting a job .
+and i' d gone to a job interview .
+and i was talking to one of the people , and i started asking them about what tools they used , and they said , " gee , we used bison++ ! " and i said , " oh , i am the author of bison++ !
+free software generally does have a copyright .
+it does have an owner .
+and it has a license .
+it is not public domain .
+if we put the software in the public domain , somebody else would be able to make a little bit of changes and turn that into a proprietory software package , which means that the users would be running our software , but they wouldn' t have freedom to cooperate and share .
+to prevent that , we use a technique called " copyleft " .
+the idea of copyleft is that it' s " copyright " flipped over .
+and what we do is , we say , this software is copyrighted and we , the authors give you permission to redistribute copies , we give you permission to change , we give you permission to add to it .
+but when you redistribute it , it has to be under these terms , no more and no less .
+so that whoever gets it from you also gets the freedom to cooperate with other people , if he wants to .
+and then , in this way everywhere the software goes , the freedom goes , too .
+and it becomes an inalienable right to cooperate with other people and form a community .
+well , copyleft being a general idea , in order to use it , you have to have specific example .
+the specific example we use for most gnu software packages is the gnu general public license , a particular document in legalese which accomplishes this job .
+a lot of other people use that same license , for example ,
+linus torvalds uses that license for linux as well .
+well , the license i use is the gnu general public license .
+that' s the one richard stallman wrote .
+and i think it is really astounding contribution .
+uh , it' s one of the few software licenses that was written from the standpoint of the community rather than from the standpoint of um , protecting a company or um , as is the case with mlt and bsd license performing the goals of a government grant program .
+uh , and the gpl is really unique in that .
+it' s not just a license .
+it' s a whole philosophy that ,
+i think , motivated the open source definition .
+i don' t hide that a lot of what i do came from stallman .
+a crucial step in the growth of gnu/ linux and the free software movement was the creation of businesses based upon the software and philosophy .
+grown zero for the beginning of the business phase was the electronics research lab at stanford university .
+known as erl , the lab was the place for the first gnu and linux business founder inspiration .
+so right here was where erl was .
+that would have been the entrance over there next to the uh , electrical engineering mccullough building .
+as you walk in , you come in , you walk down the hallway , down here .
+my office would have been about , about here . and then right across the hall , from that was michael tiemann' s office .
+michael tiemann took uh .. and started a company , cygnus software with the idea was to sell consulting and services around the gnu free software and , well michael' s done very well with cygnus .
+well uh , i spend a lot of time working out uh , how we were going to make money and in the original gnu manifesto which is the last chapter of the gnu emacs manual .
+stallman proposed a number of different possible ways to make money .
+from the beginning of the free software movement
+i had the idea that there' s room in it for business to be done .
+one of the advantages of free software is that , there' s a free market for any kind of service or support .
+so if you are using software in your business , and you want good support , you have a choice of people to go to for it , you have a choice of businesses ... that are in the business of providing you with support .
+so they are going to have to in general give you good support or you go to somebody else .
+with proprietory software , support is a monopoly , there is one company , typically , that has the source code and only they can give you support so typically , you are at the mercy of a monopoly .
+that' s the case , for example with microsoft .
+so no wonder the support is so bad .
+the benefits of free software were tremendous but the cost of supporting it internally uh , and made managers very very nervous and so the fundamental idea i had was if we can build a model that could deliver two to four times the support and uh , and uh , and hand holding capability that an internal engineer could provide .
+and we could do it at 1/ 2 to 1/ 4 of the cost that would meet the test of whether or not people would actually buy .
+and by about the fall of that year , we had all the things worked out about who needed on the technical team , what the terms the sale would be , what the key price point were , and we actually received our incorporation in nov of 1989 .
+one of the most difficult things in starting our company was actually finding a name for it .
+i explained this to one of my friends
+we' re having difficulty " and he returned an e mail message that basically just had a bunch of words with the name " gnu " in it .
+and " cygnus " was the one that looked least obnoxious and least obscene .
+i can say very clearly that cygnus was the first business that specialized in free software .
+cygnus supported free software , filled a very essential niche because we had this great software , you could get it for nothing but you couldn' t get support they made their money by charging for support .
+the gnu project started by building a toolkit , uh , basic development tools such as a c compiler , a debugger , a text editor , and uh , other necessary apparatus .
+and their intention was eventually to develop a kernel to sit underneath those and be the center of the operating system .
+by about 1990 they had successfully developed that toolkit , and it was in wide use on great many variants of unix .
+but there was still no free kernel .
+the kernel happened to be one of the last things we started to do and we had started it not long before .
+and that' s when linus torvalds came along .
+lin us " or " line us " ?
+what' s the exact , do you prefer the pronunciation ? um ..
+when i speak swedish it' s " lee nus " ; when i speak finnish it' s " leen ous " ; when i speak english it' s " line us " .
+and i really don' t care how people pronounce my name .
+but " linux " is always " linux " .
+he developed a kernel , and got it working faster than we got ours working , and got it to work very nicely and solidly .
+his kernel is called " linux " .
+the initial goal was my very personal goal to be able to run a similar environment on my computer that i had grown used to at , at the university computers .
+and i could not find anything that suited me for that .
+so having been doing computers for all my life basically .
+at that point i decided that i' il do my own .
+most of the inspiration early on came from , from sunos which was what um , i was using at the university at the time .
+university of helsinki in finland .
+from 1991 to about 1993 was really
+i guess the infancy period of linux .
+that was when it was still only alpha or beta quality ; it was relatively unstable .
+although , even then it was a good deal more stable than a lot of what are now called " production " operating systems .
+linus used the traditional tried and true method of writing one program that does the job , and he got it to work . quickly in fact faster than i would have thought was possible .
+the term for it is " monolithic " , which means that basically the os itself is one entity , indivisible .
+uh , while in the microkernel , the , the operating system kernel is actually uh , just a collection of servers that do different things and then they have a common protocol for doing communication between themselves .
+why ... why is it that he was able to kinda come in at the tail end so to speak ]
+well we actually started the gnu hurd not long before he started linux .
+and it happened though we chose a design that' s a very advanced design in terms of the power gives you but also turns out to be very hard to debug .
+we decided to divide up the kernel which traditionally had been one program , to divide it up into a lot of smaller programs that would send messages to each other asynchronously to , to communicate .
+the problem is that , that style of programming has a great deal of potential for bugs , which are often very hard to figure out because they depend on ... does this program send this message before or after this one sends that message ...
+and the result was : it took us years to get the thing to work .
+well there' s relationships to gnu on kind of multiple levels .
+one is just the philosophical level of thinking that
+making your source open is a good idea " .
+when linus developed the kernel he wasn' t doing it for the gnu project .
+he did it independently .
+and he released it independently and we didn' t know about it .
+but some of the people who did know about it decided to look for what else they could find to put together with that kernel to make a whole system .
+they looked around , and lo and behold everything they needed was already available .
+they looked around , and lo and behold everything they needed was already available .
+what good fortune ! " they thought .
+but actually there was no chance about it .
+they had found all the pieces of the gnu system which was missing just the kernel , so when they put all that together really they were fitting linux into the gap in the gnu system .
+but they didn' t know that .
+there' s a lot of these programs um , done by the free softwares foundation , and done by other people like linux .
+and there' s a symbiosis between linux and the programs that the programs run on linux and at the same time and they take the advantage of linux as a platform , while linux takes the advantage of the programs by just being able to use them .
+the main one is actually the gnu c compiler .
+which ...
+without a c compiler it would not have been possible to make linux or most of the open progress available .
+linux uses the gpl , and i agree with a kind of philosophy behind the gpl .
+that said the gpl itself is not a very pretty document which is probably just because no lawyerese can ever be very pretty .
+i' d been playing around with linux for actually
+late ' 92 or early ' 93 for about a year . before i decided that it was to the point where actually had everything that i needed to really replace a sun workstation .
+and i was looking for a way to have a unix workstation at home at the time we used sun sparc stations in the office at stanford .
+those machines cost us about 7, 000 dollars .
+now i desperately wanted a unix machine at home !
+there' s always a this thought you get as a graduate student
+gee ... if i could work at home !
+then i would be so much more productive ,
+i would graduate sooner because i would finish my thesis sooner
+well , well , is it true ?
+well , you can judge .
+you know most people end up spending a lot of their time becoming more productive so that they ever actually worked on their thesis they' d finish it in a day .
+it takes a while sometimes .
+so i decided that i wanted a unix machine at home .
+and i went out there i was able to use linux together with the pc .
+for about 2, 000 dollars , i put together a system .
+that was one and a half to two times faster than that 7, 000 dollars sun sparc station .
+it was absolutely amazing .
+i had one and a half to two times the speed , at a third to fourth the price .
+light bulbs went off .
+i knew there was an opportunity here .
+this was the chance to really do something better than what sun has done around open source and linux .
+i called it linux originally as working name .
+and that was just because " linus " and the " x " has to be there .
+it' s unix .
+it' s like a law .
+and ... what happened was that ...
+i initially thought that i can' t call it linux publicly , because it is just too egotistical .
+and that was before i had a big ego .
+right ?
+they thought they were taking a whole bunch of components putting them around linux
+so they ended up calling the whole thing " a linux system " and somehow that term caught on .
+and the result is there are now ten million people using this variant of the gnu system ... the gnu/ linux operating system .
+and most of them don' t know it .
+i mean what' s your thought on that ?
+i would say , justify or ... ]
+well , i think it' s justified but it is justified if you actually make gnu distribution of linux .
+the same way that i think that red hat linux is fine or suse linux , or debian linux .
+uh , because if you actually make your own distribution of linux
+you get to name the thing .
+but calling linux in general " gnu linux " i think , is just ridiculous .
+i got involved in fall ' 93 .
+because i was sent a copy of the first cd rom commercial linux distribution , which was called yggdrasi produced by adam richter .
+and i got a copy because ...
+i had been myself writing free software for a long time since the early 80' s .
+i was actually one of the early gnu contributors myself .
+and i was absolutely astonished ,
+i was completely astonished .
+because i' ve been a software engineer for nearly 15 years at that point .
+and according to all the rules i knew ... about controlling complexity , keeping a project group small , having closely managed objectives .
+linux should have been a disaster , and it wasn' t .
+instead , it was something wonderful , and i was determined to figure out how they were getting a way with that .
+in order for linux to grow beyond the world of the computer programmer
+it needed a use , an application that made it a must have technology
+that threshold was crossed with the development of a program that made complex websites possible
+that program is the apache web server .
+the killer app of linux was undoubtedly the apache web server .
+if you look at the history of linux , the adoption curve of linux and the adoption curve of the internet exactly track each other .
+1993 , which was when the apache web server project really got started , was also the beginnings of the popular isp explosion when the internet first became a mass market commodity and the idea of web based electronic commerce and , and mass communication became real .
+i think it was one of the first applications that caused people to go
+well , if i install linux .
+i get some tangible benefit from doing so , right ?
+i mean , clearly there were a lot of interesting applications on linux at , at the time , this being maybe two or three years ago , when the root thing really started to take off but there wasn' t a driving , you know , you could almost say business case for someone to use linux versus using nt until , i think , apache and a lot of the things that plugged into apache enhanced apache
+i mean , when you want to go out and build .. go out to build a server farm
+it was much more cost effective cost effective real dollar returns to build it on linux and apache than was to build it on ils and nt even if it meant that you have to spend a little bit of money to train your staff to learn how to use that or to find people who were knowledgeable .
+but the good news was that that knowledge wasn' t very expensive because there were all those college students out there who' d been using linux for a long time and were very familiar with it .
+if you look at the trend curves in web servers
+apache has steadily been gaining a market share ever since it' s up to something like 66 % now
+it' s steadily clobbered all of the closed source competition
+and that' s because it' s more reliable it' s more flexible , it' s more extensible
+it does what webmasters actually need and the combination of apache and linux found its way into a great many commercial shops .
+essentially , apache became the application that motivated internet service providers and e commerce companies to choose linux over microsoft' s windows .
+it would probably runs best on linux and on freebsd and the reason is the communities around those operating systems are also the communities that contribute the most back to apache , right ?
+and there were also the operating systems that internet service providers started using very heavily as well and internet service providers really liked apache because it allowed them to do a lot of different things that some of the commercial web servers didn' t such as the ability to host more than one web site on a single box , which clearly if you are an isp and you would have 40, 000 users and they all want their web site , is gonna be pretty important to you .
+one of the key factors in the growth of linux was the creation of companies that specialized in the distribution and support of the operating system itself
+among these companies , red hat software is the best known .
+red hat started as a product of marc ewing while he was working at ibm .
+he wanted a little better linux distribution he started playing around , found out he uh , he spent more time maintaining his linux distribution than he did uh , than he did working on his new project .
+so he uh , sort of started the distribution himself
+he met up with bob young , who at the time was running company called acc bookstore which was a mail order pc unix uh , catalog
+and bob kind of knew he wanted something , you know , more his own to market , rather than reselling other people' s products
+and he was fairly good at marketing , and ...
+mark knew he needed some marketing help because he was very good at the technical parts , so they kinda got together
+i started working with red hat in may of 1995 , basically right out of nc state . along with eric troan who , me and him combined make up employees # 4 and # 5 .
+we actually reported to work in an apartment that mark ewing used to live in
+we took it over as kind of the development part of red hat software and stayed that way till about november of 1995 when ... a toilet we had in the apartment kind of exploded , flooded our downstairs neighbor and she got little upset and ... the apartment folks found out we were running a business there instead of actually living there the same time
+so they decided to throw us out .
+so at that point , we had about a week to go find our first office , which we did and get ourselves moved in a hurry
+we started going in again ' 95 or so to the venture capital firms , asking , saying , there' s something happening here .
+there' s a great business opportunity , to build the next sun for open source .
+well , the venture capitalists looked at this and said
+gee , you are selling systems the software is free .
+this is kind of scary .
+we' re not sure that we want to put money in .
+and ... by the way , we funded other systems companies and it hasn' t really panned out .
+we are scared .
+i came to the us about 3 years ago , and the reason really was that i' d been spending
+like 6 or 7 years at helsinki university . and decide it was time to see the real world and not just university life .
+especially this area had a lot of the most interesting work being done .
+so i just decided that ...
+let' s try to move half way across the world , and give this a try .
+and it' s turned out pretty well .
+well , we saw it as temporary at first .
+and i think it' s certainly looking like it' s turning into long term .
+our youngest daughter is both us and finnish citizen , because she was born here and the older one is speaking both swedish and english , so ...
+the next major event was one that i had directed hand in .
+i wrote a paper , called " the cathedral & the bazaar " . which was my observations , my anthropological analysis of what it was that made the open source world work .
+we didn' t call it that then .
+we were still using the term " free software " primarily .
+so it was my observation of what made the free software world work and why we were able to produce extremely high quality software in spite of constantly violating all of the standard rules of software engineering
+in that paper , i was setting up a contrast between two different styles of development , two opposed styles of development .
+one , which is the conventional closed development style , which i called the " cathedral " style .
+in that one , you have tight specification of objectives .
+small project groups which are run in a fairly hierarchical authoritarian manner .
+and you have long release intervals
+on the other hand, what i identified is happening in the linux world was a much more peer to peer decentralized , market or bazaar like style , which has a very short release intervals and constant solicitation of feedback from people who are formally outside of the project .
+a very intense peer review process .
+and the startling thing was that the more i looked at this , the more it seemed that trading away all the supposed advantages of conventional closed development , for that one single advantage of massive independent peer review actually seemed to win , actually seemed to get you good results .
+the reason netscape is important is that they were the first large company to participate in open source .
+we had cygnus providing support , but we didn' t really have much business .
+and netscape went open source essentially as a way to fight microsoft , which was giving away internet explorer , but not letting anyone else have the source code , not letting companies collaborate .
+working as part of the sales force , i got a bit of ,
+i got a good idea of .. of why people bought our software and what it took to make our software successful in the marketplace against competitive products .
+however , the problem was , we were seeing , as that , as time went on , our software was uh , being competed against by other people' s software , particularly microsoft' s and as time went on , the price of our software had to drop because other people were giving their software away at no charge or at little charge .
+now the real problem was that they feared
+microsoft would achieve a monopoly lock on the browser market and they would then use that monopoly lock to pervert actually , the http and html standards that the web depends on .
+and once they had turned those standards in to lock in devices , they could then use that control to drive netscape out of the server market , which was where it was making its real money .
+my concern was that as time went on ,
+netscape' s business would be threatened , by the fact that we didn' t have enough people to do what we needed to do as a company in order to keep our software viable in the marketplace .
+the netscape release happened in early 1998 .
+and uh , i was told later , i had no idea at the time , that it came about as a direct result of the right people having read " the cathedral and the bazaar " .
+the cathedral and the bazaar " , the paper by eric raymond , was a significant influence on netscape' s decision to release source code .
+it came as a complete shock to me .
+i wasn' t really ready for the thought that i was changing the world even by accident .
+however he was not by any means the only influence on that decision .
+uh , and not necessarily the most important one , when all is said and done .
+as i said , netscape ,
+netscape had already been talking about releasing source code for quite some time before anyone ever heard of eric' s paper .
+linux congress in early 1997 , which was the first place that i gave that paper .
+and one of the people who heard it was tim o' reilly of o' reilly and associates .
+and uh , he thought it was pretty intriguing and he asked me to give it at his first perl conference , which was uh ..
+later that year , in fall of 97 .
+and apparently what happened , i was told later , although i had no idea that this was happening at the time , uh is that some people from netscape actually heard the paper at the perl conference and took those ideas back to netscape and they kind of lit a fire there .
+the role of my paper was essentially to make the internal case at netscape , uh to make the business case for why netscape should release its source code .
+the paper was called " netscape source code as netscape product " . uh .. a strange title , essentially what the title meant was that
+in my opinion we needed to think of source code not just as something that was used in creating our products , but as something that was a product in its own right .
+something that customers might use , other people might use .
+i then looked at what the business models might be if we released source code for our products .
+how would we license them ?
+how do we sell products in this environment ?
+then i looked at the competition , particularly microsoft .
+what would they be likely to do if we released source code ?
+was there some way they could use our source code against us ?
+i used eric' s paper as an example of how distributed development could work , how a company could develop software not just using their own people , but also working with people on the internet .
+and that' s why i included a reference to eric' s paper in my paper .
+once my paper was circulated , the people who read my paper would naturally enough find a reference to eric' s paper and read that as well .
+primarily the person who made the actual decision was jim barksdale .
+and this turned out to be important later .
+that our big win , the big score that gave us mainstream visibility and credibility with investors came not because of bottom up evangelism from a bunch of engineers , but because one strategist at the top saw the potential power of this method and then essentially imposed that vision on everyone underneath him .
+when i completed the paper , i first gave a copy to mark andreessen , who was co founder of netscape and was at the time one of , on the senior management team at netscape .
+mark then gave a copy of the paper to several other people within netscape management , including jim barksdale .
+i' m not sure exactly when jim and the other senior managers made the actual decision ,
+i believe it was in early january sometime .
+netscape actually announced that it was gonna release the source code on jan 22nd , the same time it was going to give communicator away for free .
+when netscape decided to release the source code , people sort of got a wake up notice and said
+hey , maybe there is something to this idea of releasing source code and doing development with people outside your company .
+so netscape' s decision brought a lot of public attention to the idea of free software , what became known as open source , and brought a lot of attention to the linux operating system , which was one of the most prominent examples of open source software at that time .
+this is our first office , mountain view , california .
+we moved here in early 1995 .
+this is 4, 000 square feet .
+it was an incredible leap of faith for us to move out and take the company to our own office .
+now what' s really important about this place is that this is the office where the term " open source " was invented .
+if you walk in to an executive' s office and say " free software " ,
+ok , if you' re lucky , the response you' il get is something like ,
+hmm , hmm , free software , must be cheap , shoddy , worthless .
+uh , and if you' re not lucky , it has associations with , uh .
+with the free software foundation' s wholesale attack on intellectual property rights , which regardless of what you think about the ethics of that , it' s lousy marketing , it' s not something that businesses want to hear .
+so eric raymond knew there was a problem .
+we' d been calling this free software , but people took the term " free " and associated with " free of charge " , they thought they couldn' t make money or couldn' t sell , which is exactly the wrong concept .
+we wanted to get across the idea the software was open and that the source code was available .
+very important pieces .
+we had this meeting at the va offices in mountain view , where eric , myself , and christine peterson from foresight institute joined us as well as some other people .
+christine peterson was there by phone . uh ..
+jon " mad dog " hall was also there by phone . uh ..
+and then todd anderson , who later worked for suse for a while was there .
+sam ockman who now runs penguin computing was there .
+he was uh ..
+he was an employee of va at the time
+well , we came up with the concept of open source , we called linus in fact and asked linus if he liked it .
+he was interested , he liked it .
+eventually we came up with something that replaced " free software " .
+that was the beginning of open source .
+you know , i think christine peterson was the person who really came up with the idea .
+uh , we wanted , again , the idea that the source code was out there and it was open .
+there weren' t many choices .
+well , since the fist three recipients have spoken for the open source movement ,
+i think i should speak about the free software movement .
+the open source movement , focuses on practical advantages that you can get by having a community of users who can cooperate on interchanging and improving software .
+i agree completely with the points they make about that .
+the reason why my views are different , while i am in the free software movement rather than the open source movement , is that i believe there' s something more important at stake .
+that freedom to cooperate with other people , freedom to have a community ... is important for our quality of life .
+it' s important for having a good society that we can live in .
+and that that is in my view , even more important than having powerful and reliable software .
+but i think some of the people in the free software camp ... are a little scared by the commercialization .
+and uh , you know , of course a rebel is put off by success . uh ..
+i think that commercialization is very important .
+we want to mainstream this software , and i work with richard stallman who' s the gray haired man of free software , uh , on a regular basis , and i don' t feel
+i have any philosophical differences . me as author the open source definition and he is originator of free software as an organized thing , except for one thing .
+richard thinks that all software should be free , and i think that free software and non free software should coexist .
+that' s the only difference we have .
+uh , we decided early on that what we needed , a .. a definition , we needed a kind of meta license to define the term " open source " . a , a definition , we needed a kind of meta license to define the term " open source " .
+and what we came up with is a document called " the open source definition " .
+it' s derived from the debian free software guidelines that were originally written by bruce parens .
+i' d written the original draft of that , uh , discussed it for a month with the debian developers
+debian is a linux distribution
+and made it their project policy
+and eric and i decided to relabel what we' d written for debian as the open source definition and to say open source is a software that gives you a list of nine rights which is in the open source definition .
+the first right is free redistribution
+this doesn' t mean free as in no price
+it means liberty
+um , you have to be free to redistribute your software to someone else
+and actually no price is a side effect
+you can charge for that redistribution or not
+it has to come with source code
+so that someone can maintain a program .
+if they go from a pc to a mac for example they can change the software .
+derived works have to be possible
+if someone has to improve your program um , they should be able to distribute the result uh , there is a provision about integrity of the author' s source code which says that the author can sort of maintain their honor and if you make a change you might have to change the name of the program or mark out your change very clearly so that your change doesn' t reflect on the author
+there is no discrimination against people or groups .
+uh , the example i usually use is
+you can' t stop an abortion clinic or an anti abortion activist from using the software
+there is no discrimination against fields of endeavor
+and that means the software has to be usable in a business as well as in a school
+the license has to be distributable
+in other words
+i have to be able to give that license to someone and that license then should work if that someone gives it to yet a third person
+the license can' t be specific to a product in other words if i distribute my software on a red hat system the license can' t say you can' t distribute this on a suse or debian system
+the license can' t contaminate other software
+so if i distribute this on a cd with another program
+it can' t say that other program must be free otherwise you can' t distribute my software
+and then the only other part of the open source definition is a list of licenses that were accepted
+and the ones that we started with were the gpl which was actually the example for a lot of what' s in the open source definition in the bsd license because software for bsd system pre existed linux
+i think the next moment that i thought was really pivotal was when the database vendors flipped over which happened about three months sooner than i expected to and actually happened in late july early august commitments to do one ports from oracle and and sybase and the other key database vendors .
+i thought that we were in a window of vulnerability between the time that we announced the open source campaign and the database vendors flipped over that was the point at which hostile action by microsoft or other close source software companies that was the point in which a serious marketing blitz might have sunk us but once the big database vendors flipped over that opened the way for other isvs that started the snow ball effect going
+every six months or so
+i would come back to the venture capitalists
+i would show them the new numbers showing more and more people adopting linux and new people porting , new users and i' d show them our customer list
+and our customer list was getting much more impressive
+it was people like cisco that were beginning to appear people like , you know , those dot com companies were started to show up on our customer list and eventually the venture capitalists you know , they kept looking at it they kept saying " oh , we can' t quite do it
+finally , linus appeared on the cover of fortune
+there was something happening with open source
+well , at that point , the venture capitalists couldn' t ignore it they just got sick of hearing about linux everywhere and they got tired of me , just , you know showing it to them every , at that point it was almost every week
+so they uh , they decided it was time to invest , that there was something happening
+i announced open source to the world on the internet
+i did a lot of the early ... administrative work of starting the open source initiative and i think six months later
+i was reading the words open source in the news all the time and was totally astounded
+and a year later , i believe
+microsoft was talking about releasing some source code
+and someone in the press asked steve ballmer if they were going to open source their code and steve ballmer said ,
+well , open source means more than just releasing the source code
+and i realized that he had read my document and understood it and was now telling the press about this
+now if you are like just a guy on the net who' s not doing this for a job at all and you sort of write a manifesto and it spreads out through the world and a year later the vice president of microsoft is talking about that
+you' d think you were on drugs , wouldn' t you ?
+but that' s what really happened
+the local users groups tend to be more than an issue of building a social network especially getting people familiarized with the issues also just acting as a kind of supporting network for people who , who do not , for example , have the ability to pay for commercial support network
+so one thing they' re doing in this area for example , is they' re making these .
+i think it' s once a month
+they' re having install fests , which means that people who have problems getting linux installed on their machines or have some issue , i mean maybe they' ve installed linux but want to set up the network in a specific way can actually bring in their machines to this users group meeting
+and there' s a lot of people there willing to help who may have seen the same problem before .
+well , actually things aren' t so well .
+i tried it earlier myself .
+i had problems .
+and so i came to this install fest where all the gurus abound .
+hopefully i' il have better luck getting it in .
+instead of having , uh , sending e mails , or writing to news groups on the internet and waiting several days for the answers sometimes it' s easy to come here and find other people who might know about your problem and may be able to help you
+and hopefully within a few hours you have your machine installed
+originally i wanted to it install on uh , my larger laptop and so i just did a search on the net and found where there were resources to get help
+and um , i' m here today cause i' m trying to put linux on this little guy right here . just a toshiba libretto
+it' s not a easiest thing in the world to do because it' s a weird piece of hardware , so ...
+any chairs around here ?
+i think that department of justice case has made people aware of the fact that you should at least look for alternatives to microsoft . and maybe microsoft isn' t the american dream after all and that kind of shifting perception you can very clearly see that people just took microsoft for granted and maybe they' re still buying microsoft but at least they' re kind of more aware of the issue these days
+microsoft actually uses linux as defense
+they used linux to ground a claim that they don' t have a monopoly because linux could essentially push them off their catbird seat at any time .
+it was a very ingenious argument , totally specious because it didn' t do anything to answer the charge that they had previously engaged in bullying and various anti competitive practices . but it was clever of them
+and , in an event , the judge didn' t buy it
+while ordinarily we in the linux community are rather worried about
+letting microsoft become the issue , but there was a slashdot article about december of ' 98 where a fellow named matt at the noodle had pointed out that ... the , a gentleman in australia has managed to receive a refund for the unused copy of windows that came with his computer .
+so he declared the 19th of january , was it january ? err , no , it was february .
+it was february .
+oh , i' m sorry , the 19th of february ... he declared 19th of february windows refund day . and he encouraged everyone to go to the computer manufacturers , and return their unused copies of windows ... as it was specified in the windows end user license agreement .
+it' s important to remember that in the license itself , it says that you can receive a refund if you don' t use the software , and that the manufacture is bound by law to do this ... or it was bond by contract . and we found if you called up these manufactures , they basically said ...
+stop bothering me kid . " and hung up on you .
+we didn' t really wanna sort of giving out our location , or where we were going to meet , until ... you know , the very last seconds .
+what we did is , we have people meet at the place where we could control in the different towns around here .
+so i was the san jose marshal , and i believe nick you were ...
+i was ... , rick moen and i did san francisco .
+right and so we had maps there and we handed them off everybody who was coming .
+well , we actually met at a denny' s that' s just outside the foster city limits ...
+foster city city limits , which meant also just outside of foster city police jurisdiction , which meant any , any incidents that happened at the meeting point happened in the jurisdiction of san mateo , and if they told us they get lost , we' d say , " fine , we are going to foster city .
+bye .
+it' s sort of the dukes of hazzard method of avoiding the cops , so ...
+well actually , originally we marched on the other side of this building .
+we marched around and up onto the parking structure that' s up there , and that' s where microsoft had a reception laid out for us with drinks and a big sign that said ...
+microsoft welcomes the open source community " . and the local news cameras got shots of eric raymond and microsoft representative .
+microsoft' s story seems to mostly be that ... ... this was not an issue for microsoft , rather from the oems .
+so we all needed to go back to our computer manufacturers and try yet again to try and get refund from them .
+we responded to them saying , you know , that we tried that and it' s not possible , we need microsoft to take action at this point .
+and they just repeated the tag line over and over again ...
+you need to go to the oems and manufacturers and get your refunds there .
+we had about 150 people , probably half of which had signs and such , so ..
+well , we ended up actually right in this courtyard here .
+basically we originally met , gathered outside , various people sent groups in , people from freebsd camp sent a couple of folks in .
+we had eric raymond and chris actually tried to go up eventually .
+they had blocked the elevator off to us .
+the offices are right up here on the 9th floor .
+we got some really nice press out of it . and we think as a result
+toshiba made it possible for you to buy laptop without the operating system on it .
+so , it' s a small victory , but ...
+well , even now , companies such as ibm and ... a lot of other computer manufacturers are allowing you ... now to buy machines that don' t have windows on them .
+when i was a kid and i went to school , the teachers were trying to teach us to share .
+they said if you bring some candy , you can' t eat it all yourself , you gotta share with other kids .
+but now the administration says teachers should be teaching kids to say yes to licensing .
+if you bring some software to school , " oh !
+no , don' t share it ... ... sharing means you' re pirate , sharing means you' il be put in jail .
+that' s not the way society should work .
+we need the good will , the willingness to help other people at least when it' s not too hard , because that' s the basis of society , that' s the fundamental resource ,
+that gives us a society instead of a dog eat dog jungle .
+will not ... ]
+well , they were on both counts .
+for one thing , people are making a profit from developing free software , but for another , the freedom to have a community is more important .
+well , because you are supposed to share and do it for people' s good will ,
+doesn' t that seem someone communist .
+what' s your response ? ]
+absolutely nonsense , it makes me really angry when people do that .
+well , back in , back in 1989 , actually communism would have been a compliment . the word people were using at that time was " crazy " , and i want them to use capitalism .
+communism is an ideology that forces people to share .
+if you don' t share , you get thrown in jail or killed .
+in 1990 , we got a visit from a director of an institute in uh , moscow university , and actually i saw him in helsinki just 2 weeks ago , but in any event , he came by , and richard stallman had suggested that he visit cygnus , because he was interested in and understanding how the free software model ... might apply to stimulating entrepreneurial innovation in russia of all places , and we had been kind of secretive about our business plan , because you know , we were' nt really sure it' s gonna work , we didn' t want to look too stupid if it failed .
+but i was very very open with him .
+the more i told him , the more he started to shake his head like this , and i finally said , you know , " what' s wrong ?
+and he said , " this sounds to much like communism to be successful in russia .
+you got to go a gulag and end up in a mass grave with a bullet in the back of your head .
+open source is not communism because it does' nt force people .
+carl marx did not invent helping your neighbor .
+it' s not communist to have a commons ,
+a commons existed long before communism as a philosophy of government . there are many commons in our lives ,
+for example , we drive on the highway , something that is maintained for our common good .
+actually labeling our business model ... means that it misses the point a little bit . whether it' s communist , or whether it' s capitalist , the label doesn' t matter , the real question is , how much value can you deliver , how scalable is the business , what kind of problems , what kind of of rate of innovation can you sustain . and then , however you want to label that , it' s really up to you .
+the revolution goes prime time .
+a lot of people described , that august linuxworld as " linux' s coming out party " ,
+linus torvalds was very funny about this , he said , " what ?
+was linux gay ?
+but some people said " yeah , that was our debutante ball .
+that was when the ...
+linux gods , and the hardware hackers really got it together with the suits .
+at 3pm on august 10th 1999 ,
+linus torvalds delivered the keynote address at linuxworld .
+the crowds of 6000 people began lining up at 12 noon .
+ladies and gentlemen , please welcome larry augustin ...
+linuxworld conference chair and president and ceo of va linux systems .
+these guys have to clap , i pay them .
+thank you all for being here , looks like it' s been a great show so far .
+if you' il indulge me for a moment , i' m going to try to avoid the glare of the lights .
+i still think there' s lots of people , even though this is the 2nd show ,
+i still think there' s lots of people who don' t quite get ... ... what it is that' s so exciting about linux .
+so there is a great show going on next door , there' s huge exhibits and everything , but it' s the people out here that are real contributors , not those companies .
+the person on next i know you all know , so i don' t have to give anything in the way as introduction .
+ladies and gentlemen , i give you , linus torvalds .
+linus
+thanks .
+calm down .
+calm down .
+say " oooo " . yes .
+i don' t want to just give one of my normal talks , because i find them boring , probably by now most of you find them boring too because you' ve heard them like 10 times .
+but after the technical updates , we will actually try ... ... whether we can do a question and answer session with 5, 000 people , or how many of you there are there . and it may not actually work out , because one of the 5, 000 people is really loud .
+the one thing i will do , which i always do in all my talks is the gratitude thing ,
+i want to kind of acknowledge the fact that ... ... i' m obviously not been alone in doing linux .
+on august 11 , 1999
+red hat software became the first linux company to go public .
+red hat , up 228 % this is the ipo that everybody was waiting for .
+they of course are behind the linux operating software .
+r h a t , i know
+all i' ve gotten today , are comments about what the stock price is , all morning , you know it was at 41 , it was at 42 , it was at 47 , it was at 53 , it was at 51 ...
+every machine as far as i can tell on the show floor is pointed to their e trade accounts or their broker accounts , they know the red hat' s price
+i can' t believe this .
+47
+i just heard 53 .
+oh , boy .
+hang on , i didn' t buy it .
+you didn' t buy ?
+no , no , i didn' t buy .
+i should' ve bought , but uh ...
+no no , that' s great .
+if it' s ... if it' s ....
+you guys don' t know ?
+well , you know
+red hat being successful as just means that
+it legitimizes linux so it' s much easier for us to go out
+rob malda ... on the red hat ipo
+it' s kind of been a little bit divided .
+you' ve got a lot of people that are pretty hardcore and
+and they' re kind of offended by that you know , cause they work really hard , they are not really getting ... maybe they fair share out of that .
+some people do get ticked . and you know the thing that you see that on a lot of mailing lists or on slashdot you' il read , you know
+this guy is really mad because he didn' t get chance to , he' s didn' t get a chance to do ... to get stock from red hat
+he didn' t get a chance to get ... to get a job from this other company , you know .
+but the , the kind of the shocking secret there is that ,
+most the really hardcore guys , you know , they don' t care so much .
+the guys that are kind of really down in trenches .
+they' re writing this code because they need this code .
+if we could invite richard stallman who' s the founder of the free software association and tim ney , who' s the managing director .
+there we go .
+hahahahaha
+ah , here it is .
+now , richard , i saw you playing your recorder at , in paris at that linux conference
+but i didn' t have audio tracks .
+so would you them to add audio to their , uh ...
+video downstream next time
+uh .. i don' t have any control over that unfortunately those things can only be done with non free software .
+we' il give you the award , and before you say a word , we' il have a tim and yourself hold up a little representation of the contribution towards the free software association .
+so , very ironic things have happened , but nothing to match this
+giving the linus tovarlds award to the free software foundation is sort of like giving the han solo award to the rebel fleet .
+you see , some of you may not realize how far that analogy goes .
+but actually let me tell you how this , how we got here . see what happened is , 15 years ago , if you wanted to use a computer , the only way you could do it was to , was with proprietary software , software that divides and subjugates the users .
+and most people just ...
+a lot of people didn' t like it .
+but they saw no alternative .
+but some of us were determined to make an alternative .
+and we said we' re gonna develop a free operating system , a free software operating system that will give users the chance to have freedom while they use their computers .
+now a lot of people said , " well , it' s a nice idea but it' s so hard , you' il never get it done , so i don' t wanna participate , i don' t believe you can ever get it done .
+but luckily not everybody said that .
+and clearly , we knew we would eventually get the kernel done .
+but as it happens . somebody else did a better kernel before we did .
+now in the old days , we had an overall strategy from calling people' s attention to the importance of freedom
+to the freedom they can have , or not have , when they use a computer .
+well what can we do about it ?
+as far as i can tell , the only workable way of trying to change this make that strategy work again is to , spread the word that the operating system you' re using is actually the gnu system .
+somewhat modified of course .
+and when people know this , they' il take a look at the reasons we developed this system .
+they' il think about these issues .
+and some of them will decide they agree .
+so i ask people , please tell the people this is the gnu system .
+it' s the combination of gnu and linux so we can call it gnu/ linux
+no [ all kidding aside . ]
+no i had no idea honestly [ what did you think you would be when you were finished up with your ph. d ? ]
+you know that' s a good question ,
+i really didn' t have a good idea , i mean .
+here we are , on this huge show floor .
+there are people just going crazy about linux .
+we had 6, 200 people crammed into a room to see the linux , linus speak last night .
+here we are , with , you know , all of these huge venders all over the show .
+i .. it' s , just , you have no idea that this is gonna happen .
+i mean this is just this little operating system that we' re happy with . that a few people cared about , you know ,
+i thought i' d have a nice little consulting business .
+and here i am suddenly , with all of this huge show going on .
+it' s just incredible .
+i mean , a year ago , you could look and say , you know , this is gonna be big and everyone standing at the show going
+you know the show was big last year , is it gonna , is it gonna be as big as this year ?
+the you remind them
+you know , last year was only 6 month ago .
+and then they go " oh , , linux time " .
+so leading up to the ipo , uh ... we had arrived actually in san diego on tuesday night
+we spent wednesday morning meeting investors in san diego .
+we flew up to san francisco spent wednesday afternoon meeting investment firms in san francisco
+va linux selected december 9 , 1999 , as the day for its stock to begin trading . then on the thursday morning of the ipo is when our stock would be traded publically .
+so it was nice we had ended the tour in san francisco because we could go to the credit suite' s trading desk the next morning to watch the public offering .
+and in san francisco being close enough to the company , and to our families , we could invite people up to actually join us in the first trade .
+so i invited my wife and we invited linus and tove , and a number of other friends and people who worked in the company in to join us .
+whenever we invite linus and tove , they have uh , two young children , and i have a daughter , andrea .
+and we always bring the kids along so we went in to the credit suite' s trading floor with all these traders and there are these 3 year old kids running around and chasing each other around the show floor , around the trading floor .
+so linus and i walked in and we walked up in to the trading floor and everyone was very excited .
+and we kept asking them , well " hows it going ?
+are things going ok ? " .
+and they said , " oh , it' s .. uh , we' re really excited ,
+i think things are going well .
+we don' t wanna , we don' t wanna say , we don' t wanna jinx anything .
+we walked in and it was a big screen tv showing cnbc .
+and it was amazing to us , but the theme for the day was linux .
+now we have an ipo that' s gonna go today .
+and when i mean go , it is going to go .
+the estimates i' m hearing are staggering .
+but watch va linux systems .
+it goes at 12 : 40 today .
+the symbol is l n u x.
+a provider of large scale computer servers and workstations , specially designed for the linux operating system .
+the original range on this ipo was 11 to 13 dollars , then 21 to 23 , then 28 to 30 .
+priced at 30 , and the estimates i' m hearing i don' t wanna repeat because i don' t have a confirmation .
+but if they' re true , they will blow you' re mind when this stock takes off at 12 : 40 .
+i turned to linus and i said " gee , did you ever think , you know , you' d walk in here some day and linux would be the theme on cnbc ? " . and linus said in his joking way said " oh absolutely ! " .
+so we walk in and they show us the buy and sell orders coming in .. and it' s incredible .
+we' re seeing numbers like 320 dollars , 340 dollars a share .
+and i' m just in complete shock .
+you know , this is over 10 times where we priced the offering .
+it was incredible .
+and i remember linus just kind of , sort of patting me on the back and saying , you know " relax ... " and it was pretty exciting to see that .
+we were , it was just amazing .
+we were stunned .
+we were lucky that we were able to get back to the offices , we' d been in san francisco so we could come back to va' s offices to , to see everyone in the office for the ipo .
+when we got back , we had uh , everyone was obviously very excited .
+the ipo had done just tremendously well .
+we had a little party that we put together .
+it was interesting , while we were celebrating there were plenty of people that were still trying to work .
+i recall cries of " be quiet ! " , " we' re on the phone ! " , " we' re working ! " ,
+uh , as we uh , as we went in to the offices .
+one of the things i did was i gave the road show presentation for the employees back at the office , so they could have an idea of what we' d been telling investors , and understand exactly what we' d uh , put together for them .
+but again the story of the day is va linux , now up 766 % to 235 dollars to 265 .
+sue , the best performing ipo ever .
+here it goes , sycamore networks was uh , priced at 38 dollars , surged to $270 .
+this has just beat it .
+and by the way ..
+so , if i hadn' t made linux available , i mean ,
+i wouldn' t have gotten any money that way either .
+so i mean , it' s a win win situation .
+uh , just the fact that there are a lot of commercial companies means that there are a lot of linux people who used to work on linux kind of on the side .
+and now they get paid for doing what they wanted to do .
+and that helps me in the sense that i wanted them to work on linux anyway .
+the whole gnu project is really one big hack .
+it' s one big act of subversive playful cleverness , to change society for the better , because i' m only interested in changing it for the better , but in a clever way .
+hi , we' re the gnu/ stallmans , and this is " the free software song
+join us now and share the software ;
+you' il be free , hackers , you' il be free .
+you' il be free , hackers , you' il be free .
+hoarders may get piles of money ,
+that is true , hackers , that is true .
+but they cannot help their neighbors ;
+that' s ain' t good , hackers , that' s ain' t good .
+when we have enough free software
+at our call , hackers , at our call ,
+we' il throw out those dirty licenses
+ever more , hackers , ever more .
+join us now and share the software ;
+you' il be free , hackers , you' il be free .
+join us now and share the software ;
+you' il be free , hackers , you' il be free .
+oh , you' il be free
+i let you know .
+that you' il be free .
+i let you know
+that you' il be free .
+that you' il be free .

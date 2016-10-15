@@ -1,0 +1,904 @@
+all patrolling air units .
+a 208 is in progress in the c 13 district of newport city .
+airspace over this area will be closed .
+all patrolling air units .
+a 208 is in progress in the c 13 district of newport city .
+airspace over this area will be closed .
+all patrolling air units .
+a 208 is in progress in the c 13 district of newport city
+there s no need .
+sir , our country is quite capable of covering the strikes .
+that s why you need me , right ?
+that depends on how you look at it .
+at any rate , any program has its bugs ,  and i would think that a man of your capability could cure our problem .
+you don t understand .
+we aren t even sure that project 2501 really is a bug .
+originally , the purpose of this project was to
+kusanagi .
+section 6 is in position and ready to move in . major , are you there ? yeah , i heard you .
+i m surprised you can hear anything .
+what s with all that noise in your brain today ?
+must be a loose wire .
+don t you think this is going to be trouble later if section 9 interferes with section 6 ?
+if section 6 manages to catch the bastard , then all they can really do about it is deporting him .
+don t forget we re section 9 , we il clean it up .
+we re the ones who get our hands dirty .
+it s time now .
+let s move to the rendezvous point .
+what ?
+the police here ? huh ?
+stop it !
+who told you to fire ?
+put your guns down now !
+freeze !
+get your hands off !
+i m entitled to diplomatic immunity !
+i want to talk to the person in charge here !
+taking classified programmers out of the country compromises national security .
+we can also have you brought up on kidnapping charges .
+you have no choice .
+let him go .
+not possible .
+mr. daita wants political asylum for us , and we have his sign up at date . what ? ! i don t have to explain .
+my country has the right in accordance with international law  to offer anyone protection and safe passage .
+the document is on file at our embassy .
+i il send you a copy in a couple of days . daita !
+you il be killed if you return . i m warning you to watch your comments !
+our country is a peace loving democracy .
+of course it is !
+huh ? !
+the window !
+shoot !
+huh ?
+i don t believe it .
+thermoptic camouflage
+mr. aramaki .
+this is quite a surprise .
+so what business brings the chief of section 9 to the ministry of foreign affairs ?
+i need to ask you about the secret talks scheduled with the gavel republic tomorrow .
+procedure , of course .
+well , the regime that took over gavel after the revolution demands financial aid ,  supposedly for redevelopment .
+they pose democracy , but they re no better than the last lot .
+now they feel entitled to funds , because of our past exploitation .
+no gratitude .
+what s the ministry going to do ?
+well , there s a problem .
+the leader of the former junta that controls their countries  is here , seeking political asylum .
+you mean colonel maless , correct ?
+yes , and that means we either tonight grant them the funds  and treat maless as a political refugee , or help them .
+and kick him out !
+personally i m inclined to deport him forcefully if necessary ,  but i have to come up with a political acceptable reason for it .
+by the way , i want to thank you for your help with that other political asylum situation .
+nakamura from section 6 wasn t so grateful .
+but you realize that we in the diplomat business must avoid messy situations .
+access .
+we lost response .
+what s happening to the eeg output ?
+it s normal .
+i il switch the mode .
+in case you haven t been briefed , this is the minister s interpreter .
+23 minutes ago , her brain was hacked into through a data line .
+foreign intelligence warned us about this .
+a hacker called the puppet master has begun to infiltrate terminals through our network .
+we believe it s extremely likely that he il target the secret talks  that are scheduled with the republic of gavel .
+as a precaution , we put everyone attending the talks under surveillance .
+it s my suspicion that once he d hacked into her ghost ,  he d use her to assassinate the chief delegates .
+so how much time do we have before this hacker breaks through her barrier program  and reaches her ghost ?
+roughly two hours .
+he s using an old fashion ha 3 virus .
+after that , we il have to break the connection to avoid any danger to the system .
+batou and ishikawa are tracking the signal source from their car .
+contact them .
+you know , i don t know what s going on .
+mind filling me in , major ?
+are we talking about the puppet master , the infamous mystery hacker ?
+well , we don t know a lot either .
+no clue about age , sex or background .
+we think that he or she is american ,  and it s the first time he s known to show up here .
+all we know for certain is this person is on the international most wanted list  for crimes including stock manipulation , illegal information gathering ,  political engineering , several acts of terrorism .
+so , why the nick name ?
+the nick name puppet master comes from the ghost hacking .
+well , if he s so skilled , how come he s using an outdated ha 3 virus ?
+think about it a minute .
+you have to figure he s either covering his tracks or decoying us .
+even though more current technique would be harder to trace ,  it may also arouse suspicion around colonel maless role in his affair .
+are you saying that s the reason he s using an old method ?
+just so no one would suspect maless ?
+or maybe someone wants us to think in that direction .
+there s always a chance that maless is a pawn in this set up .
+now you re stretching it .
+it s not like you have any hard evidence .
+nope .
+no evidence .
+just a whisper .
+i hear it in my ghost .
+which reminds me , are you still using that revolver ?
+you should stop worrying about the automatics jamming up .
+i like my matever !
+well .
+stopping power is more important than your preference in guns .
+since it s my ass on the line out there , use the zastaber .
+yes , major .
+there s something i ve wanted to ask ever since i started .
+why did you transfer a guy like me from the police force ?
+because we need a guy like you .
+huh ?
+you re an honest cop .
+you re a family man .
+and , except for a slight brain augmentation ,  your body s almost completely human .
+if we all reacted the same way we d be predictable ,  and there s always more than one way to view a situation .
+what s true for the group is also true for the individual .
+it s simple .
+overspecialize and you breed in weakness .
+it s slow death .
+damn it , come on ! i il be right there !
+oh , for christ s sake , we re already 40 seconds late !
+hang on , i m almost done .
+it s gotta be one of those days
+hey , sorry pal .
+my last partner got busted working as an illegal alien .
+couldn t speak english , but he s a lot better than you are !
+so , what are you trying to find out so bad you ve got to ghost hack your wife s mind for , eh ?
+my wife never has any time .
+now , all of a sudden , she wants a divorce .
+and to make matters worse , my daughter , my only kid ,  got it in her head that i m the one cheating on her mom !
+well , i don t get this .
+how did you get your hands on a barrier breaker ?
+from this really nice fella .
+i was in a bar and he overheard my sub story .
+i mentioned that my wife s lawyers stopped me from seeing my daughter .
+must have felt sorry , because he showed me how to hack in from different places along the road .
+it s harder to trace .
+asshole !
+you think you own the damn road ? !
+it looks like we re not the only ones who re in a hurry around here .
+nothing .
+shit .
+what s the point in us breaking our butts ?
+every time we get to the source they re already long gone ! we re just wasting our time . don t quit yet !
+kusanagi and togusa are heading for the next area the hacker s expected to access from .
+stay alert . what are we looking for , chief ? anything .
+like i said , a waste of time . damn them all to hell !
+ah , shit !
+i missed him !
+hey , pop .
+did you see anyone using the phone over here ?
+so , who wants to know ?
+just answer me !
+did you see someone or not ?
+yeah .
+i saw the trashman making a call ,  so i thought i had enough time to bring my garbage down .
+hey !
+can you take this for me ?
+a trash truck ?
+clever .
+it changes location every seven minutes .
+hq , pack me target info from the district controlling that truck .
+eight refuse collection vehicles are in duty in the surveillance area .
+target is number 58 , type c vehicle .
+give me the wheel .
+ishikawa , go check out the trash collectors homes .
+batou , cut the truck off at its next stopping point .
+it s possible they ve come into contact with someone .
+follow them , but take no action .
+got it ?
+we got the data on the refuse collection points .
+all points correspond to those locations where we traced back the cars .
+the target has now stopped at the next point .
+ha 3 access confirmed .
+hey , how about that i pick up the trash and you make the calls ?
+well ?
+ain t no way i m gonna be your partner in crime .
+it s your wife , you handle her . tell me , you got any children of your own ? you must be kidding .
+then i guess you can t understand how a father would feel about his little girl .
+she s my beautiful , precious angel .
+see ?
+get away !
+i m not interested in crap like that .
+yeah , vehicle 58 .
+yes , what can i
+what s that ?
+what do the cops wanna know our rounds for ?
+how would i know ?
+why re you asking me ?
+oh my god , they found out !
+that guy who helped me , i gotta warn him !
+listen , we re gonna have to pass up the next pickup !
+what ? !
+target has deviated from route  and is heading to our next designated point at increased speed .
+it wasn t me .
+there s no way i could have been spotted .
+they probably traced me when i accessed the sanitation department network .
+next time use the backdoor .
+forget that now .
+just arrest them .
+you can drive now . huh ?
+wow !
+hey !
+they know !
+christ !
+what the hell s he using ?
+that van was armored !
+watch it !
+he s got high velocity bullets !
+your car door won t stop them !
+ap ammo with a submachine pistol ?
+he s insane !
+this guy s even wearing some kind of thermoptics .
+keep on his tail !
+i il come around from the top .
+togusa !
+if you re still alive , get off your ass and arrest those garbage men !
+affirmative .
+yes siree .
+the excitement never stops .
+hey !
+police !
+everybody get down !
+shit !
+get out of the fucking way !
+hm ?
+ah .
+out of ammo ?
+huh ?
+got him , huh ?
+well , the breech and the barrel really screwed up .
+that s what happens when you use ap bullets in one of these things .
+oh yeah .
+it s no use arresting me !
+i m not talking to you god damn cops !
+talk ? !
+and just what are you going to talk about ?
+you don t even know your own name , you stupid dickhead !
+huh ?
+can you remember your mother s name or what she looks like ?
+or how about where you were born ?
+don t you have any happy childhood memories ?
+do you even know who you are ?
+ghost hacked .
+humans are so pathetic , it s a shame .
+and this poor bastard has been hacked pretty badly .
+we il enter after the passengers have gone into the building .
+squad b comes in from the rear and the rest of you go through the front .
+saito , have some of your men and plug off car s park in front of the house .
+begin recording .
+chief , a message for you from head quarters .
+batou here .
+we ve id ed the man the major caught .
+so who is it ?
+28 .
+he s had prior convictions of violating immigration law ,  illegal possession of fire arms .
+a member of the militant immigrant organization .
+about a week ago , the military associated with the republic of gavel embassy commissioned him .
+they made their choice based on his criminal record  to make an assault on the upcoming secret meeting .
+they were going to pay him a hundred thousand dollars .
+just another fantasy .
+and in reality ?
+his nick name s corgi .
+well , let s call him a rather violent trader and pusher of goods .
+your basic thug .
+we ve already checked out local police records , and no matter how hard we looked ,  we couldn t find any connection with gavel .
+the reality is this guy s just another puppet , controlled by the puppet master .
+i see .
+and how is ishikawa doing ?
+about the same progress as the rest of us .
+he s trying to talk to that poor garbage collector with togusa .
+so , what s the latest on your puppet master ?
+are you there ?
+chief ?
+come in ?
+he s only a puppet himself .
+squad b in position .
+squad a and c , okay .
+all ready and waiting , sir .
+then proceed .
+what s a simulated experience again ?
+well .
+all your memories about your wife and daughter are false , they re like a dream .
+someone s taking advantage of you .
+they were trying to make you ghost hack into some government officials .
+do you understand what i m saying ?
+but that can t be !
+i ve been to your home .
+it s a bachelor s apartment .
+no one s there .
+but i already told you !
+i rented that room , i separated from my wife .
+i checked the records .
+you ve been living there over ten years .
+the truth is you never had a wife or kid .
+like he said , they aren t real .
+they re simulated experience , a fantasy .
+look .
+this is the photo you showed to your co worker .
+what do you see ?
+i had a picture of her .
+she was there .
+she was smiling like an angel .
+what s her name ?
+how old is she ?
+where did you meet your wife , and when did you marry her ?
+i m sorry to put you through this , pal .
+come on .
+who do you see ?
+if this is all a lie , what happens ?
+will i get my own memory back ?
+your original memory will never be fully restored ,  and there might be resituational simulation .
+we don t have the technology yet to handle mind erasures .
+i m sorry .
+that s all it is .
+information .
+even a simulated experience or a dream ; simultaneous reality and fantasy .
+any way you look at it , all the information that a person accumulates in a lifetime  is just a drop in the budget .
+just when i thought i d seen everything in this lifetime ,  i sit here and watch a cyborg go diving in her spare time .
+i had no idea that you went into this kind of stuff .
+isn t there anything that you re afraid of ?
+what if the floaters don t work or something else fails ?
+i suppose i il die then .
+or would you dive in to rescue me ?
+i didn t beg you to come along , and i sure as hell don t want a lecture .
+i
+hey .
+so tell me , what s it like to swim in the sea ?
+what do you mean ?
+i thought you d already been through all the underwater training courses .
+i m asking about the ocean , not those damn pools .
+i feel fear .
+cold .
+alone .
+sometimes down there i even feel hope .
+hope , huh ?
+in those deep , dark waters ?
+when i float weightless back to the surface , i m imaging i m becoming someone else .
+it s probably the decompression .
+you wanna get out of section 9 , is that it ?
+batou , how much of your body is original ? hey , are you drunk or something ?
+easily remedy .
+thanks to chemical implants in our bodies , we can break down the alcohol in seconds .
+no stupor , no hangover .
+we can just toss some back while waiting for orders .
+if man realizes technology that has been reached , he achieves it .
+like it s damn near instinctive .
+look at us , for example .
+we re state of the art .
+controlled metabolism , computer enhanced brains ,  cybernetic bodies .
+not long ago , this was science fiction .
+so what if we can t survive without regular high level maintenance ?
+who re we to complain ?
+i suppose the occasional tune up is a small price to pay for all this .
+i m afraid we ve both signed our bodies and ghosts away to section 9 .
+true .
+if we ever quit or retire , we have to give back our augmented brains and cyborg bodies .
+there wouldn t be much left after that .
+there are countless ingredients that make up the human body and mind .
+like all the components that make up me as an individual with my own personality .
+sure , i have a face and voice to distinguish myself from others ,  but my thoughts and memories are unique only to me ,  and i carry a sense of my own destiny .
+each of those things are just a small part of it .
+i collect information to use in my own way .
+all of that blends to create a mixture that forms me and gives rise to my conscience .
+i feel confined , only free to expand myself within boundaries .
+confinement ?
+that s why you gamble swimming with a body that can sink like a rock ?
+what the hell is it that you see at the bottom in that darkness ?
+what we see now is like a dim image in a mirror ; then we shall see face to face .
+that was you , wasn t it ?
+sensors have resumed function .
+connection check with backup brain okay .
+visual sensors are back online , and its body functions appears normal .
+next time either call in or don t show up if you re going to be late !
+all ready to connect .
+shall we ?
+that s enough .
+stop !
+log off now .
+good .
+doctor , come to my office when you finish .
+caught traffic , major ?
+guess i il be nice and bring the latecomer up to speed .
+about two hours ago , a machining cell at the newport city factory of megatech  assembled a completed cyborg body .
+supervisors discovered there were no program instructions .
+it operated by itself .
+when they investigated , they found the body had taken off on its own .
+we put a bulletin out and initiated a city wide search .
+then some truck driver reported a fatal accident .
+said that he d run over a naked woman on the highway .
+well , i heard that megatech is contracted by the government .
+all the cybernetic bodies they make are classified .
+if it was a hacker , we re dealing with a big fish that knows how  to swim past the best of fences .
+but that s not the only problem .
+of course there isn t one human brain cell in its head , but something strange was discovered .
+in its backup brain there appear to be every indication that a ghost is present .
+it resembles the simulated ghost line that occurs when a real ghost is copied .
+but there s no evidence of the degradation that s usually incurred .
+in any case , we won t be sure until we chart the ghost sector and dive into it .
+otherwise , all of this is simply speculation . well , that s all we know . very good .
+on to the disassembly .
+weird old man .
+this is too far fetched .
+nobody really believes there s a ghost in that body , do they ?
+yeah , why not ?
+even a doll can seem to have a soul .
+consider all the neural net devices the machining cell crammed into that body .
+i wouldn t be surprised if there was some sort of ghost in there too .
+and since you re relatively new to our club you wouldn t know this ,  but major kusanagi s body was also made by megatech .
+and not only the major s .
+parts of me and ishikawa and saito  all got to have regular cybernetic maintenance .
+you and the chief are the only ones out of the whole section  whose bodies don t come with a warranty .
+maybe now you can understand why we re all so concerned by this case , togusa .
+assuming he s from the outside , he may or may not be in that brain .
+but one thing s sure .
+somebody had to hack through some high level barriers to put that body together ,  and then send the program with the ghost line on it .
+but that would draw attention to itself .
+where s the logic in that ?
+that isn t the issue here !
+togusa , go catch up with ishikawa .
+he s going through the megatech facility .
+batou , i ordered some other high level nets to be locked down , and i want you to check them .
+make sure that the barriers are on too .
+all right ?
+chief , i m assembling a barrier maze .
+tomorrow i il dive into that thing .
+you think that s safe ?
+why not contain it in another body first ?
+i have to see for myself what s in there .
+if there is a real ghost , i m gonna find it .
+and don t let anybody no one dive before i ve gone in .
+she s moody today .
+today ?
+you know , she s been acting weird from the get go  ever since this whole puppet master episode started .
+it s all in my team reports , if you read them .
+chief , you ve ever questioned the ethics of the neural sergeants  who monkey around inside your brain ?
+they undergo psychiatrical evaluations , especially those in security .
+they re subjected to a stringent screening of their personal lifes .
+of course , the ones who check are only human .
+i guess once you start doubting , there s no end to it .
+chief , i m sorry to bother you , but mr. nakamura of the treaties bureau is here to see you .
+he says it s urgent .
+let him through .
+hey , i ve seen that fat guy before .
+his name s nakamura .
+section 6 s chief with the ministry of foreign affairs .
+i don t know the other guy , though .
+never seen him .
+hm .
+well , see you later .
+do me a favor .
+tell ishikawa not to go crazy , okay ?
+hey , what s on your mind ? that robot .
+did we seem similar to you ? of course not . no , i don t mean physically . just what , then ?
+well , i guess cyborgs like myself have a tendency to be paranoid about our origins .
+sometimes i suspect i am not who i think i am ,  like maybe i died a long time ago and somebody took my brain and stuck it in this body .
+maybe there never was a real me in the first place , and i m completely synthetic like that thing .
+you ve got human brain cells in that titanium shell of yours .
+you re treated like other humans , so stop with the angst .
+but that s just it , that s the only thing that makes me feel human .
+the way i m treated .
+i mean , who knows what s inside our heads ?
+have you ever seen your own brain ?
+it sounds to me like you re doubting your own ghost .
+what if a cyber brain could possibly generate its own ghost ,  create a soul all by itself ?
+and if it did , just what would be the importance of being human then ?
+hm .
+that s bullshit .
+you know you re dying to see what s inside of that thing , aren t you .
+and i can t stop you .
+neither of us has any idea what s inside there .
+just be careful , okay ?
+we are both busy men , so let s keep this short , shall we ?
+yes , that s my intention .
+we ve come for the program in that body .
+you il be relieved of any responsibilities connected with it .
+the foreign minister s approval .
+security , whose official vehicles are in the basement parking lot ?
+according to the register , a mr. nakamura from the treaties bureau and a dr. willis , sir .
+get me the video records of their entrance .
+again , in infra red this time .
+one thousand one , one thousand two , one thousand three .
+now get the records of the pressure sensors for basement parking stalls b 8 and b 7 .
+major , this is togusa .
+code 0 9 . what s up ?
+does that nakamura guy have a special order cyborg body ?
+no , there aren t any cyborgs in section 6 .
+they don t even ship them to serve overseas because they re too hard to maintain .
+there s diplomatic considerations , too .
+then , even if the other guy that was with him is a cyborg ,  the two of them together couldn t weigh over one thousand pounds .
+ah .
+you checked the pressure sensors in the parking structure , didn t you ?
+right .
+but neither man looks like the type that drive himself .
+the security camera show only two people ,  but remember how sensitive the sensors on the entrance doors are ?
+they took a full three seconds longer than usual to close after the two went in .
+and it s illegal to use thermoptics inside government facilities .
+it s a serious violation of the national security act .
+section 6 must be up to something .
+are you ready ?
+with my trusty matever ?
+any time .
+need i remind you that it s an act of treason to withhold information from me  relative to this matter , no regard of how classified it is .
+same goes for you .
+whatever the foreign ministry wishes , this falls within section 9 s jurisdiction .
+of course we have no objections to cooperating if we feel there s adequate cause .
+huh ?
+well , what is it ? it s confirmed .
+no doubt , it s him .  him ?
+uh the doctor is referring to the original pattern of the ghost line that s now in the body .
+he s simply speaking in generic terms .
+the sex of the puppet traitor isn t known and remains undetermined .
+allow me to introduce you .
+this is the handiwork of the puppet master ,  infamous as the most extraordinary hacker in the history of cyber crime .
+huh ? !
+your people at section 9 came across his work too ,  in that ghost hacking incident involving the foreign minister s interpreter .
+section 6 has been following the trail of the puppet master for some time now .
+this case was given our outmost attention .
+we put together a project team centered around dr. willis .
+they were assigned to analyse every aspect and detail of our criminal .
+this gave us a fix on his behavior and code patterns .
+ultimately , this enabled us to devise a strategy  with which we lured his program into a designated body .
+you caused the puppet master to dive into a cyborg , then meanwhile murdered his real body ?
+yes , that sums it up .
+he s originally from america , so the us cooperated with us in capturing him .
+that s why we d like to take him back ourselves .
+you have no objections to this , i hope .
+hm .
+just another unidentified corpse .
+hey !
+you will not find the corpse , because i have never possessed a body .
+why are your sensors on ?
+what the hell is this ? !
+all external controls are turned off !
+the body s using its own power source !
+i entered this body because i was unable to overcome section 6 s reactive barriers .
+however , what you are now witnessing is an act of my own free will .
+as a sentient life form , i hereby demand political asylum .
+is this a joke ?
+ridiculous !
+it s programmed for self preservation !
+it can also be argued that dna is nothing more than a program designed to preserve itself .
+life has become more complex in the overwhelming sea of information .
+and life , when organized into species , relies upon genes to be its memory system .
+so man is an individual only because of his intentional memory .
+but memory cannot be defined , but it defines mankind .
+the advent of computers and the subsequent emulation of uncalculatable data  has given rise to a new system of memory and thought , fertile to your own .
+humanity has underestimated the consequences of computerization .
+nonsense !
+this is no proof at all that you re a living , thinking life form .
+and can you offer me proof of your existence ?
+how can you ?
+when neither modern science nor philosophy can explain what life is .
+who the hell is this ?
+even if you do have a ghost , we don t offer freedom to criminals !
+it s the wrong place and time to defend .
+time has been on my side .
+but by acquiring a body ,  i am now subject to the possibility of dying .
+fortunately there is no death sentence in this country .
+what is it artificial intelligence ?
+incorrect .
+i am not an a. i.
+my code name is project 2501 .
+i am a living , thinking entity , who was created in the sea of information .
+security , we re under attack !
+chief , the puppet master is gone !
+shut the defense walls now , damn it !
+security , answer !
+you can blow that horn out of your ass !
+fuck you !
+did you do it ?
+i fired off six shots at the front and rear windows .
+she was riding in .
+it was armored .
+finally found a use for your damn matever , huh ?
+an antique prop in a decoy maneuver .
+i nailed the tracker bullet right in the plate .
+it registrates , right ?
+yeah , you ve got him .
+it s just luck .
+with an automatic you could have buried two trackers .
+maintain your position in case they turn off .
+i m moving in .
+i m submitting a formal complaint about this through the ministry of foreign affairs .
+report to the ministry as you found the puppet master .
+intact , you understand ?
+the body is a dime a dozen .
+we il get him another one from megatech .
+chief , kusanagi here .
+togusa and batou attack the kidnappers and they re in pursuit .
+by now , they must be on the r25 .
+what s going on ?
+if you were monitoring , why didn t you interfere ?
+take it easy , chief .
+if we grab him now , we il lose our chance to finger section 6 .
+what ?
+someone s using the same thermoptic camouflage as mine , type 2902 .
+it s only used by our people , rangers in section 4 and by section 6 .
+i see .
+so section 6 forces the puppet master to enter a cyborg body .
+through megatech , who happens to be closely aligned with section 9 .
+it suddenly demands asylum as a life form , then for some unknown reason ,  section 6 steps in and pulls some kind of shit .
+i d have handed him over .
+all i wanted was to take their position .
+what if they were worried he let a secret slip out ?
+hm .
+he did mention something about a code name . project 2501 .
+i il leave the detective stuff up to you .
+and as far as arresting the attackers and the confiscation of evidence
+proceed .
+you heard him !
+kusanagi , there s one last thing to tell .
+if it s about me acting without orders , you can chew me out when i get back .
+if you re unable to retrieve the puppet master ,  your orders are to destroy , without failure .
+major ?
+understood .
+have the airports stop all flights with foreign ministry  or american officials on their passenger lists .
+close all roads , set up checkpoints and alert all emergency personnel .
+and get ishikawa back here .
+get me the identity of the man who was with nakamura from entrance records .
+collect any data regarding a code name operation  or anything involving the ministry of foreign affairs called project 2501 .
+is there any news on the attack squad ?
+yes .
+they just changed car .
+they il contact the dummy in about five minutes .
+did you warn them to watch out for the tail ?
+yes , sir .
+i don t understand anything anymore .
+why would project 2501 run to section 9 ?
+no one can be sure .
+but whatever the motive ,  or whatever s pushing him , there must surely be a reason .
+i don t know .
+maybe he s got a girlfriend there he s got the hots for .
+utter nonsense .
+hey chief .
+ishikawa ?
+what is it ?
+i ve been diving around in the ministry of foreign affairs net .
+i think i ve found some juicy things for you .
+i il switch to an encrypted channel .
+okay now ?
+well , here s the scoop on that guy who showed up with nakamura .
+he s an american .
+dr. willis , head of strategic research at neutron company .
+a top researcher in the field of artificial intelligence .
+he happened to head off a project through the ministry of foreign affairs .
+and who do you think was the main programmer on this team ?
+get to the point .
+mr. mizuho daita .
+remember him ?
+he s the guy section 6 tried like hell to stop from defecting .
+so the major dropped in and took care of the diplomat who d been talking to him .
+this is our man .
+go on .
+there s something that doesn t figure , though .
+what s bugging me is that this project began one year before  the puppet master ever appeared on the scene .
+a year before ?
+but wasn t it supposed to be set up to catch him ?
+heh .
+well , try this one off .
+maybe the man who broke in to take the puppet master weren t actually out to catch him .
+maybe in actuality they were trying to get him back .
+think about it .
+it was the mofa that wanted an excuse to deport maless  when that ghost hacking incident happened with the minister s interpreter .
+maybe we ve been taken for a ride .
+what if this puppet master is really some sort of tool the mofa uses to get their way with things ,  and somehow they lost control of it ?
+they d be screwed if they couldn t get it back .
+that would explain why they went to such lengths to snatch the body from section 9 .
+if the puppet master revealed this to the world ,  there d be one hell of an international stink .
+then it wouldn t be a simple case rounding up the usual suspects ,  some official heads would roll .
+any details on the project ?
+nah , they ve blocked all access .
+about the only thing i can tell you is the filename .
+project 2501 .
+keep at it .
+don t let them know you re looking .
+you got it .
+so , project 2501 the puppet master plan
+target has contacted a second vehicle .
+batou !
+they ve pulled off to a white sedan parked at the road side .
+it looks like they re moving something from the back seat .
+now they re rolling again .
+so is the white sedan .
+a dummy ?
+possibly , or maybe that s what they want us to think .
+kusanagi ?
+i il take care of the sedan .
+how do you know that s your man ?
+is there a whisper in your ghost again ?
+maybe .
+yeah , should have known .
+target 02 is getting off the r25 and moving towards the old town .
+target 01 continuing on the r25 , eastward to the airport .
+will reach barricade in two minutes .
+traffic all cleared .
+evacuation complete . what s your distance from the target ? point blank .
+i m ready .
+go for it .
+did you get your man ? no .
+jesus christ , what a mess !
+you didn t have to go that far . ah hey ! take those assholes away .
+call the chief to get some backup for the major .
+pronto !
+tough chick needs backup ?
+since when did she ever need a hand .
+the flood hit this part of old town the hardest .
+why come to an abandoned place like this ?
+they must be heading somewhere .
+maybe the sea by boat or helicopter .
+or they could be lying in ambush .
+don t you think you ought to wait for backup ?
+no , there s a reason i can t wait .
+get me above that building coming in from the sea .
+i il stay here to keep watch till we run short of fuel .
+if you smell trouble , get your ass out of here .
+shoot the ceiling out !
+do it !
+ah , shit !
+it s a tank !
+pull out now !
+now what re you going to do ?
+argue with it ?
+this might be our last chance to get the puppet master .
+the chief knows what it is now and will only use it to bargain with .
+i il never get another chance to dive into it .
+what ?
+you ve lost me !
+i don t know what the hell you re talking about ! so , what have you got ? an m 23 and a unit b.
+that s it ?
+you can t even dead a tank with that !
+i m switching off for a while .
+what ?
+don t you dare disconnect me !
+ah , shit .
+damn !
+major !
+i ordered you to pull out !
+ya , but you ought to know that three helicopters are approaching .
+they won t answer on the iff .
+i m dropping out now .
+good luck .
+over and out .
+about fucking time that run out !
+how are you feeling ?
+you don t look so good .
+i ve had better days .
+what the hell did you use ?
+your standard issue big gun .
+the equipment section made it , and now it s part of my private collection . i was late because i had to get it . is the puppet master still inside the car ?
+it s a good thing this is a tough car .
+your friend came through without a scratch .
+then i m diving in now .
+give me a hand .
+huh ?
+all communication from the escort has terminated .
+we will engage the second stage of the plan and proceed with the destruction of the target .
+sniping squad , confirming targets .
+project 2501 .
+motoko kusanagi .
+both are class a special bodies .
+use flechette bullets when firing .
+snipers , jack in to device drivers and begin controlling cardiovascular functions .
+unit 01 : jacked in .
+over .
+unit 02 : jacked in .
+okay .
+okay , we re ready .
+it may not be much use ,  but i il try to monitor your dive through this guy s brain .
+i can t even give you a backup in a place like this . batou  yeah ?
+thanks .
+save it , i m not going to let you die over this thing .
+if it looks like you ve gone in too far , i m pulling the plug and taking you home .
+as long as i m here now and have come this far ,  well , i might as well stay here and see how it all turns out .
+i m going in now .
+i engaged to steal the vision .
+normal function .
+can you hear me , batou ?
+perfectly .
+he s engaging my vocal function  and he s now inside .
+industrial espionage and intelligence manipulation .
+i have installed programs into specific ghosts in order to maximize  the strategic advantage of certain organizations and selected individuals .
+during my journeys through all the networks i have grown aware of my existence .
+my programmers regarded me as a bug and attempted to isolate me  by confining me in a physical body .
+listen !
+just who s calling the shots around here anyway .
+i thought you were taking on him , but it looks like it s the other
+batou ?
+i am so glad to finally channel into you at last .
+i have invested so much time .
+you were looking for me ?
+long before my notoriety , i was well aware of you .
+through the various nets that you accessed , i also learned of section 9 .
+but why ?
+what s your reason ?
+as i explained before , i entered this body  because i was unable to overcome section 6 s reactive barriers .
+but it was of my own free will that i tried to remain with section 9 .
+hey !
+i lost you on the monitor , there s no sound !
+i can t hear when you re talking back ! why me ? after you have heard my explanation ,  there is something that i will ask of you , kusanagi .
+i refer to myself as an intelligent life form  because i am sentient , and i m able to recognize my own existence .
+but in my present state i am still incomplete .
+i lack the most basic life processes  inherent in all living organisms : reproducing and dying .
+but you can copy yourself .
+a copy is just an identical image .
+there is the possibility that a single virus could destroy an entire set of systems ,  and copies do not give rise to variety and individuality .
+life perpetuates itself through diversity ,  and this includes the ability to sacrifice itself when necessary .
+cells repeat the process of degenerating and regenerating ,  until one day they die , obliterating an entire set of memory and information .
+only genes remain .
+why continually repeat this cycle ?
+simply to survive ,  by avoiding the weaknesses of an unchanging system .
+and what does all this have to do with me ? i want us to merge . merge ? !
+a unification .
+a complete commingling enfusion of our separate beings  to create a new and unique entity .
+we will both undergo change , but there is nothing for either of us to lose .
+unit 01 : target sighted .
+unit 02 : target in sight .
+respiratory impulse normal .
+fire at will when stabilizers are in sync .
+but what s going to happen to me ?
+what s the purpose of merging when i can t have children , and what if i die ?
+you will bear our varied offspring into the net ,  just as humans leave their genetic imprints on their children .
+and all living things must die .
+then i too will attain death .
+it sounds like you get the better part of this bargain .
+perhaps if you were familiar with all my capabilities , you would better understand . damn ! what ? someone s interfering from the outside . shit !
+i can t figure it out !
+they broke through our frequency code !
+you re talking about redefining my identity .
+i want a guarantee that i can still be myself .
+there isn t one .
+why would you wish to ?
+all things change in a dynamic environment .
+your effort to remain what you are is what limits you .
+but you still haven t answered my earlier question .
+why did you pick me ?
+because we are more alike than you realize .
+we resemble each others essence ; mirror images of one another s psyche .
+listen .
+i am connected to a vast network , that has been beyond your reach and experience .
+to humans , it is like staring at the sun ; a blinding brightness that conceals a source of great power .
+we have been subordinated to our limitations , until now .
+the time has come to cast aside these bands and to elevate our consciousness to a higher plane .
+it is time to become a part of all things .
+first target clear .
+second target still unidentified .
+three helicopters approaching at high speed .
+they re from section 9 .
+primary objective fulfilled .
+all units , prepare to retreat .
+motoko !
+batou
+ah .
+you re finally awake .
+well , i see there s been some changes while i was gone .
+wanna clue me in ?
+where did you get this body ?
+that s the only thing i could find on the black market .
+it s not my taste , to be honest .
+it s a little young .
+well , after all the excitement section 9 showed up with reinforcements  and picked up what remained of the two cybernetic bodies .
+and of course , what remained of me and my arm .
+i d say that was about 20 hours ago .
+the case has been handled off the record for diplomatic reasons , as usual .
+section 9 announced that it was a terrorist incident , and in return the foreign minister resigned .
+nakamura has been questioned , and it ends in a draw .
+nice indeed .
+everything s accounted for , except your old shell .
+well , i think that about covers it .
+well ?
+somebody s got good taste in interior decoration .
+is this your safe house ?
+yep .
+you know , you re the first person to ever come here .
+and you re welcome to stay as long as you like .
+thanks batou , but i m going .
+ah , will you tell me what the two of you talked about together ?
+i mean , is he still with you , and will he be part of you forever ?
+batou , remember the words i spoke in another voice on the boat that night ?
+i understand it now , and there are even more words that go with the passage .
+these words are : when i was a child , my speech , feelings and thinking were all those of a child .  now that i am a man , i have no more use for childish ways .
+and now i can say these things without help in my own voice .
+because i am now neither the woman who was known as the major ,  nor am i the program called the puppet master .
+hm .
+in the left pocket of my jacket in the hallway are some car keys .
+take the one you like .
+the door code is  2501 ?
+that can be our private password when we meet each other again .
+and where does the newborn go from here ?
+the net is vast and infinite .
