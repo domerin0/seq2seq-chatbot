@@ -47,7 +47,6 @@ function Seq2Seq:buildModel()
 
   self.criterion = nn.SequencerCriterion(nn.ClassNLLCriterion())
 
-  self.zeroTensor = torch.Tensor(2):zero()
 end
 
 function Seq2Seq:cuda()
@@ -57,7 +56,6 @@ function Seq2Seq:cuda()
   if self.criterion then
     self.criterion:cuda()
   end
-  self.zeroTensor = self.zeroTensor:cuda()
 end
 
 function Seq2Seq:forwardConnect(inputSeqLength)
@@ -112,20 +110,29 @@ function Seq2Seq:train(input, target, optimState)
   local decoderTarget = target:sub(2, -1)
 
   -- Forward pass
-  self.encoder:forward(encoderInput)
+  encoderOutput = self.encoder:forward(encoderInput)
   self:forwardConnect(encoderInput:size(1))
   local decoderOutput = self.decoder:forward(decoderInput)
-  local loss = self.criterion:forward(decoderOutput, decoderTarget)
+
+  -- convert to table
+  decoderTargetTable = {}
+  for i=1,decoderTarget:size(1) do
+    decoderTargetTable[i] = decoderTarget[i]
+  end
+
+  local loss = self.criterion:forward(decoderOutput, decoderTargetTable)
 
   if loss ~= loss then
     return loss
   end
 
--- Backward pass
-  local gradLoss = self.criterion:backward(decoderOutput, decoderTarget)
+-- Backward
+
+  local gradLoss = self.criterion:backward(decoderOutput, decoderTargetTable)
+
   self.decoder:backward(decoderInput, gradLoss)
   self:backwardConnect()
-  self.encoder:backward(encoderInput, self.zeroTensor)
+  self.encoder:backward(encoderInput, encoderOutput)
 
   self.encoder:updateGradParameters(optimState.momentum)
   self.decoder:updateGradParameters(optimState.momentum)
