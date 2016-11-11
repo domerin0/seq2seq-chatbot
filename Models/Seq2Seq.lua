@@ -96,7 +96,14 @@ function Seq2Seq:eval(input, target)
   self.encoder:forward(encoderInput)
   self:forwardConnect(encoderInput:size(1))
   local decoderOutput = self.decoder:forward(decoderInput)
-  local loss = self.criterion:forward(decoderOutput, decoderTarget)
+
+  -- convert to table
+  decoderTargetTable = {}
+  for i=1,decoderTarget:size(1) do
+    decoderTargetTable[i] = decoderTarget[i]
+  end
+
+  local loss = self.criterion:forward(decoderOutput, decoderTargetTable)
 
   if loss ~= loss then
     return loss
